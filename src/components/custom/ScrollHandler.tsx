@@ -1,5 +1,5 @@
 // ScrollHandler.tsx
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ScrollHandler: React.FC<{ refs: { [key: string]: React.RefObject<HTMLDivElement> } }> = ({ refs }) => {
