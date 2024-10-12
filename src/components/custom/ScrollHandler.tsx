@@ -1,13 +1,12 @@
-// ScrollHandler.tsx
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ScrollHandler: React.FC<{ refs: { [key: string]: React.RefObject<HTMLDivElement> } }> = ({ refs }) => {
-  const navigate = useNavigate(); // Now this is within the Router context
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const sections = [
-    { ref: refs.home, path: "/" },
+      { ref: refs.home, path: "/" },
       { ref: refs.about, path: "/about" },
       { ref: refs.timeline, path: "/timeline" },
       { ref: refs.problems, path: "/problems" },
@@ -17,8 +16,8 @@ const ScrollHandler: React.FC<{ refs: { [key: string]: React.RefObject<HTMLDivEl
     ];
 
     const options = {
-      root: null, // Use the viewport as the root
-      threshold: 0.5, // Trigger when 50% of the section is visible
+      root: null, 
+      threshold: 0.5, 
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -26,7 +25,7 @@ const ScrollHandler: React.FC<{ refs: { [key: string]: React.RefObject<HTMLDivEl
         if (entry.isIntersecting) {
           const path = sections.find(section => section.ref.current === entry.target)?.path;
           if (path) {
-            navigate(path); // Change route based on the visible section
+            navigate(path);
           }
         }
       });
@@ -34,16 +33,16 @@ const ScrollHandler: React.FC<{ refs: { [key: string]: React.RefObject<HTMLDivEl
 
     sections.forEach(section => {
       if (section.ref.current) {
-        observer.observe(section.ref.current); // Start observing each section
+        observer.observe(section.ref.current); 
       }
     });
 
     return () => {
-      observer.disconnect(); // Cleanup observer on component unmount
+      observer.disconnect();
     };
   }, [navigate, refs]);
 
-  return null; // This component doesn't render anything
+  return null;
 };
 
 export default ScrollHandler;
