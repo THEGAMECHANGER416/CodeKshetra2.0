@@ -1,32 +1,57 @@
 import "./App.css";
+import Home from "./components/custom/Home";
 import AboutUs from "./components/custom/AboutUs";
-import Faq from "./components/custom/FAQ";
-import MentorCard from "./components/custom/MentorCard";
+import Faq from "./components/custom/FAQ"; // Ensure this component exists
+import MentorCard from "./components/custom/MentorCard"; // Ensure this component exists
 import Navbar from "./components/custom/Navbar";
 import PrizePool from "./components/custom/PrizePool";
 import ProblemStatement from "./components/custom/ProblemStatement";
 import TimeLine from "./components/custom/TimeLine";
-import { Button } from "./components/ui/button";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Import BrowserRouter and Route
+import { BrowserRouter as Router } from "react-router-dom"; 
+import { useRef } from "react";
+import ScrollHandler from "./components/custom/ScrollHandler";
 
 function App() {
+  // Create refs for each section
+  const homeRef = useRef<HTMLDivElement | null>(null);
+  const aboutUsRef = useRef<HTMLDivElement | null>(null);
+  const timelineRef = useRef<HTMLDivElement | null>(null);
+  const problemStatementRef = useRef<HTMLDivElement | null>(null);
+  const prizePoolRef = useRef<HTMLDivElement | null>(null);
+  const faqRef = useRef<HTMLDivElement | null>(null);
+  const mentorCardRef = useRef<HTMLDivElement | null>(null);
+
   return (
-    <Router> {/* Wrap your application with Router */}
+    <Router>
       <>
-        <Button variant={"outline"} className="bg-red-400">
-          Click me
-        </Button>
-        <Navbar />
-        <Routes>
-          {/* Define routes here */}
-          <Route path="/"  />
-          <Route path="/about"  element={<AboutUs/>} />
-          <Route path="/timeline" element={<TimeLine/>}  />
-          <Route path="/problems" element={<ProblemStatement/>}  />
-          <Route path="/prizes" element={<PrizePool/>}  />
-          <Route path="/dontknow"  element={<Faq/>} />
-          <Route path="/team" element={<MentorCard/>} />
-        </Routes>
+        <Navbar
+          scrollRefs={{
+            home:homeRef,
+            about: aboutUsRef,
+            timeline: timelineRef,
+            problems: problemStatementRef,
+            prizes: prizePoolRef,
+            faq: faqRef,
+            team: mentorCardRef,
+          }}
+        />
+        
+        <ScrollHandler refs={{
+          home:homeRef,
+          about: aboutUsRef,
+          timeline: timelineRef,
+          problems: problemStatementRef,
+          prizes: prizePoolRef,
+          faq: faqRef,
+          team: mentorCardRef,
+        }} />
+         <div ref={homeRef} className="h-screen"><Home/></div>
+        <div ref={aboutUsRef} className="h-screen"><AboutUs/></div>
+        <div ref={timelineRef} className="h-screen"><TimeLine/></div>
+        <div ref={problemStatementRef} className="h-screen"><ProblemStatement/></div>
+        <div ref={prizePoolRef} className="h-screen"><PrizePool/></div>
+        <div ref={faqRef} className="h-screen"><Faq/></div>
+        <div ref={mentorCardRef} className="h-screen"><MentorCard/></div>
       </>
     </Router>
   );
