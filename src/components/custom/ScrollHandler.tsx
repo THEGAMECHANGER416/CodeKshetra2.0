@@ -7,6 +7,7 @@ const ScrollHandler: React.FC<{ refs: { [key: string]: React.RefObject<HTMLDivEl
 
   useEffect(() => {
     const sections = [
+    { ref: refs.home, path: "/" },
       { ref: refs.about, path: "/about" },
       { ref: refs.timeline, path: "/timeline" },
       { ref: refs.problems, path: "/problems" },
