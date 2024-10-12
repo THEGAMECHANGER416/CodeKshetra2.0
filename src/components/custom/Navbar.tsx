@@ -26,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollRefs }) => {
   }, [location]);
 
   return (
-    <div className="fixed md:left-[1rem] top-[93vh] md:top-1/2 transform -translate-y-1/2 w-11/12 md:left-[3.5rem] md:w-16 bg-[#2c1e36] text-white rounded-full shadow-lg">
+    <div className="fixed md:left-[1rem] md:top-1/2 md:transform md:-translate-y-1/2 bottom-[5rem] md:bottom-auto right-[1rem] w-11/12 md:w-16 bg-[#2c1e36] text-white rounded-full shadow-lg">
       <div className="flex md:flex-col md:items-center h-auto gap-0.5">
         <NavItem to="/" icon={<HiHome />} label="Home" isFirst selected={selectedSection === '/'} scrollTo={scrollRefs.home} />
         <NavItem to="/about" icon={<FaGripLines />} label="About" selected={selectedSection === '/about'} scrollTo={scrollRefs.about} />
@@ -47,7 +47,7 @@ interface NavItemProps {
   isFirst?: boolean;
   isLast?: boolean;
   selected: boolean;
-  scrollTo: React.RefObject<HTMLDivElement>; // New prop for the ref
+  scrollTo: React.RefObject<HTMLDivElement>;
 }
 
 const NavItem: React.FC<NavItemProps> = ({ icon, label, to, isFirst, isLast, selected, scrollTo }) => {
