@@ -3,18 +3,38 @@ import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa6";
+import Autoplay from "embla-carousel-autoplay";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+import data from "../../json/home.json";
+import React from "react";
 
 const Home = () => {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: false })
+  );
+
   return (
     <>
       <div>
-        <div className="flex h-full sm:h-screen w-full flex-col items-center justify-end rounded-lg">
+        {/* <div className="flex min-h-screen w-full flex-col items-center justify-end rounded-lg"> */}
+
+        <div className="flex h-full lg:h-screen w-full flex-col items-center justify-end rounded-lg">
           <div className="grid h-full w-full grid-cols-8 grid-rows-10 gap-4">
             <div className="col-span-4 sm:col-span-2 row-span-2 mt-20 sm:mt-0  rounded-3xl bg-primary">
               <div className="font-bold text-accent mt-4 text-xl">
                 Registrations
               </div>
-              <div className="font-bold mt-4 text-white text-xl">12345678</div>
+              <div className="font-bold mt-4 text-white text-xl">
+                {data.regsiterations}
+              </div>
             </div>
 
             <div className="col-span-full sm:col-span-4 row-span-3 sm:h-full sm:mb-0 row-start-2 sm:row-start-1 sm:col-start-3  sm:row-span-5 relative rounded-3xl bg-secondary">
@@ -42,12 +62,22 @@ const Home = () => {
               <div className="font-bold text-accent mt-4 text-xl">
                 Prize Pool
               </div>
+              <div className="font-bold mt-4 text-white text-xl">
+                {data.prizePool}
+              </div>
             </div>
 
-            <div className="col-span-2 row-span-3 rounded-3xl bg-primary hidden sm:block"></div>
+            <div className="col-span-2 row-span-3 rounded-3xl bg-primary hidden sm:block">
+              <div className="font-bold  text-white text-3xl mt-20">
+                {data.extraBox}
+              </div>
+            </div>
 
             <div className="col-span-4 sm:col-span-2 row-span-2 rounded-3xl bg-primary">
               <div className="font-bold text-accent mt-4 text-xl">Location</div>
+              <div className="font-bold mt-4 text-white text-xl">
+                {data.location}
+              </div>
             </div>
 
             <div className=" col-span-full sm:col-span-3 row-span-2 sm:row-span-4 rounded-3xl bg-primary">
@@ -114,11 +144,71 @@ const Home = () => {
               <div className="font-bold text-accent mt-4 text-xl">
                 Event Highlights
               </div>
+              <div className="w-full h-5/6 flex justify-center items-center">
+                <Carousel
+                  plugins={[plugin.current]}
+                  className="bg-transparent w-full h-full"
+                  onMouseEnter={plugin.current.stop}
+                  onMouseLeave={plugin.current.reset}
+                >
+                  <CarouselContent>
+                    {data.eventHighlights.map((src, index) => (
+                      <CarouselItem key={index} className="bg-transparent">
+                        <Card className="bg-transparent w-full h-full">
+                          <CardContent className="flex items-center bg-transparent justify-center w-full h-full">
+                            {" "}
+                            {/*normal div*/}
+                            <div className="bg-transparent text-white h-full w-full p-2">
+                              <img
+                                src={src}
+                                alt=""
+                                className="object-contain h-full w-full"
+                              />
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+              </div>
             </div>
           </div>
           <div className=" w-full mt-4 h-64 block sm:hidden rounded-3xl bg-primary">
             <div className="font-bold text-accent mt-4 text-xl">
               Event Highlights
+            </div>
+            <div className="w-full h-5/6 flex justify-center items-center">
+              <Carousel
+                plugins={[plugin.current]}
+                className="bg-transparent w-full h-full"
+                onMouseEnter={plugin.current.stop}
+                onMouseLeave={plugin.current.reset}
+              >
+                <CarouselContent>
+                  {data.eventHighlights.map((src, index) => (
+                    <CarouselItem key={index} className="bg-transparent">
+                      <Card className="bg-transparent w-full h-full">
+                        <CardContent className="flex items-center bg-transparent justify-center w-full h-full">
+                          {" "}
+                          {/*normal div*/}
+                          <div className="bg-transparent text-white h-full w-full p-2">
+                            <img
+                              src={src}
+                              alt=""
+                              className="object-contain h-full w-full"
+                            />
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
             </div>
           </div>
         </div>
