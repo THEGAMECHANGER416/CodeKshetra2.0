@@ -7,7 +7,7 @@ import Navbar from "./components/custom/Navbar";
 import PrizePool from "./components/custom/PrizePool";
 import ProblemStatement from "./components/custom/ProblemStatement";
 import TimeLine from "./components/custom/TimeLine";
-import { BrowserRouter as Router } from "react-router-dom"; 
+import { BrowserRouter as Router } from "react-router-dom";
 import { useRef } from "react";
 import ScrollHandler from "./components/custom/ScrollHandler";
 
@@ -26,7 +26,7 @@ function App() {
       <>
         <Navbar
           scrollRefs={{
-            home:homeRef,
+            home: homeRef,
             about: aboutUsRef,
             timeline: timelineRef,
             problems: problemStatementRef,
@@ -35,23 +35,39 @@ function App() {
             team: mentorCardRef,
           }}
         />
-        
-        <ScrollHandler refs={{
-          home:homeRef,
-          about: aboutUsRef,
-          timeline: timelineRef,
-          problems: problemStatementRef,
-          prizes: prizePoolRef,
-          faq: faqRef,
-          team: mentorCardRef,
-        }} />
-         <div ref={homeRef} className="h-screen"><Home/></div>
-        <div ref={aboutUsRef} className="h-screen"><AboutUs/></div>
-        <div ref={timelineRef} className="h-screen"><TimeLine/></div>
-        <div ref={problemStatementRef} className="h-screen"><ProblemStatement/></div>
-        <div ref={prizePoolRef} className="h-screen"><PrizePool/></div>
-        <div ref={faqRef} className="h-screen"><Faq/></div>
-        <div ref={mentorCardRef} className="h-screen"><MentorCard/></div>
+
+        <ScrollHandler
+          refs={{
+            home: homeRef,
+            about: aboutUsRef,
+            timeline: timelineRef,
+            problems: problemStatementRef,
+            prizes: prizePoolRef,
+            faq: faqRef,
+            team: mentorCardRef,
+          }}
+        />
+        <div ref={homeRef} className="h-full">
+          <Home />
+        </div>
+        <div ref={aboutUsRef} className="h-screen">
+          <AboutUs />
+        </div>
+        <div ref={timelineRef} className="h-screen">
+          <TimeLine />
+        </div>
+        <div ref={problemStatementRef} className="h-screen">
+          <ProblemStatement />
+        </div>
+        <div ref={prizePoolRef} className="h-screen">
+          <PrizePool />
+        </div>
+        <div ref={faqRef} className="h-screen">
+          <Faq />
+        </div>
+        <div ref={mentorCardRef} className="h-screen">
+          <MentorCard />
+        </div>
       </>
     </Router>
   );
