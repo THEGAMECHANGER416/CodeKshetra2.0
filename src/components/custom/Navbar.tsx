@@ -68,7 +68,7 @@ const NavItem: React.FC<NavItemProps> = ({ icon, label, to, isFirst, isLast, sel
         className={`w-full md:w-16 py-2 h-[4rem] flex items-center justify-center transition-colors 
         ${selected ? 'bg-[#3a2c4e] md:bg-[#3a2c4e]' : ''}
         ${isFirst ? 'rounded-l-full md:rounded-t-full md:rounded-b-none' : isLast ? 'rounded-r-full md:rounded-b-full md:rounded-t-none' : ''} 
-        hover:bg-[#3a2c4e]`}
+        hover:bg-[#3a2c4e] ${selected ? '' : 'disable-hover'}`} // Add disable-hover class here
         onClick={() => onClick(to, scrollTo, navItemRef)}
         aria-label={label}
       >
