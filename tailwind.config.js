@@ -10,7 +10,19 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        background: "hsl(var(--background))",
+        primary: {
+          DEFAULT: "#2C1E36", // Use your hex value here
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "#FF32F4", // Hex value for secondary
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        accent: {
+          DEFAULT: "#FF530A", // Fix the typo
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        background: "#160D1D",
         foreground: "hsl(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",
@@ -20,21 +32,9 @@ export default {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -63,7 +63,6 @@ export default {
     require("tailwindcss-animate"),
     function ({ addUtilities }) {
       const newUtilities = {
-        // Custom utility to disable hover effects on mobile
         "@media (hover: none) and (pointer: coarse)": {
           ".disable-hover": {
             "&:hover": {

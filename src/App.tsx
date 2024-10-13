@@ -47,7 +47,7 @@ function App() {
             team: mentorCardRef,
           }}
         />
-        <div ref={homeRef} className="h-screen">
+        <div ref={homeRef} className="h-full">
           <Home />
         </div>
         <div ref={aboutUsRef} className="h-screen">
