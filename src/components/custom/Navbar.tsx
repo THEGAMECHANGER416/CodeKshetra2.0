@@ -64,7 +64,7 @@ interface NavItemProps {
 
 const NavItem: React.FC<NavItemProps> = ({ icon, label, to, isFirst, isLast, selected, target, scrollTo, onClick }) => {
   const navItemRef = useRef<HTMLButtonElement>(null);
-  const isActive = selected || (target === to || true) ; // Determine if the item is active based on selected or target state
+  const isActive = selected || (target === to && false) ; // Determine if the item is active based on selected or target state
 
   return (
     <div className="flex-1 md:flex-none">
