@@ -73,7 +73,7 @@ const NavItem: React.FC<NavItemProps> = ({ icon, label, to, isFirst, isLast, sel
         className={`w-full md:w-16 py-2 h-[4rem] flex items-center justify-center transition-colors 
         ${isActive ? 'bg-[#3a2c4e] md:bg-[#3a2c4e]' : ''}
         ${isFirst ? 'rounded-l-full md:rounded-t-full md:rounded-b-none' : isLast ? 'rounded-r-full md:rounded-b-full md:rounded-t-none' : ''} 
-        hover:bg-[#3a2c4e] ${isActive ? '' : 'disable-hover'}`} // Update logic to check isActive
+        `} // Update logic to check isActive
         onClick={() => onClick(to, scrollTo, navItemRef)}
         aria-label={label}
       >
