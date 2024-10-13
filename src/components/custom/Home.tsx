@@ -48,7 +48,7 @@ const Home = () => {
                 Register
               </Button>
               <img
-                src="src/assets/logo.png"
+                src="/assets/logo.png"
                 alt="logo"
                 className="absolute bottom-0 left-1/2 bg-primary transform -translate-x-1/2 translate-y-1/2 h-44 w-44 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-80 lg:h-80 rounded-full border-2 border-background "
               />
