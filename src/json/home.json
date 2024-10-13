@@ -4,9 +4,9 @@
   "location": "Lorem Ipsum , Lorem",
   "extraBox": "💫✨🌟⭐",
   "eventHighlights": [
-    "src/assets/logo.png",
-    "src/assets/logo.png",
-    "src/assets/logo.png",
-    "src/assets/logo.png"
+    "/assets/logo.png",
+    "/assets/logo.png",
+    "/assets/logo.png",
+    "/assets/logo.png"
   ]
 }

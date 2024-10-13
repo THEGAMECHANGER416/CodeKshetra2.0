@@ -17,15 +17,16 @@ import data from "../../json/home.json";
 import React from "react";
 
 const Home = () => {
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false })
+  const plugin1 = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+  const plugin2 = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
   );
 
   return (
     <>
       <div>
-        {/* <div className="flex min-h-screen w-full flex-col items-center justify-end rounded-lg"> */}
-
         <div className="flex h-full lg:h-screen w-full flex-col items-center justify-end rounded-lg">
           <div className="grid h-full w-full grid-cols-8 grid-rows-10 gap-4">
             <div className="col-span-4 sm:col-span-2 row-span-2 mt-20 sm:mt-0  rounded-3xl bg-primary">
@@ -48,7 +49,7 @@ const Home = () => {
                 Register
               </Button>
               <img
-                src="src/assets/logo.png"
+                src="/assets/logo.png"
                 alt="logo"
                 className="absolute bottom-0 left-1/2 bg-primary transform -translate-x-1/2 translate-y-1/2 h-44 w-44 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-80 lg:h-80 rounded-full border-2 border-background "
               />
@@ -146,18 +147,14 @@ const Home = () => {
               </div>
               <div className="w-full h-5/6 flex justify-center items-center">
                 <Carousel
-                  plugins={[plugin.current]}
+                  plugins={[plugin1.current]}
                   className="bg-transparent w-full h-full"
-                  onMouseEnter={plugin.current.stop}
-                  onMouseLeave={plugin.current.reset}
                 >
                   <CarouselContent>
                     {data.eventHighlights.map((src, index) => (
                       <CarouselItem key={index} className="bg-transparent">
                         <Card className="bg-transparent w-full h-full">
                           <CardContent className="flex items-center bg-transparent justify-center w-full h-full">
-                            {" "}
-                            {/*normal div*/}
                             <div className="bg-transparent text-white h-full w-full p-2">
                               <img
                                 src={src}
@@ -182,18 +179,14 @@ const Home = () => {
             </div>
             <div className="w-full h-5/6 flex justify-center items-center">
               <Carousel
-                plugins={[plugin.current]}
+                plugins={[plugin2.current]}
                 className="bg-transparent w-full h-full"
-                onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}
               >
                 <CarouselContent>
                   {data.eventHighlights.map((src, index) => (
                     <CarouselItem key={index} className="bg-transparent">
                       <Card className="bg-transparent w-full h-full">
                         <CardContent className="flex items-center bg-transparent justify-center w-full h-full">
-                          {" "}
-                          {/*normal div*/}
                           <div className="bg-transparent text-white h-full w-full p-2">
                             <img
                               src={src}
