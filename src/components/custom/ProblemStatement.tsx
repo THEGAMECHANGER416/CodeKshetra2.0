@@ -78,10 +78,10 @@ const ProblemStatement = () => {
               api?.scrollPrev();
               handleInteraction();
             }}
-            className="bg-accent/50 border border-white/30 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
+            className="bg-white/60 border border-accent/10 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
             aria-label="Previous card"
           >
-            <ChevronLeft className="w-3 h-3 md:w-6 md:h-6 text-white" />
+            <ChevronLeft className="w-3 h-3 md:w-6 md:h-6 text-black" />
           </button>
         </div>
 
@@ -122,10 +122,10 @@ const ProblemStatement = () => {
               api?.scrollNext();
               handleInteraction();
             }}
-            className="bg-accent/50 border border-white/30 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
+            className="bg-white/60 border border-accent/10 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
             aria-label="Next card"
           >
-            <ChevronRight className="w-3 h-3 md:w-6 md:h-6 text-white" />
+            <ChevronRight className="w-3 h-3 md:w-6 md:h-6 text-black" />
           </button>
         </div>
       </div>
