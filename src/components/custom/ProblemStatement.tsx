@@ -32,8 +32,18 @@ const ProblemStatement = () => {
       </div>
 
       <div className="grid place-items-center overflow-hidden">
-        <div className="relative w-full max-w-6xl px-4 md:px-12 py-[4.5rem] h-full">
-          <div className="flex relative justify-center h-full max-h-[40rem] overflow-hidden">
+        <div className="w-full max-w-6xl px-4 md:px-12 py-[4.5rem] h-full max-h-[40rem] grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-1">
+          <div className="hidden md:flex md:items-center">
+            <button
+              onClick={prevCard}
+              className="bg-accent/50 border border-white/30 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
+              aria-label="Previous card"
+            >
+              <ChevronLeft className="w-3 h-3 md:w-6 md:h-6 text-white" />
+            </button>
+          </div>
+
+          <div className="flex relative justify-center h-full overflow-hidden">
             {problemStatements.map((statement, index) => (
               <div
                 key={index}
@@ -45,24 +55,15 @@ const ProblemStatement = () => {
             ))}
           </div>
 
-          {problemStatements.length > 1 && (
-            <>
-              <button
-                onClick={prevCard}
-                className="absolute left-0 md:-left-4 top-1/2 transform -translate-y-1/2 bg-accent/50 border border-white/30 rounded-full p-2 shadow-md z-30 hidden md:block"
-                aria-label="Previous card"
-              >
-                <ChevronLeft className="w-3 h-3 md:w-6 md:h-6 text-white" />
-              </button>
-              <button
-                onClick={nextCard}
-                className="absolute right-0 md:-right-4 top-1/2 transform -translate-y-1/2 bg-accent/50 border border-white/30 rounded-full p-2 shadow-md z-30 hidden md:block"
-                aria-label="Next card"
-              >
-                <ChevronRight className="w-3 h-3 md:w-6 md:h-6 text-white" />
-              </button>
-            </>
-          )}
+          <div className="hidden md:flex md:items-center">
+            <button
+              onClick={nextCard}
+              className="bg-accent/50 border border-white/30 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
+              aria-label="Next card"
+            >
+              <ChevronRight className="w-3 h-3 md:w-6 md:h-6 text-white" />
+            </button>
+          </div>
         </div>
       </div>
 
