@@ -105,6 +105,7 @@ const TimeLine: React.FC = () => {
       </div>
 
       {/* Task list at the bottom */}
+      {/*
       <div className="text-white text-lg leading-relaxed items-center">
         <div className="space-y-2">
           {dayData[selectedDay].tasks.map((task, index) => (
@@ -118,6 +119,7 @@ const TimeLine: React.FC = () => {
           ))}
         </div>
       </div>
+      */}
     </div>
   );
 };
