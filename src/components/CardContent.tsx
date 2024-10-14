@@ -26,7 +26,7 @@ export const CardContent = ({
       {title}
     </h5>
 
-    <p className="text-left py-8 text-secondary tracking-wide text-sm sm:text-base md:text-lg font-light">
+    <p className="text-left py-8 text-secondary tracking-wide text-base md:text-lg font-light">
       <span className="font-medium">Category - </span>
       <span className="text-slate-400 capitalize">{category}</span>
     </p>
