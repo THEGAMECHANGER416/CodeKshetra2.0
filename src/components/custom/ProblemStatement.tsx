@@ -33,7 +33,7 @@ const ProblemStatement = () => {
 
       <div className="grid place-items-center overflow-hidden">
         <div className="relative w-full max-w-6xl px-4 md:px-12 py-[4.5rem] h-full">
-          <div className="flex relative justify-center h-full overflow-hidden">
+          <div className="flex relative justify-center h-full max-h-[40rem] overflow-hidden">
             {problemStatements.map((statement, index) => (
               <div
                 key={index}
