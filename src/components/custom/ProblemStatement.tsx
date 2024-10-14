@@ -15,7 +15,6 @@ const ProblemStatement = () => {
     prevCard,
     goToCard,
   } = useProblemStatements(problemStatements);
-
   rippleEffect(titleRef, containerRef);
 
   return (
@@ -31,14 +30,15 @@ const ProblemStatement = () => {
           Problem Statements
         </h2>
       </div>
+
       <div className="grid place-items-center overflow-hidden">
-        <div className="relative w-full max-w-6xl px-4 md:px-12">
-          <div className="flex justify-center items-center">
+        <div className="relative w-full max-w-6xl px-4 md:px-12 py-24 md:py-16 h-full">
+          <div className="flex relative justify-center h-full overflow-hidden">
             {problemStatements.map((statement, index) => (
               <div
                 key={index}
                 ref={(el) => (cardsRef.current[index] = el)}
-                className="absolute w-full max-w-md"
+                className="absolute w-full max-w-md h-full"
               >
                 <CardContent {...statement} className="h-full" />
               </div>
@@ -65,6 +65,7 @@ const ProblemStatement = () => {
           )}
         </div>
       </div>
+
       <div className="flex justify-center mt-4 space-x-2">
         {problemStatements.map((_, index) => (
           <button
