@@ -73,29 +73,28 @@ export const useProblemStatements = (statements: ProblemStatement[]) => {
   useGSAP(() => {
     if (statements.length === 0) return;
 
+    const tl = gsap.timeline();
+
     cardsRef.current.forEach((card, index) => {
       if (!card) return;
 
       const offset =
         (index - currentIndex + statements.length) % statements.length;
-      const config = {
-        xPercent: 0,
-        scale: 1,
-        zIndex: 2,
-        opacity: 1,
-        duration: 0.5,
-        ease: "power2.out",
-      };
 
-      if (offset !== 0) {
-        const isAdjacent = offset === 1 || offset === statements.length - 1;
-        config.xPercent = offset === 1 ? 100 : -100;
-        config.scale = isAdjacent ? 0.8 : 0.6;
-        config.zIndex = isAdjacent ? 1 : 0;
-        config.opacity = isAdjacent ? 0.6 : 0;
+      if (offset === 0 || offset === 1 || offset === statements.length - 1) {
+        const config = {
+          xPercent: offset === 0 ? 0 : offset === 1 ? 100 : -100,
+          scale: offset === 0 ? 1 : 0.8,
+          zIndex: offset === 0 ? 2 : 1,
+          opacity: offset === 0 ? 1 : 0.6,
+          duration: 0.5,
+          ease: "power2.out",
+        };
+
+        tl.to(card, config, 0);
+      } else {
+        tl.set(card, { opacity: 0, scale: 0.6, zIndex: 0 }, 0);
       }
-
-      gsap.to(card, config);
     });
   }, [currentIndex, statements.length]);
 
