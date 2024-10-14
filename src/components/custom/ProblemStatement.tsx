@@ -60,7 +60,7 @@ const ProblemStatement = () => {
   return (
     <div
       ref={containerRef}
-      className="py-8 h-full grid grid-rows-[auto_1fr_auto]"
+      className="py-12 h-fit grid grid-rows-[auto_1fr_auto]"
     >
       <div className="text-white flex justify-center">
         <h2
@@ -71,67 +71,62 @@ const ProblemStatement = () => {
         </h2>
       </div>
 
-      <div className="grid place-items-center">
-        <div className="w-full max-w-6xl px-4 md:px-12 py-[2.5rem] h-full grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-2">
-          <div className="hidden md:flex md:items-center">
-            <button
-              onClick={() => {
-                api?.scrollPrev();
-                handleInteraction();
-              }}
-              className="bg-accent/50 border border-white/30 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
-              aria-label="Previous card"
-            >
-              <ChevronLeft className="w-3 h-3 md:w-6 md:h-6 text-white" />
-            </button>
-          </div>
+      <div className="w-full max-w-6xl px-4 md:px-12 py-[2.5rem] h-fit grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-2">
+        <div className="hidden md:flex md:items-center">
+          <button
+            onClick={() => {
+              api?.scrollPrev();
+              handleInteraction();
+            }}
+            className="bg-accent/50 border border-white/30 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
+            aria-label="Previous card"
+          >
+            <ChevronLeft className="w-3 h-3 md:w-6 md:h-6 text-white" />
+          </button>
+        </div>
 
-          <div className="flex justify-center items-center">
-            <Carousel
-              className="w-full h-full max-w-md lg:max-w-none"
-              setApi={setApi}
-              opts={{
-                align: "center",
-                loop: true,
-              }}
-              onMouseEnter={stopAutoChange}
-              onMouseLeave={startAutoChange}
-              onTouchStart={stopAutoChange}
-              onTouchEnd={startAutoChange}
-            >
-              <CarouselContent className="h-full flex items-center">
-                {problemStatements.map((statement, index) => (
-                  <CarouselItem
-                    key={index}
-                    className="md:pl-4 lg:basis-4/5 xl:basis-2/5"
+        <div className="flex justify-center items-center">
+          <Carousel
+            className="w-full h-full max-w-md lg:max-w-none"
+            setApi={setApi}
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            onMouseEnter={stopAutoChange}
+            onMouseLeave={startAutoChange}
+            onTouchStart={stopAutoChange}
+            onTouchEnd={startAutoChange}
+          >
+            <CarouselContent className="h-full flex items-center">
+              {problemStatements.map((statement, index) => (
+                <CarouselItem key={index} className="lg:basis-4/5 xl:basis-2/5">
+                  <div
+                    className={`transition-all duration-300 ${
+                      index === current
+                        ? "scale-100 opacity-100"
+                        : "scale-90 opacity-60"
+                    }`}
                   >
-                    <div
-                      className={`transition-all duration-300 ${
-                        index === current
-                          ? "scale-100 opacity-100"
-                          : "scale-90 opacity-60"
-                      }`}
-                    >
-                      <CardContent {...statement} className="h-full" />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
-          </div>
+                    <CardContent {...statement} className="h-full" />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
 
-          <div className="hidden md:flex md:items-center">
-            <button
-              onClick={() => {
-                api?.scrollNext();
-                handleInteraction();
-              }}
-              className="bg-accent/50 border border-white/30 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
-              aria-label="Next card"
-            >
-              <ChevronRight className="w-3 h-3 md:w-6 md:h-6 text-white" />
-            </button>
-          </div>
+        <div className="hidden md:flex md:items-center">
+          <button
+            onClick={() => {
+              api?.scrollNext();
+              handleInteraction();
+            }}
+            className="bg-accent/50 border border-white/30 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
+            aria-label="Next card"
+          >
+            <ChevronRight className="w-3 h-3 md:w-6 md:h-6 text-white" />
+          </button>
         </div>
       </div>
 

@@ -31,7 +31,7 @@ export const CardContent = ({
       <span className="text-slate-400 capitalize">{category}</span>
     </p>
 
-    <p className="text-slate-400 text-left text-pretty sm:my-4 text-[0.95rem] sm:text-base flex items-center">
+    <p className="text-slate-400 text-left text-pretty sm:my-4 text-[0.85rem] sm:text-base flex items-center">
       {description}
     </p>
   </div>
