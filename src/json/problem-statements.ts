@@ -1,5 +1,7 @@
 import { ProblemStatement } from "@/types/problems";
 
+export const CHANGE_DURATION = 5000;
+
 export const problemStatements: ProblemStatement[] = [
   {
     title: "Sanchit Problem 1",
