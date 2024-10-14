@@ -32,7 +32,7 @@ const ProblemStatement = () => {
       </div>
 
       <div className="grid place-items-center overflow-hidden">
-        <div className="w-full max-w-6xl px-4 md:px-12 py-[4.5rem] h-full max-h-[55rem] grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-1">
+        <div className="w-full max-w-6xl px-4 md:px-12 py-[4.5rem] h-full max-h-[85rem] md:max-h-[60rem] xl:max-h-[55rem] grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-1">
           <div className="hidden md:flex md:items-center">
             <button
               onClick={prevCard}
