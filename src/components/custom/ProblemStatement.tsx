@@ -15,6 +15,7 @@ const ProblemStatement = () => {
     prevCard,
     goToCard,
   } = useProblemStatements(problemStatements);
+
   rippleEffect(titleRef, containerRef);
 
   return (
@@ -48,14 +49,14 @@ const ProblemStatement = () => {
             <>
               <button
                 onClick={prevCard}
-                className="absolute left-0 md:-left-4 top-1/2 transform -translate-y-1/2 bg-accent/20 rounded-full p-2 shadow-md z-30"
+                className="absolute left-0 md:-left-4 top-1/2 transform -translate-y-1/2 bg-accent/50 border border-white/30 rounded-full p-2 shadow-md z-30 hidden md:block"
                 aria-label="Previous card"
               >
                 <ChevronLeft className="w-3 h-3 md:w-6 md:h-6 text-white" />
               </button>
               <button
                 onClick={nextCard}
-                className="absolute right-0 md:-right-4 top-1/2 transform -translate-y-1/2 bg-accent/20 rounded-full p-2 shadow-md z-30"
+                className="absolute right-0 md:-right-4 top-1/2 transform -translate-y-1/2 bg-accent/50 border border-white/30 rounded-full p-2 shadow-md z-30 hidden md:block"
                 aria-label="Next card"
               >
                 <ChevronRight className="w-3 h-3 md:w-6 md:h-6 text-white" />
