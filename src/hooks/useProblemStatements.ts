@@ -9,8 +9,8 @@ export const useProblemStatements = (statements: ProblemStatement[]) => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const touchStartX = useRef<number>(0);
-  const touchEndX = useRef<number>(0);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const nextCard = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % statements.length);
@@ -66,6 +66,18 @@ export const useProblemStatements = (statements: ProblemStatement[]) => {
   }, [handleTouchStart, handleTouchMove, handleTouchEnd]);
 
   useEffect(() => {
+    if (statements.length > 0) {
+      cardsRef.current.forEach((card, index) => {
+        if (card && index === 0) {
+          gsap.set(card, { xPercent: 0, scale: 1, opacity: 1, zIndex: 2 });
+        } else if (card) {
+          gsap.set(card, { xPercent: 100, scale: 0.8, opacity: 0, zIndex: 0 });
+        }
+      });
+    }
+  }, [statements.length]);
+
+  useEffect(() => {
     const intervalId = setInterval(nextCard, CHANGE_DURATION);
     return () => clearInterval(intervalId);
   }, [nextCard]);
@@ -73,28 +85,43 @@ export const useProblemStatements = (statements: ProblemStatement[]) => {
   useGSAP(() => {
     if (statements.length === 0) return;
 
-    const tl = gsap.timeline();
-
     cardsRef.current.forEach((card, index) => {
       if (!card) return;
 
       const offset =
         (index - currentIndex + statements.length) % statements.length;
+      let xPercent, scale, zIndex, opacity, visibility;
 
-      if (offset === 0 || offset === 1 || offset === statements.length - 1) {
-        const config = {
-          xPercent: offset === 0 ? 0 : offset === 1 ? 100 : -100,
-          scale: offset === 0 ? 1 : 0.8,
-          zIndex: offset === 0 ? 2 : 1,
-          opacity: offset === 0 ? 1 : 0.6,
-          duration: 0.5,
-          ease: "power2.out",
-        };
-
-        tl.to(card, config, 0);
+      if (offset === 0) {
+        xPercent = 0;
+        scale = 1;
+        zIndex = 2;
+        opacity = 1;
+        visibility = "visible";
+      } else if (offset === 1 || offset === statements.length - 1) {
+        xPercent = offset === 1 ? 100 : -100;
+        scale = 0.8;
+        zIndex = 1;
+        opacity = 0.6;
+        visibility = "visible";
       } else {
-        tl.set(card, { opacity: 0, scale: 0.6, zIndex: 0 }, 0);
+        xPercent = 0;
+        scale = 0.6;
+        zIndex = 0;
+        opacity = 0;
+        visibility = "hidden";
       }
+
+      gsap.to(card, {
+        xPercent,
+        scale,
+        zIndex,
+        opacity,
+        visibility,
+        duration: 0.5,
+        ease: "power2.out",
+        overwrite: true,
+      });
     });
   }, [currentIndex, statements.length]);
 
