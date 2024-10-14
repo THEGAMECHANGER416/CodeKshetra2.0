@@ -32,7 +32,7 @@ const ProblemStatement = () => {
       </div>
 
       <div className="grid place-items-center overflow-hidden">
-        <div className="relative w-full max-w-6xl px-4 md:px-12 py-8 pb-24 md:py-16 h-full">
+        <div className="relative w-full max-w-6xl px-4 md:px-12 py-[4.5rem] h-full">
           <div className="flex relative justify-center h-full overflow-hidden">
             {problemStatements.map((statement, index) => (
               <div
@@ -66,7 +66,7 @@ const ProblemStatement = () => {
         </div>
       </div>
 
-      <div className="flex justify-center mt-4 space-x-2">
+      <div className="flex justify-center space-x-2">
         {problemStatements.map((_, index) => (
           <button
             key={index}
