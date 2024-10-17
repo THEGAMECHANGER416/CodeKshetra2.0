@@ -36,21 +36,21 @@ const TimeLine: React.FC = () => {
 
   return (
     <div className="p-4 md:pl-24">
-      <h1 className="md:text-[4rem] text-4xl text-accent font-bold mb-[4rem] md:mb-[6rem] text-center">
-        Event Schedule
-      </h1>
+      <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
+        EVENT SCHEDULE
+      </h1> 
 
       {/* Horizontal timeline for larger screens */}
       <div className="relative mb-[7rem] hidden md:block">
         {/* Line across the timeline */}
-        <div className="absolute bg-purple-600 h-1  left-14 right-14 z-0 transform md:-translate-y-[-0.5rem]"></div>
+        <div className="absolute bg-pink h-1  left-14 right-14 z-0 transform md:-translate-y-[-0.5rem]"></div>
 
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           {dayData[selectedDay].tasks.map((task, index) => (
             <div key={index} className="flex flex-col items-center mb-8 md:mb-0 relative">
               <div className="flex flex-col items-center">
                 {/* Circles */}
-                <div className="bg-white w-8 h-8 rounded-full border-8 border-orange-500 z-10 relative top-[-4px]"></div>
+                <div className="bg-white w-8 h-8 rounded-full border-8 border-purple z-10 relative top-[-4px]"></div>
                 <span className="text-lg text-white font-bold text-center">{task.description}</span>
                 <span className="text-xs text-white text-center mt-1">{`${task.date} | ${task.time}`}</span>
               </div>
@@ -71,11 +71,11 @@ const TimeLine: React.FC = () => {
             <div key={index} className="relative flex justify-between items-start mb-8">
               <div className="flex-shrink-0 relative">
                 {/* Circles */}
-                <div className="bg-white w-8 h-8 rounded-full border-8 border-orange-500 z-10"></div>
+                <div className="bg-white w-8 h-8 rounded-full border-8 border-purple z-10"></div>
 
                 {/* Connecting Line */}
                 {index < dayData[selectedDay].tasks.length - 1 && (
-                  <div className="absolute  left-[50%] transform -translate-x-1/2 w-1 h-[9vh] bg-purple-600 z-0"></div>
+                  <div className="absolute  left-[50%] transform -translate-x-1/2 w-1 h-[9vh] bg-pink z-0"></div>
                 )}
               </div>
 
