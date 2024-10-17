@@ -14,23 +14,23 @@ export default {
       },
       colors: {
         primary: {
-          DEFAULT: "#2C1E36", // Use your hex value here
+          DEFAULT: "#2C1E36",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#FF32F4", // Hex value for secondary
+          DEFAULT: "#FF32F4",
           foreground: "hsl(var(--secondary-foreground))",
         },
         accent: {
-          DEFAULT: "#FF530A", // Fix the typo
+          DEFAULT: "#FF530A",
           foreground: "hsl(var(--accent-foreground))",
         },
         purple: {
-          DEFAULT: "#6319BE", // Fix the typo
+          DEFAULT: "#6319BE",
           foreground: "hsl(var(--purple-foreground))",
         },
         pink: {
-          DEFAULT: "#da39ae", // Fix the typo
+          DEFAULT: "#da39ae",
           foreground: "hsl(var(--pink-foreground))",
         },
         background: "#000000",
@@ -60,6 +60,15 @@ export default {
           3: "hsl(var(--chart-3))",
           4: "hsl(var(--chart-4))",
           5: "hsl(var(--chart-5))",
+        },
+      },
+      animation: {
+        fadeInScale: 'fadeInScale 0.3s ease-in-out forwards',
+      },
+      keyframes: {
+        fadeInScale: {
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
         },
       },
     },
