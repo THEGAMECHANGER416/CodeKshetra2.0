@@ -56,7 +56,8 @@ function App() {
         <div ref={timelineRef} className="h-screen">
           <TimeLine />
         </div>
-        <div ref={problemStatementRef} className="h-screen">
+        {/* chagned the height of this as requested so that it doesn't take up the whole screen */}
+        <div ref={problemStatementRef} className="min-h-[70dvh] h-fit">
           <ProblemStatement />
         </div>
         <div ref={prizePoolRef} className="h-screen">
