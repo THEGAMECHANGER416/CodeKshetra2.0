@@ -10,6 +10,7 @@ import TimeLine from "./components/custom/TimeLine";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useRef } from "react";
 import ScrollHandler from "./components/custom/ScrollHandler";
+import Judges from "./components/custom/Judges";
 
 function App() {
   // Create refs for each section
@@ -20,6 +21,7 @@ function App() {
   const prizePoolRef = useRef<HTMLDivElement | null>(null);
   const faqRef = useRef<HTMLDivElement | null>(null);
   const mentorCardRef = useRef<HTMLDivElement | null>(null);
+  const judgeRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <Router>
@@ -68,6 +70,9 @@ function App() {
         </div>
         <div ref={mentorCardRef} className="h-screen">
           <MentorCard />
+        </div>
+        <div ref={judgeRef} className="h-screen">
+          <Judges />
         </div>
       </>
     </Router>
