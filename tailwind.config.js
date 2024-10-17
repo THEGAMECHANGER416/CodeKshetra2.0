@@ -4,6 +4,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        'bebas': ['Bebas Neue', 'cursive'], // Add Bebas Neue as a font family
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -22,7 +25,15 @@ export default {
           DEFAULT: "#FF530A", // Fix the typo
           foreground: "hsl(var(--accent-foreground))",
         },
-        background: "#160D1D",
+        purple: {
+          DEFAULT: "#6319BE", // Fix the typo
+          foreground: "hsl(var(--purple-foreground))",
+        },
+        pink: {
+          DEFAULT: "#da39ae", // Fix the typo
+          foreground: "hsl(var(--pink-foreground))",
+        },
+        background: "#000000",
         foreground: "hsl(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",
