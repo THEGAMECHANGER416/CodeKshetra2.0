@@ -63,7 +63,7 @@ function App() {
         <div ref={prizePoolRef} className="h-screen">
           <PrizePool />
         </div>
-        <div ref={faqRef} className="h-screen">
+        <div ref={faqRef} className="h-100vh">
           <Faq />
         </div>
         <div ref={mentorCardRef} className="h-screen">
