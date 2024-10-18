@@ -91,7 +91,7 @@ const Home = () => {
               <img src="/assets/logo.png" alt="" className="h-24 w-auto" />
             </div>
             <div className="col-span-1 row-span-2 rounded-3xl bg-secondary p-6">
-              <div className="font-bold text-pink 0 text-2xl sm:text-3xl font-bebas">
+              <div className="font-bold text-pink 0 text-3xl sm:text-4xl font-bebas">
                 PRIZE POOL
               </div>
               <div className="font-bold mt-4 text-white text-3xl sm:text-2xl">
@@ -99,7 +99,7 @@ const Home = () => {
               </div>
             </div>
             <div className="col-span-1 row-span-2 rounded-3xl bg-secondary p-6">
-              <div className="font-bold text-pink mt-0 text-2xl sm:text-3xl font-bebas">
+              <div className="font-bold text-pink mt-0 text-3xl sm:text-4xl font-bebas">
                 LOCATION
               </div>
               <div className="font-bold mt-1 text-white text-xl sm:text-2xl">
@@ -108,7 +108,7 @@ const Home = () => {
             </div>
 
             <div className="col-span-2 md:col-span-3 row-span-3 rounded-3xl bg-secondary ">
-              <div className="text-pink mt-4 pl-7 text-4xl sm:text-5xl lg:text-6xl text-start font-bebas">
+              <div className="text-pink mt-4 text-center text-3xl sm:text-4xl font-bold font-bebas">
                 REGISTRATIONS
               </div>
               <div className="font-bold text-6xl my-2 sm:text-8xl lg:text-9xl text-white">
@@ -117,36 +117,36 @@ const Home = () => {
             </div>
 
             <div className="col-span-2 md:col-span-2 row-span-3 rounded-3xl bg-secondary">
-              <div className="font-bold text-start pl-6 text-pink mt-4 text-2xl sm:text-3xl font-bebas">
+              <div className="font-bold text-center text-pink mt-4 text-3xl sm:text-4xl font-bebas">
                 EVENT IN
               </div>
 
-              <div className="flex space-x-2 sm:space-x-4 items-center text-white justify-center my-5 sm:mt-6">
-                <div className="text-center bg-background p-2 sm:p-4 rounded-xl">
-                  <p className="lg:text-4xl md:text-3xl sm:text-2xl text-4xl font-bold ">
+              <div className="flex space-x-2 sm:space-x-4 items-center text-white justify-center my-5 sm:mt-6 px-8">
+                <div className="text-center bg-background/30 p-2 sm:p-4 rounded-xl">
+                  <p className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold ">
                     {String(timeLeft.hours).padStart(2, "0")}
                   </p>
-                  <p className="text-xs sm:text-sm">Hours</p>
+                  <p className="text-xs sm:text-base">Hours</p>
                 </div>
-                <div className="lg:text-4xl md:text-3xl sm:text-2xl text-4xl font-bold mb-2">
+                <div className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold mb-2">
                   :
                 </div>
 
-                <div className="text-center bg-background p-2 sm:p-4 rounded-xl">
-                  <p className="lg:text-4xl md:text-3xl sm:text-2xl text-4xl font-bold">
+                <div className="text-center bg-background/30 p-2 sm:p-4 rounded-xl">
+                  <p className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold">
                     {String(timeLeft.minutes).padStart(2, "0")}
                   </p>
-                  <p className="text-xs sm:text-sm">Minutes</p>
+                  <p className="text-xs sm:text-base">Minutes</p>
                 </div>
-                <div className="lg:text-4xl md:text-3xl sm:text-2xl text-4xl font-bold mb-2">
+                <div className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold mb-2">
                   :
                 </div>
 
-                <div className="text-center bg-background p-2 sm:p-4 rounded-xl">
-                  <p className="lg:text-4xl md:text-3xl sm:text-2xl text-4xl font-bold">
+                <div className="text-center bg-background/30 p-2 sm:p-4 rounded-xl">
+                  <p className="lg:text-6xl md:text-3xl text-pink sm:text-2xl text-4xl font-bold">
                     {String(timeLeft.seconds).padStart(2, "0")}
                   </p>
-                  <p className="text-xs sm:text-sm">Seconds</p>
+                  <p className="text-xs text-pink sm:text-bases">Seconds</p>
                 </div>
               </div>
             </div>
