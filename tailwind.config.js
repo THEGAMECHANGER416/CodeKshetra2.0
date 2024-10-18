@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'bebas': ['Bebas Neue', 'cursive'], // Add Bebas Neue as a font family
+        bebas: ["Bebas Neue", "cursive"], // Add Bebas Neue as a font family
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -18,7 +18,7 @@ export default {
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#FF32F4", // Hex value for secondary
+          DEFAULT: "#151A20", // Hex value for secondary
           foreground: "hsl(var(--secondary-foreground))",
         },
         accent: {

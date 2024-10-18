@@ -1,207 +1,154 @@
-import { Button } from "@/components/ui/button";
-import { FaInstagram } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
-import { FaFacebook } from "react-icons/fa6";
-import Autoplay from "embla-carousel-autoplay";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-
+import { useState, useEffect } from "react";
+import { Button } from "../ui/button";
 import data from "../../json/home.json";
-import React from "react";
 
 const Home = () => {
-  const plugin1 = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  );
-  const plugin2 = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  );
+  const targetDate = new Date(Date.UTC(2025, 1, 14, 23, 59, 59)); // February 14, 2025
 
+  // Countdown logic
+  const calculateTimeLeft = () => {
+    const now = new Date(); // Current date and time
+    const difference = targetDate.getTime() - now.getTime();
+
+    let timeLeft = {
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    };
+
+    if (difference > 0) {
+      timeLeft = {
+        hours: Math.floor(difference / (1000 * 60 * 60)), // Total hours remaining
+        minutes: Math.floor((difference / 1000 / 60) % 60), // Minutes
+        seconds: Math.floor((difference / 1000) % 60), // Seconds
+      };
+    }
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer); // Cleanup the interval on unmount
+  }, []);
+
+  //counter animation
+  const [count, setCount] = useState<number>(0);
+  const targetCount = data.regsiterations; // This comes from the `data` prop
+  const duration = 3000; // Animation duration in milliseconds
+  const resetDelay = 5000; // Delay before the animation restarts (5 seconds)
+
+  useEffect(() => {
+    const animateCounter = () => {
+      const incrementPerFrame = targetCount / (duration / 16); // Assuming 60fps (~16ms per frame)
+
+      const updateCount = () => {
+        setCount((prevCount) => {
+          const nextCount = prevCount + incrementPerFrame;
+          return nextCount >= targetCount ? targetCount : nextCount;
+        });
+      };
+
+      const interval = setInterval(updateCount, 16); // Update every 16ms (~60fps)
+
+      // Clear interval when the target count is reached
+      setTimeout(() => {
+        clearInterval(interval);
+        setTimeout(() => {
+          setCount(0); // Reset count to 0 after 5 seconds
+        }, resetDelay); // Wait 5 seconds before resetting
+      }, duration); // Stop the animation after the duration (3 seconds)
+    };
+
+    // Start the animation on component mount and every resetDelay + duration interval
+    animateCounter();
+    const restartInterval = setInterval(animateCounter, duration + resetDelay);
+
+    return () => clearInterval(restartInterval); // Clean up intervals on unmount
+  }, [targetCount, duration, resetDelay]);
   return (
     <>
-      <div>
-        <div className="flex h-full lg:h-screen w-full flex-col items-center justify-end rounded-lg">
-          <div className="grid h-full w-full grid-cols-8 grid-rows-10 gap-4">
-            <div className="col-span-4 sm:col-span-2 row-span-2 mt-20 sm:mt-0  rounded-3xl bg-primary">
-              <div className="font-bold text-accent mt-4 text-xl">
-                Registrations
+      <div className=" mb-40">
+        <div className="flex h-full lg:h-[95vh] w-full flex-col items-center justify-center rounded-lg">
+          <div className="grid h-5/6 md:h-full w-full grid-cols-2 md:grid-cols-5 md:grid-rows-9 gap-4">
+            <div className="col-span-2 md:col-span-4 row-span-6 rounded-3xl bg-[url('/assets/bg.png')] bg-cover bg-center flex flex-col pl-6 justify-end pb-12">
+              <div className="font-bold mt-4 text-white text-start text-4xl sm:text-5xl lg:text-6xl">
+                Codeक्षेत्र: The Ultimate
               </div>
-              <div className="font-bold mt-4 text-white text-xl">
-                {data.regsiterations}
-              </div>
-            </div>
-
-            <div className="col-span-full sm:col-span-4 row-span-3 sm:h-full sm:mb-0 row-start-2 sm:row-start-1 sm:col-start-3  sm:row-span-5 relative rounded-3xl bg-secondary">
-              <div className="font-bold mt-4 text-white text-4xl">
-                Codeक्षेत्र: The Ultimates
-              </div>
-              <div className="font-bold mt-2 sm:mt-4 text-black text-4xl">
+              <div className="font-bold mt-2 sm:mt-4 text-start text-white text-4xl sm:text-5xl lg:text-6xl">
                 36-Hour Hackathon
               </div>
-              <Button className="mt-4 text-lg h-12 p-3 w-40 rounded-xl">
+              <Button className="mt-4 text-xl sm:text-2xl h-14 p-3 w-48 rounded-xl text-black font-bold bg-pink">
                 Register
               </Button>
-              <img
-                src="/assets/logo.png"
-                alt="logo"
-                className="absolute bottom-0 left-1/2 bg-primary transform -translate-x-1/2 translate-y-1/2 h-44 w-44 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-80 lg:h-80 rounded-full border-2 border-background "
-              />
             </div>
 
-            <div className="col-span-full sm:col-span-2 row-span-1 row-start-1 sm:col-start-7 rounded-3xl bg-[#D9D9D9]">
-              <div className="font-bold mt-4 text-xl">logos</div>
+            <div className="col-span-2 md:col-span-1 row-start-1 row-span-1 md:row-span-2 flex justify-center">
+              <img src="/assets/logo.png" alt="" className="h-24 w-auto" />
             </div>
-
-            <div className="col-span-4 sm:col-span-2 row-span-2 mt-20 sm:mt-0 rounded-3xl bg-primary">
-              <div className="font-bold text-accent mt-4 text-xl">
-                Prize Pool
+            <div className="col-span-1 row-span-2 rounded-3xl bg-secondary p-6">
+              <div className="font-bold text-pink 0 text-3xl sm:text-4xl font-bebas">
+                PRIZE POOL
               </div>
-              <div className="font-bold mt-4 text-white text-xl">
+              <div className="font-bold mt-4 text-white text-3xl sm:text-2xl">
                 {data.prizePool}
               </div>
             </div>
-
-            <div className="col-span-2 row-span-3 rounded-3xl bg-primary hidden sm:block">
-              <div className="font-bold  text-white text-3xl mt-20">
-                {data.extraBox}
+            <div className="col-span-1 row-span-2 rounded-3xl bg-secondary p-6">
+              <div className="font-bold text-pink mt-0 text-3xl sm:text-4xl font-bebas">
+                LOCATION
               </div>
-            </div>
-
-            <div className="col-span-4 sm:col-span-2 row-span-2 rounded-3xl bg-primary">
-              <div className="font-bold text-accent mt-4 text-xl">Location</div>
-              <div className="font-bold mt-4 text-white text-xl">
+              <div className="font-bold mt-1 text-white text-xl sm:text-2xl">
                 {data.location}
               </div>
             </div>
 
-            <div className=" col-span-full sm:col-span-3 row-span-2 sm:row-span-4 rounded-3xl bg-primary">
-              <div className="font-bold text-accent mt-4 text-2xl text-center lg:text-start lg:pl-16 ">
-                Event in
+            <div className="col-span-2 md:col-span-3 row-span-3 rounded-3xl bg-secondary ">
+              <div className="text-pink mt-4 text-center text-3xl sm:text-4xl font-bold font-bebas">
+                REGISTRATIONS
               </div>
-              <div className="flex space-x-4 items-center text-white justify-center mt-9">
-                <div className="text-center">
-                  <p className="lg:text-6xl md:text-4xl sm:text-2xl text-3xl font-bold ">
-                    30
+              <div className="font-bold text-6xl my-2 sm:text-8xl lg:text-9xl text-white">
+                {Math.floor(count)} +
+              </div>
+            </div>
+
+            <div className="col-span-2 md:col-span-2 row-span-3 rounded-3xl bg-secondary">
+              <div className="font-bold text-center text-pink mt-4 text-3xl sm:text-4xl font-bebas">
+                EVENT IN
+              </div>
+
+              <div className="flex space-x-2 sm:space-x-4 items-center text-white justify-center my-5 sm:mt-6 px-8">
+                <div className="text-center bg-background/30 p-2 sm:p-4 rounded-xl">
+                  <p className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold ">
+                    {String(timeLeft.hours).padStart(2, "0")}
                   </p>
-                  <p className="text-sm sm:text-xs">Hours</p>
+                  <p className="text-xs sm:text-base">Hours</p>
                 </div>
-                <div className="lg:text-6xl md:text-4xl sm:text-2xl text-3xl font-bold mb-6">
+                <div className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold mb-2">
                   :
                 </div>
-                <div className="text-center">
-                  <p className="lg:text-6xl md:text-4xl sm:text-2xl text-3xl font-bold">
-                    30
+
+                <div className="text-center bg-background/30 p-2 sm:p-4 rounded-xl">
+                  <p className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold">
+                    {String(timeLeft.minutes).padStart(2, "0")}
                   </p>
-                  <p className="text-sm sm:text-xs">Minutes</p>
+                  <p className="text-xs sm:text-base">Minutes</p>
                 </div>
-                <div className="lg:text-6xl md:text-4xl sm:text-2xl text-3xl font-bold mb-6">
+                <div className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold mb-2">
                   :
                 </div>
-                <div className="text-center">
-                  <p className="lg:text-6xl md:text-4xl sm:text-2xl text-3xl font-bold">
-                    30
+
+                <div className="text-center bg-background/30 p-2 sm:p-4 rounded-xl">
+                  <p className="lg:text-6xl md:text-3xl text-pink sm:text-2xl text-4xl font-bold">
+                    {String(timeLeft.seconds).padStart(2, "0")}
                   </p>
-                  <p className="text-sm sm:text-xs">Seconds</p>
+                  <p className="text-xs text-pink sm:text-bases">Seconds</p>
                 </div>
               </div>
-              <div className="font-bold text-white mt-5 pb-5 text-2xl">
-                What are you waiting for ?
-              </div>
-            </div>
-
-            <div className="col-span-4 row-start-7 col-start-5 sm:col-span-2 row-span-2 sm:row-start-8 sm:col-start-4 rounded-3xl bg-primary">
-              <div className="font-bold text-accent mt-4 text-xl">
-                Our Socials
-              </div>
-
-              <div className="sm:flex hidden justify-evenly flex-wrap text-3xl mt-4 ">
-                <FaInstagram className="text-secondary" />
-                <FaXTwitter className="text-secondary" />
-                <MdEmail className="text-secondary" />
-                <FaFacebook className="text-secondary" />
-              </div>
-
-              <div className="sm:hidden flex flex-col pt-6 space-y-5">
-                <div className="flex justify-evenly">
-                  <FaInstagram className="text-secondary text-4xl" />
-                  <FaXTwitter className="text-secondary text-4xl" />
-                </div>
-
-                <div className="flex justify-evenly">
-                  <MdEmail className="text-secondary text-4xl" />
-                  <FaFacebook className="text-secondary text-4xl" />
-                </div>
-              </div>
-            </div>
-
-            <div className="col-span-full sm:col-span-3 row-span-4 hidden sm:block rounded-3xl bg-primary">
-              <div className="font-bold text-accent mt-4 text-xl">
-                Event Highlights
-              </div>
-              <div className="w-full h-5/6 flex justify-center items-center">
-                <Carousel
-                  plugins={[plugin1.current]}
-                  className="bg-transparent w-full h-full"
-                >
-                  <CarouselContent>
-                    {data.eventHighlights.map((src, index) => (
-                      <CarouselItem key={index} className="bg-transparent">
-                        <Card className="bg-transparent w-full h-full">
-                          <CardContent className="flex items-center bg-transparent justify-center w-full h-full">
-                            <div className="bg-transparent text-white h-full w-full p-2">
-                              <img
-                                src={src}
-                                alt=""
-                                className="object-contain h-full w-full"
-                              />
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious />
-                  <CarouselNext />
-                </Carousel>
-              </div>
-            </div>
-          </div>
-          <div className=" w-full mt-4 h-64 block sm:hidden rounded-3xl bg-primary">
-            <div className="font-bold text-accent mt-4 text-xl">
-              Event Highlights
-            </div>
-            <div className="w-full h-5/6 flex justify-center items-center">
-              <Carousel
-                plugins={[plugin2.current]}
-                className="bg-transparent w-full h-full"
-              >
-                <CarouselContent>
-                  {data.eventHighlights.map((src, index) => (
-                    <CarouselItem key={index} className="bg-transparent">
-                      <Card className="bg-transparent w-full h-full">
-                        <CardContent className="flex items-center bg-transparent justify-center w-full h-full">
-                          <div className="bg-transparent text-white h-full w-full p-2">
-                            <img
-                              src={src}
-                              alt=""
-                              className="object-contain h-full w-full"
-                            />
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
             </div>
           </div>
         </div>
