@@ -11,7 +11,7 @@ export const CardContent = ({
   className,
 }: CardContentProps) => (
   <div
-    className={`${className} overflow-clip bg-secondary px-4 py-6 grid grid-rows-[auto_auto_auto_1fr] sm:gap-2 md:gap-4`}
+    className={`${className} overflow-clip bg-secondary rounded-3xl px-4 py-6 grid grid-rows-[auto_auto_auto_1fr] sm:gap-2 md:gap-4`}
   >
     <h4 className="font-bold text-lg md:text-xl xl:text-2xl italic tracking-wider text-accent relative overflow-hidden group flex justify-center items-center text-white">
       <span className="group-hover:opacity-0 opacity-100 transition-all duration-300">
