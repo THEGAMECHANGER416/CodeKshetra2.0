@@ -12,6 +12,30 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeInDown: {
+          "0%": { opacity: "0", transform: "translateY(-30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeInLeft: {
+          "0%": { opacity: "0", transform: "translateX(-30px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        fadeInRight: {
+          "0%": { opacity: "0", transform: "translateX(30px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        fadeInUp: "fadeInUp 1.5s ease-in-out",
+        fadeInDown: "fadeInDown 1.5s ease-in-out",
+        fadeInLeft: "fadeInLeft 1.5s ease-in-out",
+        fadeInRight: "fadeInRight 1.5s ease-in-out",
+      },
       colors: {
         primary: {
           DEFAULT: "#2C1E36", // Use your hex value here
