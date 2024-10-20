@@ -97,7 +97,7 @@ const ProblemStatement = () => {
               {problemStatements.map((statement, index) => (
                 <CarouselItem key={index} className="lg:basis-4/5 xl:basis-2/5">
                   <div
-                    className={`transition-all duration-300 ${
+                    className={`transition-all duration-300 rounded-lg shadow-lg ${
                       index === current
                         ? "scale-100 opacity-100"
                         : "scale-90 opacity-30"
@@ -135,7 +135,7 @@ const ProblemStatement = () => {
             }}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
               index === current
-                ? "bg-accent scale-125"
+                ? "bg-pink scale-125"
                 : "bg-gray-300 hover:bg-gray-500"
             }`}
             aria-label={`Go to card ${index + 1}`}
