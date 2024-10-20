@@ -20,15 +20,15 @@ export default {
           }, // Initial and final state
           "25%": {
             borderRadius: "12% 10% 15% 5%",
-            transform: "translate(4px, -2px)",
+            transform: "translate(1px, -1px)",
           }, // More curvature on top left and bottom right
           "50%": {
             borderRadius: "15% 5% 20% 10%",
-            transform: "translate(-2px, 4px)",
+            transform: "translate(-1px, 1px)",
           }, // Increased bend and slight move down
           "75%": {
             borderRadius: "5% 15% 10% 8%",
-            transform: "translate(3px, -1px)",
+            transform: "translate(2px, -1px)",
           }, // Random bending and minimal upward movement
         },
       },

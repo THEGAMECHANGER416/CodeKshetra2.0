@@ -81,31 +81,43 @@ const Home = () => {
 
   return (
     <>
-      <div className=" mb-40">
+      <div className="mb-40">
         <div className="flex h-full lg:h-[95vh] w-full flex-col items-center justify-center rounded-lg">
           <div className="grid h-5/6 md:h-full w-full grid-cols-2 md:grid-cols-5 md:grid-rows-9 gap-4">
-            <div className="col-span-2 md:col-span-4 row-span-6 rounded-3xl bg-[url('/assets/homeBg.jpeg')] bg-cover bg-center flex flex-col pl-6 justify-end pb-12">
-              <div className="font-bold mt-10 md:mt-4 text-white text-start text-4xl sm:text-5xl lg:text-6xl">
-                Codeक्षेत्र: The Ultimate
+            {/* Background section */}
+            <div className="col-span-2 md:col-span-4 row-span-6 relative rounded-3xl bg-cover bg-center flex flex-col pl-6 justify-end pb-12 bg-[url('/assets/homeBg.jpeg')] before:content-[''] before:absolute before:inset-0 before:bg-black/50 before:rounded-3xl">
+              {/* Content on top of the background */}
+              <div className="relative z-10 w-full">
+                <div className="font-bold mt-10 md:mt-4 text-white text-start text-4xl sm:text-5xl lg:text-6xl [text-shadow:_0_4px_8px_#000000]">
+                  Codeक्षेत्र: The Ultimate
+                </div>
+                <div className="font-bold mt-2 sm:mt-4 text-start text-white text-4xl sm:text-5xl lg:text-6xl [text-shadow:_0_4px_8px_#000000]">
+                  36-Hour Hackathon
+                </div>
+                <div className="flex justify-start">
+                  <Button
+                    className="mt-4 text-xl sm:text-2xl h-12 w-32 md:h-14 md:w-48 rounded-xl text-black font-bold bg-pink hover:text-white"
+                    onClick={() =>
+                      window.open(
+                        "https://code-kshetra-2.devfolio.co/",
+                        "_blank"
+                      )
+                    }
+                  >
+                    Register
+                  </Button>
+                </div>
               </div>
-              <div className="font-bold mt-2 sm:mt-4 text-start text-white text-4xl sm:text-5xl lg:text-6xl">
-                36-Hour Hackathon
-              </div>
-              <Button
-                className="mt-4 text-lg sm:text-2xl h-12 w-32 md:h-14 p-3 md:w-48 rounded-xl text-black font-bold bg-pink hover:text-white"
-                onClick={() =>
-                  window.open("https://code-kshetra-2.devfolio.co/", "_blank")
-                }
-              >
-                Register
-              </Button>
             </div>
 
-            <div className="col-span-2 md:col-span-1 row-start-1 row-span-1 md:row-span-2 flex justify-center">
+            {/* Logo section */}
+            <div className="col-span-2 md:col-span-1 row-start-1 row-span-1 md:row-span-2 flex justify-center z-20">
               <img src="/assets/logo.png" alt="" className="h-24 w-auto" />
             </div>
-            <div className="col-span-1 animate-blob row-span-2 rounded-xl bg-secondary p-2">
-              <div className="font-bold text-pink  sm:mt-2 text-3xl sm:text-4xl font-bebas">
+
+            {/* Prize pool section */}
+            <div className="col-span-1 animate-blob row-span-2 rounded-xl bg-secondary p-2 z-20">
+              <div className="font-bold text-pink sm:mt-2 text-3xl sm:text-4xl font-bebas">
                 PRIZE POOL
               </div>
               <div className="font-bold mt-4 sm:mt-2 text-white text-3xl sm:text-2xl">
@@ -117,7 +129,8 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="col-span-1 row-span-2 rounded-3xl bg-secondary p-2">
+            {/* Location section */}
+            <div className="col-span-1 animate-blob row-span-2 rounded-3xl bg-secondary p-2 z-20">
               <div className="font-bold text-pink mt-0 text-3xl sm:text-4xl font-bebas">
                 LOCATION
               </div>
@@ -126,19 +139,21 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="col-span-2 md:col-span-3 row-span-3 rounded-3xl bg-secondary ">
+            {/* Registrations section */}
+            <div className="col-span-2 md:col-span-3 row-span-3 rounded-3xl bg-secondary z-20">
               <div className="text-pink mt-4 text-center md:mt-8 lg:mt-4 md:text-7xl lg:text-4xl text-3xl sm:text-4xl font-bold font-bebas">
                 REGISTRATIONS
               </div>
-              <div className="font-bold md:hidden lg:block text-4xl my-2 sm:text-8xl lg:text-9xl text-white">
+              <div className="font-bold md:hidden lg:block text-4xl my-2 sm:text-8xl lg:text-8xl lg:mt-6 text-white">
                 {Math.floor(count)} +
               </div>
-              <div className="font-bold hidden md:block lg:hidden text-6xl mt-2 sm:text-8xl  text-white">
+              <div className="font-bold hidden md:block lg:hidden text-6xl mt-2 sm:text-8xl text-white">
                 {Math.floor(count)} +
               </div>
             </div>
 
-            <div className="col-span-2 md:col-span-2 row-span-3 rounded-3xl bg-secondary">
+            {/* Countdown Timer */}
+            <div className="col-span-2 md:col-span-2 row-span-3 rounded-3xl bg-secondary z-20">
               {/* <div className="font-bold text-center text-pink mt-4 text-3xl sm:text-4xl font-bebas">
                 EVENT IN
               </div> */}
@@ -175,10 +190,9 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-
               <div className="flex space-x-2 sm:space-x-4 items-center text-white justify-center md:hidden lg:flex sm:mt-16 px-8 py-8 sm:py-0">
                 <div className="text-center bg-background/30 p-2 sm:p-4 rounded-xl">
-                  <p className="lg:text-3xl md:text-2xl sm:text-2xl text-4xl font-bold ">
+                  <p className="lg:text-3xl md:text-2xl sm:text-2xl text-4xl font-bold">
                     {String(timeLeft.days).padStart(2, "0")}
                   </p>
                   <p className="text-xs sm:text-base">Days</p>
@@ -186,9 +200,8 @@ const Home = () => {
                 <div className="lg:text-3xl md:text-2xl sm:text-2xl text-4xl font-bold mb-2">
                   :
                 </div>
-
                 <div className="text-center bg-background/30 p-2 sm:p-4 rounded-xl">
-                  <p className="lg:text-3xl md:text-2xl sm:text-2xl text-4xl font-bold ">
+                  <p className="lg:text-3xl md:text-2xl sm:text-2xl text-4xl font-bold">
                     {String(timeLeft.hours).padStart(2, "0")}
                   </p>
                   <p className="text-xs sm:text-base">Hours</p>
@@ -196,14 +209,13 @@ const Home = () => {
                 <div className="lg:text-3xl md:text-2xl sm:text-2xl text-4xl font-bold mb-2">
                   :
                 </div>
-
                 <div className="text-center bg-background/30 p-2 sm:p-4 rounded-xl">
                   <p className="lg:text-3xl md:text-2xl sm:text-2xl text-4xl font-bold">
                     {String(timeLeft.minutes).padStart(2, "0")}
                   </p>
                   <p className="text-xs sm:text-base">Minutes</p>
                 </div>
-                <div className="lg:text-3xl md:text-2xl sm:text-2xl text-4xl font-bold mb-2">
+                <div className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold mb-2">
                   :
                 </div>
 
