@@ -1,8 +1,8 @@
 import "./App.css";
 import Home from "./components/custom/Home";
 import AboutUs from "./components/custom/AboutUs";
-import Faq from "./components/custom/FAQ"; // Ensure this component exists
-import MentorCard from "./components/custom/MentorCard"; // Ensure this component exists
+import Faq from "./components/custom/FAQ";
+import MentorCard from "./components/custom/MentorCard";
 import Navbar from "./components/custom/Navbar";
 import PrizePool from "./components/custom/PrizePool";
 import ProblemStatement from "./components/custom/ProblemStatement";
@@ -10,6 +10,7 @@ import TimeLine from "./components/custom/TimeLine";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useRef } from "react";
 import ScrollHandler from "./components/custom/ScrollHandler";
+import Footer from "./components/custom/Footer";
 
 function App() {
   // Create refs for each section
@@ -69,6 +70,9 @@ function App() {
         <div ref={mentorCardRef} className="h-screen">
           <MentorCard />
         </div>
+
+        <Footer />
+
       </>
     </Router>
   );
