@@ -35,7 +35,7 @@ const TimeLine: React.FC = () => {
   const [selectedDay, setSelectedDay] = useState(0);
 
   return (
-    <div className="p-4 md:pl-24">
+    <div className="p-4 md:pl-24 mt-96">
       <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
         EVENT SCHEDULE
       </h1> 
