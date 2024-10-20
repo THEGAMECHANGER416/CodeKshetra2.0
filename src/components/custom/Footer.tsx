@@ -11,7 +11,7 @@ const Footer = () => {
             alt="JIMS Logo"
             className="h-32 w-auto mx-auto mb-4" 
           />
-          <p className="text-base md:text-lg lg:text-xl"> {/* Increased text size for lg screens */}
+          <p className="text-base md:text-lg lg:text-xl">
             Code Kshetra 2.0, a groundbreaking hackathon by{" "}
             <a
               href="https://www.jimsindia.org/"
@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         <div className="w-full md:w-1/3 mb-8 md:mb-0 text-center">
-          <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white mb-4 border-b-2 border-pink-500 inline-block"> {/* Increased text size for lg screens */}
+          <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white mb-4 border-b-2 border-pink-500 inline-block">
             Useful Links
           </h3>
           {/* <ul className="list-none">
@@ -46,28 +46,27 @@ const Footer = () => {
           </ul> */}
         </div>
 
-        {/* Center align the contact section */}
         <div className="w-full md:w-1/3 text-center">
-          <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white mb-4 border-b-2 border-pink-500 inline-block"> {/* Increased text size for lg screens */}
+          <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white mb-4 border-b-2 border-pink-500 inline-block">
             Contact Us
           </h3>
-          <address className="not-italic text-sm md:text-base lg:text-lg"> {/* Increased text size for lg screens */}
+          <address className="not-italic text-sm md:text-base lg:text-lg">
             JIMS, Near Rithala Metro Station<br />
             Rohini Sector 5, Institutional Area,<br />
             New Delhi, Delhi 110085
           </address>
           <div className="flex justify-center mt-4 space-x-6">
-            <a href="mailto:someone@example.com" aria-label="Email">
+            <a href="mailto:community@geekroom.in" aria-label="Email">
               <span className="flex items-center justify-center p-3 transition duration-200 ease-in-out transform hover:scale-110 hover:text-pink-400">
                 <i className="fa-solid fa-envelope" style={{ color: "#ff00bb", opacity: 0.7, fontSize: "1.5rem" }}></i>
               </span>
             </a>
-            <a href="https://example.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/geek__room_" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
               <span className="flex items-center justify-center p-3 transition duration-200 ease-in-out transform hover:scale-110 hover:text-pink-400">
                 <i className="fa-brands fa-x-twitter" style={{ color: "#ff00bb", opacity: 0.7, fontSize: "1.5rem" }}></i>
               </span>
             </a>
-            <a href="https://instagram.com" aria-label="Instagram">
+            <a href="https://www.instagram.com/_geek.room/" aria-label="Instagram">
               <span className="flex items-center justify-center p-3 transition duration-200 ease-in-out transform hover:scale-110 hover:text-pink-400">
                 <i className="fa-brands fa-instagram" style={{ color: "#ff00bb", opacity: 0.7, fontSize: "1.5rem" }}></i>
               </span>
