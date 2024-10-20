@@ -4,12 +4,12 @@ const Footer = () => {
   return (
     <footer className="bg-zinc-900 text-zinc-300 py-10 w-full rounded-t-[50px]" style={{ width: '100vw', marginLeft: '-50vw', marginRight: '-50vw', left: '50%', position: 'relative' }}>
       <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-start">
-        
+
         <div className="w-full md:w-1/3 mb-8 md:mb-0 text-center">
           <img
             src={logo}
             alt="JIMS Logo"
-            className="h-32 w-auto mx-auto mb-4" 
+            className="h-32 w-auto mx-auto mb-4"
           />
           <p className="text-base md:text-lg lg:text-xl">
             Code Kshetra 2.0, a groundbreaking hackathon by{" "}
@@ -39,11 +39,24 @@ const Footer = () => {
           <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white mb-4 border-b-2 border-pink-500 inline-block">
             Useful Links
           </h3>
-          {/* <ul className="list-none">
-            <li><a href="#" className="hover:text-white">Link 1</a></li>
-            <li><a href="#" className="hover:text-white">Link 2</a></li>
-            <li><a href="#" className="hover:text-white">Link 3</a></li>
-          </ul> */}
+          <ul className="list-none space-y-3">
+            <li>
+              <a
+                href="https://linktr.ee/geekroom"
+                className="text-base md:text-lg lg:text-xl transition-colors duration-200 ease-in-out text-zinc-300 hover:text-pink-400"
+              >
+                Linktree
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://code-kshetra-2.devfolio.co/"
+                className="text-base md:text-lg lg:text-xl transition-colors duration-200 ease-in-out text-zinc-300 hover:text-pink-400"
+              >
+                Devfolio
+              </a>
+            </li>
+          </ul>
         </div>
 
         <div className="w-full md:w-1/3 text-center">
