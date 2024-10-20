@@ -13,27 +13,28 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        blob: {
-          "0%, 100%": {
-            borderRadius: "8% 8% 12% 12%",
-            transform: "translate(0, 0)",
-          }, // Initial and final state
-          "25%": {
-            borderRadius: "12% 10% 15% 5%",
-            transform: "translate(1px, -1px)",
-          }, // More curvature on top left and bottom right
-          "50%": {
-            borderRadius: "15% 5% 20% 10%",
-            transform: "translate(-1px, 1px)",
-          }, // Increased bend and slight move down
-          "75%": {
-            borderRadius: "5% 15% 10% 8%",
-            transform: "translate(2px, -1px)",
-          }, // Random bending and minimal upward movement
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeInDown: {
+          "0%": { opacity: "0", transform: "translateY(-30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeInLeft: {
+          "0%": { opacity: "0", transform: "translateX(-30px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        fadeInRight: {
+          "0%": { opacity: "0", transform: "translateX(30px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
         },
       },
       animation: {
-        blob: "blob 3s infinite ease-in-out",
+        fadeInUp: "fadeInUp 1.5s ease-in-out",
+        fadeInDown: "fadeInDown 1.5s ease-in-out",
+        fadeInLeft: "fadeInLeft 1.5s ease-in-out",
+        fadeInRight: "fadeInRight 1.5s ease-in-out",
       },
       colors: {
         primary: {

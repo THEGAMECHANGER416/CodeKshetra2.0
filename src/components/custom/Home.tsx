@@ -82,10 +82,10 @@ const Home = () => {
   return (
     <>
       <div className="mb-40">
-        <div className="flex h-full lg:h-[95vh] w-full flex-col items-center justify-center rounded-lg">
+        <div className="flex h-full fade lg:h-[95vh] w-full flex-col items-center justify-center rounded-lg">
           <div className="grid h-5/6 md:h-full w-full grid-cols-2 md:grid-cols-5 md:grid-rows-9 gap-4">
             {/* Background section */}
-            <div className="col-span-2 md:col-span-4 row-span-6 relative rounded-3xl bg-cover bg-center flex flex-col pl-6 justify-end pb-12 bg-[url('/assets/homeBg.jpeg')] before:content-[''] before:absolute before:inset-0 before:bg-black/50 before:rounded-3xl">
+            <div className="col-span-2 animate-fadeInUp md:col-span-4 row-span-6 relative rounded-3xl bg-cover bg-center flex flex-col pl-6 justify-end pb-12 bg-[url('/assets/homeBg.jpeg')] before:content-[''] before:absolute before:inset-0 before:bg-black/50 before:rounded-3xl">
               {/* Content on top of the background */}
               <div className="relative z-10 w-full">
                 <div className="font-bold mt-10 md:mt-4 text-white text-start text-4xl sm:text-5xl lg:text-6xl [text-shadow:_0_4px_8px_#000000]">
@@ -111,12 +111,12 @@ const Home = () => {
             </div>
 
             {/* Logo section */}
-            <div className="col-span-2 md:col-span-1 row-start-1 row-span-1 md:row-span-2 flex justify-center z-20">
+            <div className="col-span-2 animate-fadeInLeft md:col-span-1 row-start-1 row-span-1 md:row-span-2 flex justify-center z-20">
               <img src="/assets/logo.png" alt="" className="h-24 w-auto" />
             </div>
 
             {/* Prize pool section */}
-            <div className="col-span-1 animate-blob row-span-2 rounded-xl bg-secondary p-2 z-20">
+            <div className="col-span-1 row-span-2 animate-fadeInLeft rounded-3xl bg-secondary p-2 z-20">
               <div className="font-bold text-pink sm:mt-2 text-3xl sm:text-4xl font-bebas">
                 PRIZE POOL
               </div>
@@ -130,7 +130,7 @@ const Home = () => {
             </div>
 
             {/* Location section */}
-            <div className="col-span-1 animate-blob row-span-2 rounded-3xl bg-secondary p-2 z-20">
+            <div className="col-span-1 row-span-2 animate-fadeInRight rounded-3xl bg-secondary p-2 z-20">
               <div className="font-bold text-pink mt-0 text-3xl sm:text-4xl font-bebas">
                 LOCATION
               </div>
@@ -140,7 +140,7 @@ const Home = () => {
             </div>
 
             {/* Registrations section */}
-            <div className="col-span-2 md:col-span-3 row-span-3 rounded-3xl bg-secondary z-20">
+            <div className="col-span-2 md:col-span-3 animate-fadeInDown row-span-3 rounded-3xl bg-secondary z-20">
               <div className="text-pink mt-4 text-center md:mt-8 lg:mt-4 md:text-7xl lg:text-4xl text-3xl sm:text-4xl font-bold font-bebas">
                 REGISTRATIONS
               </div>
@@ -153,7 +153,7 @@ const Home = () => {
             </div>
 
             {/* Countdown Timer */}
-            <div className="col-span-2 md:col-span-2 row-span-3 rounded-3xl bg-secondary z-20">
+            <div className="col-span-2 md:col-span-2 row-span-3 animate-fadeInUp rounded-3xl bg-secondary z-20">
               {/* <div className="font-bold text-center text-pink mt-4 text-3xl sm:text-4xl font-bebas">
                 EVENT IN
               </div> */}
