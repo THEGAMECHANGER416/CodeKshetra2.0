@@ -12,7 +12,7 @@ const Footer = () => {
             className="h-32 w-auto mx-auto mb-4" 
           />
           <p className="text-base md:text-lg lg:text-xl"> {/* Increased text size for lg screens */}
-            Code Kshetra, a groundbreaking hackathon by{" "}
+            Code Kshetra 2.0, a groundbreaking hackathon by{" "}
             <a
               href="https://www.jimsindia.org/"
               className="text-pink-400 hover:text-purple-600"
