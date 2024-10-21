@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Mobile from '/assets/mobile.png'; // Use this format
-
 import Tablet from "/assets/tablet.png"
 import laptop from "/assets/laptop.png"
 
