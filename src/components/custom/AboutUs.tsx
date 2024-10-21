@@ -1,6 +1,6 @@
 import React from "react";
 import '../../App.css'
-const AboutUs = () => {
+const AboutUs:React.FC = () => {
   return (
     <div className="p-4 md:pl-24 h-full w-full">
       <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">About Us</h1>
