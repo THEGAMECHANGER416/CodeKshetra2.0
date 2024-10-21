@@ -11,9 +11,9 @@ export const CardContent = ({
   className,
 }: CardContentProps) => (
   <div
-    className={`${className} overflow-clip bg-primary rounded-lg shadow-lg px-4 py-6 grid grid-rows-[auto_auto_auto_1fr] sm:gap-2 md:gap-4`}
+    className={`${className} overflow-clip bg-secondary rounded-3xl px-4 py-6 grid grid-rows-[auto_auto_auto_1fr] sm:gap-2 md:gap-4`}
   >
-    <h4 className="font-bold text-lg md:text-xl xl:text-2xl italic tracking-wider text-accent relative overflow-hidden group flex justify-center items-center">
+    <h4 className="font-bold text-lg md:text-xl xl:text-2xl italic tracking-wider text-accent relative overflow-hidden group flex justify-center items-center text-white">
       <span className="group-hover:opacity-0 opacity-100 transition-all duration-300">
         Problem
       </span>
@@ -22,16 +22,16 @@ export const CardContent = ({
       </span>
     </h4>
 
-    <h5 className="capitalize font-medium text-slate-400 text-sm md:text-lg py-2">
+    <h5 className="capitalize font-medium text-slate-200 text-sm md:text-lg py-2">
       {title}
     </h5>
 
-    <p className="text-left py-8 text-secondary tracking-wide text-sm sm:text-base md:text-lg font-light">
-      <span className="font-medium">Category: </span>
-      <span className="text-slate-400 capitalize">{category}</span>
+    <p className="text-left py-8 tracking-wide text-sm sm:text-base md:text-lg font-light">
+      <span className="font-semibold text-white">Category: </span>
+      <span className="text-slate-200 capitalize">{category}</span>
     </p>
 
-    <p className="text-slate-400 text-left text-pretty sm:my-4 text-[0.85rem] sm:text-base flex items-center">
+    <p className="text-slate-200 text-left text-pretty sm:my-4 text-[0.85rem] sm:text-base flex items-center">
       {description}
     </p>
   </div>

@@ -62,14 +62,9 @@ const ProblemStatement = () => {
       ref={containerRef}
       className="py-12 h-fit grid grid-rows-[auto_1fr_auto]"
     >
-      <div className="text-white flex justify-center">
-        <h2
-          ref={titleRef}
-          className="text-2xl md:text-4xl xl:text-6xl font-bold cursor-pointer relative px-2 md:px-6 xl:px-8"
-        >
-          Problem Statements
-        </h2>
-      </div>
+      <h1 className="font-bebas text-pink font-bold mb-[4rem] md:mb-[6rem] text-center text-6xl lg:text-9xl xl:text-9xl 2xl:text-[12rem]">
+        PROBLEM STATEMENTS
+      </h1>
 
       <div className="w-full max-w-6xl px-4 md:px-12 py-[2.5rem] h-fit grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-2">
         <div className="hidden md:flex md:items-center">
@@ -78,7 +73,7 @@ const ProblemStatement = () => {
               api?.scrollPrev();
               handleInteraction();
             }}
-            className="bg-white/60 border border-accent/10 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
+            className="bg-white/60 border border-black/10 rounded-full h-fit p-2 shadow-md z-30 hidden md:block"
             aria-label="Previous card"
           >
             <ChevronLeft className="w-3 h-3 md:w-6 md:h-6 text-black" />
@@ -102,10 +97,10 @@ const ProblemStatement = () => {
               {problemStatements.map((statement, index) => (
                 <CarouselItem key={index} className="lg:basis-4/5 xl:basis-2/5">
                   <div
-                    className={`transition-all duration-300 ${
+                    className={`transition-all duration-300 rounded-lg shadow-lg ${
                       index === current
                         ? "scale-100 opacity-100"
-                        : "scale-90 opacity-60"
+                        : "scale-90 opacity-30"
                     }`}
                   >
                     <CardContent {...statement} className="h-full" />
@@ -140,7 +135,7 @@ const ProblemStatement = () => {
             }}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
               index === current
-                ? "bg-accent scale-125"
+                ? "bg-pink scale-125"
                 : "bg-gray-300 hover:bg-gray-500"
             }`}
             aria-label={`Go to card ${index + 1}`}
