@@ -48,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollRefs }) => {
   };
 
   return (
-    <div className="fixed md:left-[1rem]  z-50 md:top-1/2 md:transform md:-translate-y-1/2 bottom-[5rem] md:bottom-auto right-[1rem] w-11/12 md:w-16 bg-[#2c1e36] text-white rounded-full shadow-lg">
+    <div className="fixed md:left-[1rem]  z-50 md:top-1/2 md:transform md:-translate-y-1/2 bottom-[5rem] md:bottom-auto right-[1rem] w-11/12 md:w-16 bg-[#151a20] text-white rounded-full shadow-lg">
       <div className="flex md:flex-col md:items-center h-auto gap-0.5 overflow-x-auto">
         <NavItem
           to="/"
