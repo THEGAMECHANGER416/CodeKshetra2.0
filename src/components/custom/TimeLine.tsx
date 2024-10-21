@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Mobile from "../../../public/assets/mobile.png"
-import Tablet from "../../../public/assets/tablet.png"
-import laptop from "../../../public/assets/laptop.png"
+import Mobile from '/assets/mobile.png'; // Use this format
+
+import Tablet from "/assets/tablet.png"
+import laptop from "/assets/laptop.png"
 
 interface Task {
   time: string;
@@ -107,17 +108,18 @@ const TimeLine: React.FC = () => {
       </div>
 
       {/* Image section */}
-      <div className="text-center h-[15rem] w-full mb-[16rem]"> {/* Adjust height as needed */}
-        <picture>
-          <source media="(min-width: 1024px)" srcSet={laptop} />
-          <source media="(min-width: 768px)" srcSet={Tablet}/>
-          <img
-            src={Mobile}
-            alt="Event SVG"
-            className="w-full h-auto mx-auto max-w-[1200px] block"
-          />
-        </picture>
-      </div>
+      <div className="text-center h-[15rem] w-full mb-[16rem]"> 
+  <picture>
+    <source media="(min-width: 1024px)" srcSet={laptop} />
+    <source media="(min-width: 768px)" srcSet={Tablet} />
+    <img
+      src={Mobile}
+      alt="Event SVG"
+      className="w-full h-auto mx-auto max-w-[1200px] block"
+    />
+  </picture>
+</div>
+
     </div>
   );
 };
