@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import Mobile from '/assets/mobile.png'; // Use this format
+import Tablet from "/assets/tablet.png"
+import laptop from "/assets/laptop.png"
 
 interface Task {
   time: string;
@@ -38,11 +41,10 @@ const TimeLine: React.FC = () => {
     <div className="p-4 md:pl-24">
       <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
         EVENT SCHEDULE
-      </h1> 
+      </h1>
 
       {/* Horizontal timeline for larger screens */}
       <div className="relative mb-[7rem] hidden md:block">
-        {/* Line across the timeline */}
         <div className="absolute bg-pink h-1  left-14 right-14 z-0 transform md:-translate-y-[-0.5rem]"></div>
 
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
@@ -104,24 +106,22 @@ const TimeLine: React.FC = () => {
         ))}
       </div>
 
-      {/* Task list at the bottom */}
-      {/*
-      <div className="text-white text-lg leading-relaxed items-center">
-        <div className="space-y-2">
-          {dayData[selectedDay].tasks.map((task, index) => (
-            <div key={index} className="px-2">
-              <div className="flex items-center justify-between">
-                <span className="text-white font-bold text-left w-2/6">{`${task.time}`}</span>
-                <span className="text-white font-bold text-left w-3/6">{task.description}</span>
-              </div>
-              <hr className="my-2 border-t border-white w-full" />
-            </div>
-          ))}
-        </div>
-      </div>
-      */}
+      {/* Image section */}
+      <div className="text-center h-[15rem] w-full mb-[16rem]"> 
+  <picture>
+    <source media="(min-width: 1024px)" srcSet={laptop} />
+    <source media="(min-width: 768px)" srcSet={Tablet} />
+    <img
+      src={Mobile}
+      alt="Event SVG"
+      className="w-full h-auto mx-auto max-w-[1200px] block"
+    />
+  </picture>
+</div>
+
     </div>
   );
 };
+
 
 export default TimeLine;
