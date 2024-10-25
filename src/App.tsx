@@ -51,12 +51,15 @@ function App() {
         <div ref={homeRef} className="">
           <Home />
         </div>
-        <div ref={aboutUsRef} className="h-screen">
+        <div ref={aboutUsRef} className="">
           <AboutUs />
         </div>
-        <div ref={timelineRef} className="h-screen mb-[50rem] max-w-400:mb-[40rem] between-768-900:mb-[60rem] min-w-1024:mb-[30rem]">
-  <TimeLine />
-</div>
+        <div
+          ref={timelineRef}
+          className="h-screen mb-[50rem] max-w-400:mb-[40rem] between-768-900:mb-[60rem] min-w-1024:mb-[30rem]"
+        >
+          <TimeLine />
+        </div>
 
         {/* chagned the height of this as requested so that it doesn't take up the whole screen */}
         <div ref={problemStatementRef} className="min-h-[70dvh] h-fit">
@@ -73,7 +76,6 @@ function App() {
         </div>
 
         <Footer />
-
       </>
     </Router>
   );
