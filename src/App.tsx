@@ -4,13 +4,14 @@ import AboutUs from "./components/custom/AboutUs";
 import Faq from "./components/custom/FAQ";
 import MentorCard from "./components/custom/MentorCard";
 import Navbar from "./components/custom/Navbar";
-import PrizePool from "./components/custom/PrizePool";
 import ProblemStatement from "./components/custom/ProblemStatement";
 import TimeLine from "./components/custom/TimeLine";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useRef } from "react";
 import ScrollHandler from "./components/custom/ScrollHandler";
 import Footer from "./components/custom/Footer";
+import Sponsors from "./components/custom/Sponsor";
+import Prizes from "./components/custom/PrizePool";
 
 function App() {
   // Create refs for each section
@@ -18,6 +19,7 @@ function App() {
   const aboutUsRef = useRef<HTMLDivElement | null>(null);
   const timelineRef = useRef<HTMLDivElement | null>(null);
   const problemStatementRef = useRef<HTMLDivElement | null>(null);
+  const sponsorsRef = useRef<HTMLDivElement | null>(null);
   const prizePoolRef = useRef<HTMLDivElement | null>(null);
   const faqRef = useRef<HTMLDivElement | null>(null);
   const mentorCardRef = useRef<HTMLDivElement | null>(null);
@@ -65,8 +67,11 @@ function App() {
         <div ref={problemStatementRef} className="min-h-[70dvh] h-fit">
           <ProblemStatement />
         </div>
+        <div ref={sponsorsRef} className="h-100 mt-24 mb-40">
+          <Sponsors/>
+        </div>
         <div ref={prizePoolRef} className="h-screen">
-          <PrizePool />
+          <Prizes />
         </div>
         <div ref={faqRef} className="h-100">
           <Faq />
