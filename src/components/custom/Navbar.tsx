@@ -48,7 +48,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrollRefs }) => {
   };
 
   return (
-    <div className="fixed md:left-[1rem]  z-50 md:top-1/2 md:transform md:-translate-y-1/2 bottom-[5rem] md:bottom-auto right-[1rem] w-11/12 md:w-16 bg-[#151a20] text-white rounded-full shadow-lg">
+    <div className="fixed md:left-[1rem] z-50 md:top-1/2 md:transform md:-translate-y-1/2 bottom-[5rem] md:bottom-auto right-[1rem] w-11/12 md:w-16 bg-[#151a20] text-white rounded-full shadow-[0px_0px_10px_rgba(0,0,0,0.5)]">
+
+
       <div className="flex md:flex-col md:items-center h-auto gap-0.5 overflow-x-auto">
         <NavItem
           to="/"
@@ -155,19 +157,20 @@ const NavItem: React.FC<NavItemProps> = ({
       <button
         ref={navItemRef}
         className={`w-full md:w-16 py-2 h-[4rem] flex items-center justify-center transition-colors 
-        ${isActive ? "bg-[#3a2c4e] md:bg-[#3a2c4e]" : ""}
+          ${isActive ? "bg-pink text-[#151a20] md:bg-pink md:text-[#151a20]" : "text-pink"}
+
         ${
           isFirst
             ? "rounded-l-full md:rounded-t-full md:rounded-b-none"
             : isLast
             ? "rounded-r-full md:rounded-b-full md:rounded-t-none"
             : ""
-        } 
+        }   
         `} // Update logic to check isActive
-        onClick={() => onClick(to, scrollTo, navItemRef)}
+        onClick={() => onClick(to, scrollTo, navItemRef)} 
         aria-label={label}
       >
-        <span className="text-[#FF32F4] font-bold">{icon}</span>
+        <span className=" font-bold">{icon}</span>
       </button>
     </div>
   );
