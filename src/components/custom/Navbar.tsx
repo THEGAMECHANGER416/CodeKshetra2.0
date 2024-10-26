@@ -14,6 +14,7 @@ interface NavbarProps {
     prizes: React.RefObject<HTMLDivElement>;
     faq: React.RefObject<HTMLDivElement>;
     team: React.RefObject<HTMLDivElement>;
+    judge: React.RefObject<HTMLDivElement>;
   };
 }
 

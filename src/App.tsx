@@ -2,7 +2,7 @@ import "./App.css";
 import Home from "./components/custom/Home";
 import AboutUs from "./components/custom/AboutUs";
 import Faq from "./components/custom/FAQ";
-import MentorCard from "./components/custom/MentorCard";
+// import MentorCard from "./components/custom/MentorCard";
 import Navbar from "./components/custom/Navbar";
 import ProblemStatement from "./components/custom/ProblemStatement";
 import TimeLine from "./components/custom/TimeLine";
@@ -12,6 +12,7 @@ import ScrollHandler from "./components/custom/ScrollHandler";
 import Footer from "./components/custom/Footer";
 import Sponsors from "./components/custom/Sponsor";
 import Prizes from "./components/custom/PrizePool";
+import Judge from "./components/custom/Judge";
 
 function App() {
   // Create refs for each section
@@ -23,6 +24,7 @@ function App() {
   const prizePoolRef = useRef<HTMLDivElement | null>(null);
   const faqRef = useRef<HTMLDivElement | null>(null);
   const mentorCardRef = useRef<HTMLDivElement | null>(null);
+  const judgeRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <Router>
@@ -34,6 +36,7 @@ function App() {
             timeline: timelineRef,
             problems: problemStatementRef,
             prizes: prizePoolRef,
+            judge:judgeRef,
             faq: faqRef,
             team: mentorCardRef,
           }}
@@ -62,11 +65,11 @@ function App() {
           ref={timelineRef}
           className="
             h-screen 
-            mb-[50rem] 
-            mt-[-5rem] 
-            mb-[60rem] sm:mb-[90rem]
-            sm:mb-[50rem] md:mb-[80rem]
-            lg:mb-[30rem]
+            mt-[5rem] 
+            mb-[70rem] 
+            sm:mb-[90rem]
+            md:mb-[80rem]
+            lg:mb-[60rem]
             xl:mb-[20rem]
             2xl:mb-[10rem]
           "
@@ -85,10 +88,12 @@ function App() {
         <div id="faq" ref={faqRef} className="h-100">
           <Faq />
         </div>
-        <div id="team" ref={mentorCardRef} className="h-screen">
+        {/* <div id="team" ref={mentorCardRef} className="h-screen">
           <MentorCard />
+        </div> */}
+        <div id="judge" ref={judgeRef} className="h-screen">
+          <Judge />
         </div>
-
         <Footer />
       </>
     </Router>
