@@ -54,7 +54,7 @@ function App() {
         <div id="home" ref={homeRef} className="xl:mt-10">
           <Home />
         </div>
-        <div id="about" ref={aboutUsRef} className="mt-[-3rem] min-w-1024:mt-[-5rem]">
+        <div id="about" ref={aboutUsRef} className="mt-[2rem] sm:mt-[-3rem] min-w-1024:mt-[-5rem]">
           <AboutUs />
         </div>
         <div
