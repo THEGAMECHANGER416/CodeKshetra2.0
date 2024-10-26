@@ -4,10 +4,10 @@ const AboutUs: React.FC = () => {
   return (
     <>
       <div className="p-4 md:pl-24 h-full w-full">
-        <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold  text-center">
+        <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold  text-center mb-[2rem]">
           About Us
         </h1>
-        <p className="font-bold text-white text-xl leading-relaxed">
+        <p className="font-bold text-white text-xl leading-relaxed mb-[2rem]">
           Code Kshetra 2.0, a 36-hour hackathon in February 2025, invites tech
           enhusisasts to a reviting experience of innovation. Dive into coding
           challenges, showcase your skills, and seize the chance to win exciting

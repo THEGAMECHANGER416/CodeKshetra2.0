@@ -140,11 +140,11 @@ const Home = () => {
             </div>
 
             {/* Registrations section */}
-            <div className="col-span-2 md:col-span-3 animate-fadeInDown row-span-3 rounded-3xl bg-secondary z-20">
+            <div className="col-span-2 md:col-span-3 animate-fadeInDown row-span-3 md:row-span-2 rounded-3xl bg-secondary z-20">
               <div className="text-pink mt-4 text-center md:mt-8 lg:mt-4 md:text-7xl lg:text-4xl text-3xl sm:text-4xl font-bold font-bebas">
                 REGISTRATIONS
               </div>
-              <div className="font-bold md:hidden lg:block text-4xl my-2 sm:text-8xl lg:text-8xl lg:mt-6 text-white">
+              <div className="font-bold md:hidden lg:block text-4xl my-2 sm:text-8xl lg:text-8xl lg:mt-2 text-white">
                 {Math.floor(count)} +
               </div>
               <div className="font-bold hidden md:block lg:hidden text-6xl mt-2 sm:text-8xl text-white">
@@ -153,7 +153,7 @@ const Home = () => {
             </div>
 
             {/* Countdown Timer */}
-            <div className="col-span-2 md:col-span-2 row-span-3 animate-fadeInUp rounded-3xl bg-secondary z-20">
+            <div className="col-span-2 md:col-span-2 row-span-3 md:row-span-2 animate-fadeInUp rounded-3xl bg-secondary z-20">
               {/* <div className="font-bold text-center text-pink mt-4 text-3xl sm:text-4xl font-bebas">
                 EVENT IN
               </div> */}

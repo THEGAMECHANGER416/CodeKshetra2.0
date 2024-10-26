@@ -2,7 +2,7 @@ import logo from "../../../public/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-900 text-zinc-300 py-10 w-full rounded-t-[50px]" style={{ width: '100vw', marginLeft: '-50vw', marginRight: '-50vw', left: '50%', position: 'relative' }}>
+    <footer className="bg-secondary text-zinc-300 py-10 w-full rounded-t-[50px]" style={{ width: '100vw', marginLeft: '-50vw', marginRight: '-50vw', left: '50%', position: 'relative' }}>
       <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-start">
 
         <div className="w-full md:w-1/3 mb-8 md:mb-0 text-center">

@@ -138,6 +138,22 @@ interface NavItemProps {
   ) => void;
 }
 
+const useMediaQuery = (query: string) => {
+  const [matches, setMatches] = useState<boolean>(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    setMatches(media.matches);
+
+    const handler = (event: MediaQueryListEvent) => setMatches(event.matches);
+    media.addEventListener("change", handler);
+
+    return () => media.removeEventListener("change", handler);
+  }, [query]);
+
+  return matches;
+};
+
 const NavItem: React.FC<NavItemProps> = ({
   icon,
   label,
@@ -150,30 +166,38 @@ const NavItem: React.FC<NavItemProps> = ({
   onClick,
 }) => {
   const navItemRef = useRef<HTMLButtonElement>(null);
-  const isActive = selected || (target === to && false); // Determine if the item is active based on selected or target state
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const isDesktop = useMediaQuery("(min-width: 768px)"); // Change the width as needed
+  const isActive = selected || (target === to && false);
 
   return (
     <div className="flex-1 md:flex-none">
       <button
         ref={navItemRef}
         className={`w-full md:w-16 py-2 h-[4rem] flex items-center justify-center transition-colors 
-          ${isActive ? "bg-pink text-[#151a20] md:bg-pink md:text-[#151a20]" : "text-pink"}
-
-        ${
-          isFirst
-            ? "rounded-l-full md:rounded-t-full md:rounded-b-none"
-            : isLast
-            ? "rounded-r-full md:rounded-b-full md:rounded-t-none"
-            : ""
-        }   
-        `} // Update logic to check isActive
-        onClick={() => onClick(to, scrollTo, navItemRef)} 
+          ${isActive ? "bg-pink text-[#151a20] md:bg-pink md:text-[#151a20]" : ""}
+          ${isHovered && isDesktop ? "bg-pink text-[#151a20]" : ""}
+          ${
+            isFirst
+              ? "rounded-l-full md:rounded-t-full md:rounded-b-none"
+              : isLast
+              ? "rounded-r-full md:rounded-b-full md:rounded-t-none"
+              : ""
+          }   
+        `}
+        onClick={() => {
+            onClick(to, scrollTo, navItemRef)
+          }
+        } 
+        onMouseOver={() => isDesktop && setIsHovered(true)}
+        onMouseOut={() => isDesktop && setIsHovered(false)}
         aria-label={label}
       >
-        <span className=" font-bold">{icon}</span>
+        <span className="font-bold">{icon}</span>
       </button>
     </div>
   );
 };
+
 
 export default Navbar;

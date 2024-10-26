@@ -50,15 +50,15 @@ function App() {
             team: mentorCardRef,
           }}
         />
-        <div ref={homeRef} className="">
+        <div ref={homeRef} className="md:mt-[4rem]">
           <Home />
         </div>
-        <div ref={aboutUsRef} className="">
+        <div ref={aboutUsRef} className="md:mt-[-10rem] mt-[-3rem]">
           <AboutUs />
         </div>
         <div
           ref={timelineRef}
-          className="h-screen mb-[50rem] max-w-400:mb-[40rem] between-768-900:mb-[60rem] min-w-1024:mb-[30rem]"
+          className="h-screen mb-[35rem] mt-[-15rem] max-w-400:mb-[40rem] max-w-400:mt-[-15rem] between-768-900:mb-[60rem] min-w-1024:mb-[10rem]"
         >
           <TimeLine />
         </div>
@@ -67,7 +67,7 @@ function App() {
         <div ref={problemStatementRef} className="min-h-[70dvh] h-fit">
           <ProblemStatement />
         </div>
-        <div ref={sponsorsRef} className="h-100 mt-24 mb-40">
+        <div ref={sponsorsRef} className="h-100 mb-40">
           <Sponsors/>
         </div>
         <div ref={prizePoolRef} className="h-screen">
