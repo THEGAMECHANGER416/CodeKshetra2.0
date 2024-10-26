@@ -6,7 +6,7 @@ import MentorCard from "./components/custom/MentorCard";
 import Navbar from "./components/custom/Navbar";
 import ProblemStatement from "./components/custom/ProblemStatement";
 import TimeLine from "./components/custom/TimeLine";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom"; // Use HashRouter for smooth scrolling
 import { useRef } from "react";
 import ScrollHandler from "./components/custom/ScrollHandler";
 import Footer from "./components/custom/Footer";
@@ -50,33 +50,33 @@ function App() {
             team: mentorCardRef,
           }}
         />
-        <div ref={homeRef} className="">
+
+        <div id="home" ref={homeRef} className="md:mt-[4rem]">
           <Home />
         </div>
-        <div ref={aboutUsRef} className="">
+        <div id="about" ref={aboutUsRef} className="md:mt-[-10rem] mt-[-3rem]">
           <AboutUs />
         </div>
         <div
+          id="timeline"
           ref={timelineRef}
-          className="h-screen mb-[50rem] max-w-400:mb-[40rem] between-768-900:mb-[60rem] min-w-1024:mb-[30rem]"
+          className="h-screen mb-[35rem] mt-[-15rem] max-w-400:mb-[40rem] max-w-400:mt-[-15rem] between-768-900:mb-[60rem] min-w-1024:mb-[10rem]"
         >
           <TimeLine />
         </div>
-
-        {/* chagned the height of this as requested so that it doesn't take up the whole screen */}
-        <div ref={problemStatementRef} className="min-h-[70dvh] h-fit">
+        <div id="problems" ref={problemStatementRef} className="min-h-[70dvh] h-fit">
           <ProblemStatement />
         </div>
-        <div ref={sponsorsRef} className="h-100 mt-24 mb-40">
-          <Sponsors/>
+        <div id="sponsors" ref={sponsorsRef} className="h-100 mb-40">
+          <Sponsors />
         </div>
-        <div ref={prizePoolRef} className="h-screen">
+        <div id="prizes" ref={prizePoolRef} className="h-screen">
           <Prizes />
         </div>
-        <div ref={faqRef} className="h-100">
+        <div id="faq" ref={faqRef} className="h-100">
           <Faq />
         </div>
-        <div ref={mentorCardRef} className="h-screen">
+        <div id="team" ref={mentorCardRef} className="h-screen">
           <MentorCard />
         </div>
 

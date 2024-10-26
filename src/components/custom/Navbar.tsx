@@ -1,11 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
-import {
-  FaGripLines,
-  FaPenToSquare,
-  FaQuestion,
-  FaRegClock,
-} from "react-icons/fa6";
+import { FaGripLines, FaPenToSquare, FaQuestion, FaRegClock } from "react-icons/fa6";
 import { RiTeamFill } from "react-icons/ri";
 import { HiHome } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
@@ -23,23 +18,50 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ scrollRefs }) => {
-  const [selectedSection, setSelectedSection] = useState<string>("");
-  const [targetSection, setTargetSection] = useState<string>("");
+  const [selectedSection, setSelectedSection] = useState<string>("#home");
   const location = useLocation();
 
   useEffect(() => {
-    setSelectedSection(location.pathname);
-  }, [location.pathname]);
+    setSelectedSection(location.hash || "#home");
+  }, [location.hash]);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5 // Adjust as needed
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setSelectedSection(`#${entry.target.id}`);
+        }
+      });
+    }, options);
+
+    Object.values(scrollRefs).forEach(ref => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      Object.values(scrollRefs).forEach(ref => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, [scrollRefs]);
 
   const handleNavClick = (
-    path: string,
+    hash: string,
     ref: React.RefObject<HTMLDivElement>,
     navItemRef: React.RefObject<HTMLButtonElement>
   ) => {
-    // Set the target section when nav item is clicked
-    setTargetSection(path);
+    window.location.hash = hash;
     ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    // Scroll the clicked nav item into view
     navItemRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
@@ -49,71 +71,62 @@ const Navbar: React.FC<NavbarProps> = ({ scrollRefs }) => {
 
   return (
     <div className="fixed md:left-[1rem] z-50 md:top-1/2 md:transform md:-translate-y-1/2 bottom-[5rem] md:bottom-auto right-[1rem] w-11/12 md:w-16 bg-[#151a20] text-white rounded-full shadow-[0px_0px_10px_rgba(0,0,0,0.5)]">
-
-
       <div className="flex md:flex-col md:items-center h-auto gap-0.5 overflow-x-auto">
         <NavItem
-          to="/"
+          hash="#home"
           icon={<HiHome />}
           label="Home"
           isFirst
-          selected={selectedSection === "/"}
-          target={targetSection}
+          selected={selectedSection === "#home"}
           scrollTo={scrollRefs.home}
           onClick={handleNavClick}
         />
         <NavItem
-          to="/about"
+          hash="#about"
           icon={<FaGripLines />}
           label="About"
-          selected={selectedSection === "/about"}
-          target={targetSection}
+          selected={selectedSection === "#about"}
           scrollTo={scrollRefs.about}
           onClick={handleNavClick}
         />
         <NavItem
-          to="/timeline"
+          hash="#timeline"
           icon={<FaRegClock />}
           label="TimeLine"
-          selected={selectedSection === "/timeline"}
-          target={targetSection}
+          selected={selectedSection === "#timeline"}
           scrollTo={scrollRefs.timeline}
           onClick={handleNavClick}
         />
         <NavItem
-          to="/problems"
+          hash="#problems"
           icon={<FaPenToSquare />}
           label="Problems"
-          selected={selectedSection === "/problems"}
-          target={targetSection}
+          selected={selectedSection === "#problems"}
           scrollTo={scrollRefs.problems}
           onClick={handleNavClick}
         />
         <NavItem
-          to="/prizes"
+          hash="#prizes"
           icon={<RiMoneyRupeeCircleFill />}
           label="Prizes"
-          selected={selectedSection === "/prizes"}
-          target={targetSection}
+          selected={selectedSection === "#prizes"}
           scrollTo={scrollRefs.prizes}
           onClick={handleNavClick}
         />
         <NavItem
-          to="/dontknow"
+          hash="#faq"
           icon={<FaQuestion />}
-          label="DontKnow"
-          selected={selectedSection === "/dontknow"}
-          target={targetSection}
+          label="Don't Know"
+          selected={selectedSection === "#faq"}
           scrollTo={scrollRefs.faq}
           onClick={handleNavClick}
         />
         <NavItem
-          to="/team"
+          hash="#team"
           icon={<RiTeamFill />}
           label="Team"
           isLast
-          selected={selectedSection === "/team"}
-          target={targetSection}
+          selected={selectedSection === "#team"}
           scrollTo={scrollRefs.team}
           onClick={handleNavClick}
         />
@@ -125,52 +138,80 @@ const Navbar: React.FC<NavbarProps> = ({ scrollRefs }) => {
 interface NavItemProps {
   icon: React.ReactNode;
   label: string;
-  to: string;
+  hash: string;
   isFirst?: boolean;
   isLast?: boolean;
   selected: boolean;
-  target: string; // Add target prop
   scrollTo: React.RefObject<HTMLDivElement>;
   onClick: (
-    path: string,
+    hash: string,
     ref: React.RefObject<HTMLDivElement>,
     navItemRef: React.RefObject<HTMLButtonElement>
   ) => void;
 }
 
+const useMediaQuery = (query: string) => {
+  const [matches, setMatches] = useState<boolean>(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    setMatches(media.matches);
+
+    const handler = (event: MediaQueryListEvent) => setMatches(event.matches);
+    media.addEventListener("change", handler);
+
+    return () => media.removeEventListener("change", handler);
+  }, [query]);
+
+  return matches;
+};
+
 const NavItem: React.FC<NavItemProps> = ({
   icon,
   label,
-  to,
+  hash,
   isFirst,
   isLast,
   selected,
-  target,
   scrollTo,
   onClick,
 }) => {
   const navItemRef = useRef<HTMLButtonElement>(null);
-  const isActive = selected || (target === to && false); // Determine if the item is active based on selected or target state
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const isDesktop = useMediaQuery("(min-width: 768px)"); // Check for desktop
+
+  const handleMouseOver = () => {
+    if (isDesktop) {
+      setIsHovered(true);
+    }
+  };
+
+  const handleMouseOut = () => {
+    if (isDesktop) {
+      setIsHovered(false);
+    }
+  };
+
+  const isActive = selected;
 
   return (
     <div className="flex-1 md:flex-none">
       <button
         ref={navItemRef}
         className={`w-full md:w-16 py-2 h-[4rem] flex items-center justify-center transition-colors 
-          ${isActive ? "bg-pink text-[#151a20] md:bg-pink md:text-[#151a20]" : "text-pink"}
-
-        ${
-          isFirst
-            ? "rounded-l-full md:rounded-t-full md:rounded-b-none"
-            : isLast
-            ? "rounded-r-full md:rounded-b-full md:rounded-t-none"
-            : ""
-        }   
-        `} // Update logic to check isActive
-        onClick={() => onClick(to, scrollTo, navItemRef)} 
+          ${isActive ? "bg-pink text-[#151a20] md:bg-pink md:text-[#151a20]" : ""}
+          ${isHovered ? "bg-pink text-[#151a20]" : ""}
+          ${isFirst ? "rounded-l-full md:rounded-t-full md:rounded-b-none" : ""}
+          ${isLast ? "rounded-r-full md:rounded-b-full md:rounded-t-none" : ""}
+        `}
+        onClick={() => {
+          onClick(hash, scrollTo, navItemRef);
+        }} 
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
         aria-label={label}
       >
-        <span className=" font-bold">{icon}</span>
+        <span className="font-bold">{icon}</span>
       </button>
     </div>
   );
