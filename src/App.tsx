@@ -51,23 +51,32 @@ function App() {
           }}
         />
 
-        <div id="home" ref={homeRef} className="md:mt-[4rem]">
+        <div id="home" ref={homeRef} className="xl:mt-10">
           <Home />
         </div>
-        <div id="about" ref={aboutUsRef} className="md:mt-[-10rem] mt-[-3rem]">
+        <div id="about" ref={aboutUsRef} className="mt-[-3rem] min-w-1024:mt-[-5rem]">
           <AboutUs />
         </div>
         <div
           id="timeline"
           ref={timelineRef}
-          className="h-screen mb-[35rem] mt-[-15rem] max-w-400:mb-[40rem] max-w-400:mt-[-15rem] between-768-900:mb-[60rem] min-w-1024:mb-[10rem]"
+          className="
+            h-screen 
+            mb-[50rem] 
+            mt-[-5rem] 
+            mb-[60rem] sm:mb-[90rem]
+            sm:mb-[50rem] md:mb-[80rem]
+            lg:mb-[30rem]
+            xl:mb-[20rem]
+            2xl:mb-[10rem]
+          "
         >
           <TimeLine />
         </div>
         <div id="problems" ref={problemStatementRef} className="min-h-[70dvh] h-fit">
           <ProblemStatement />
         </div>
-        <div id="sponsors" ref={sponsorsRef} className="h-100 mb-40">
+        <div id="sponsors" ref={sponsorsRef} className="h-100 mb-40 mt-[10rem]">
           <Sponsors />
         </div>
         <div id="prizes" ref={prizePoolRef} className="h-screen">

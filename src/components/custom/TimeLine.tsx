@@ -108,16 +108,16 @@ const TimeLine: React.FC = () => {
 
       {/* Image section */}
       <div className="text-center h-[15rem] w-full mb-[16rem]"> 
-  <picture>
-    <source media="(min-width: 1024px)" srcSet={laptop} />
-    <source media="(min-width: 768px)" srcSet={Tablet} />
-    <img
-      src={Mobile}
-      alt="Event SVG"
-      className="w-full h-auto mx-auto max-w-[1200px] block"
-    />
-  </picture>
-</div>
+        <picture>
+          <source media="(min-width: 1024px)" srcSet={laptop} />
+          <source media="(min-width: 768px)" srcSet={Tablet} />
+          <img
+            src={Mobile}
+            alt="Event SVG"
+            className="w-full h-auto mx-auto max-w-[1200px] block"
+          />
+        </picture>
+      </div>
 
     </div>
   );
