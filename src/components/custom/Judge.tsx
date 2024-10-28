@@ -1,8 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
-import { Autoplay } from "swiper/modules";
-import image1 from "../../../public/assets/Main Logo.png";
+import "swiper/css/pagination";
+import { Autoplay, Pagination } from "swiper/modules";
+import Logo from "../../../public/assets/Main Logo.png";
 
 interface Judge {
   img: string;
@@ -10,24 +11,28 @@ interface Judge {
 }
 
 const judges: Judge[] = [
-  { img: image1, name: "Judge 1" },
-  { img: image1, name: "Judge 2" },
-  { img: image1, name: "Judge 3" },
-  { img: image1, name: "Judge 4" },
-  { img: image1, name: "Judge 5" },
+  { img: Logo, name: "Judge 1" },
+  { img: Logo, name: "Judge 2" },
+  { img: Logo, name: "Judge 3" },
+  { img: Logo, name: "Judge 4" },
+  { img: Logo, name: "Judge 5" },
 ];
 
 export default function Judge(): JSX.Element {
   return (
-    <div className="container mx-auto">
-      <div className="App bg-black min-h-screen text-white">
-        <h1 className="md:text-[12rem] text-6xl font-bebas text-pink font-bold mb-[4rem] md:mb-[6rem] mt-[5rem] text-center">EVENT JUDGES</h1>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 bg-black min-h-screen text-white">
+      <div className="text-center mt-8 mb-12 lg:mt-12 lg:mb-16">
+        <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bebas font-bold text-pink mb-6 md:mb-10">
+          EVENT JUDGES
+        </h1>
+      </div>
+
       {/* Desktop View */}
-      <div className="hidden lg:flex justify-center items-center space-x-10">
+      <div className="hidden lg:flex justify-center items-center space-x-6 xl:space-x-10 mb-12">
         {judges.map((judge, index) => (
           <div
             key={index}
-            className={`w-48 h-48 bg-neutral-200/10 ${
+            className={`w-32 h-32 xl:w-48 xl:h-48 bg-neutral-200/15 ${
               index % 2 === 0 ? "rounded-lg" : "rounded-full"
             } overflow-hidden flex justify-center items-center ${
               index === 2 ? "triangle-shape" : ""
@@ -44,20 +49,25 @@ export default function Judge(): JSX.Element {
 
       {/* Mobile View */}
       <Swiper
-        spaceBetween={50}
+        spaceBetween={30}
         slidesPerView={1}
         autoplay={{ delay: 2500 }}
-        modules={[Autoplay]}
+        pagination={{
+          clickable: true,
+          bulletClass: 'swiper-pagination-bullet',
+          bulletActiveClass: 'swiper-pagination-bullet-active',
+        }}
+        modules={[Autoplay, Pagination]}
         className="lg:hidden"
       >
         {judges.map((judge, index) => (
           <SwiperSlide key={index}>
-            <div className="flex justify-center">
+            <div className="flex justify-center mb-10"> 
               <div
-                className={`w-64 h-64 bg-white ${
+                className={`w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 bg-neutral-200/15 ${
                   index % 2 === 0 ? "rounded-lg" : "rounded-full"
                 } overflow-hidden flex justify-center items-center ${
-                  index === 2 ? "triangle-shape" : "rounded-full"
+                  index === 2 ? "triangle-shape" : ""
                 }`}
               >
                 <img
@@ -70,7 +80,18 @@ export default function Judge(): JSX.Element {
           </SwiperSlide>
         ))}
       </Swiper>
-      </div>
+
+      {/* Custom Pagination Styling */}
+      <style>{`
+        .swiper-pagination-bullet {
+          background-color: white !important; 
+          width: 12px; 
+          height: 12px;
+          top:10px;
+        }
+        .swiper-pagination {
+          bottom: 15px; /* Adjust distance from the bottom of the slide */
+      `}</style>
     </div>
   );
 }

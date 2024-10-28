@@ -85,14 +85,14 @@ function App() {
         <div id="prizes" ref={prizePoolRef} className="h-screen">
           <Prizes />
         </div>
-        <div id="faq" ref={faqRef} className="h-100">
-          <Faq />
-        </div>
         {/* <div id="team" ref={mentorCardRef} className="h-screen">
           <MentorCard />
-        </div> */}
+          </div> */}
         <div id="judge" ref={judgeRef} className="h-screen">
           <Judge />
+        </div>
+        <div id="faq" ref={faqRef} className="h-100">
+            <Faq />
         </div>
         <Footer />
       </>
