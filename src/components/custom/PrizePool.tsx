@@ -86,26 +86,26 @@ export default function Component() {
   return (
     <motion.section
       ref={ref}
-      className="py-16 bg-gradient-to-b from-primary/10 to-primary/5"
+      className="py-12 sm:py-16 bg-gradient-to-b from-primary/10 to-primary/5 overflow-hidden"
       variants={containerVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
     >
-      <div className="container mx-auto px-4">
-        <h2 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
+      <div className="container mx-auto px-4 max-w-[90vw] sm:max-w-[80vw]">
+        <h2 className="text-5xl md:text-8xl font-bold text-pink mb-12 text-center">
           Prize Pool
         </h2>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-12 mb-16">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-16 md:space-x-4">
           <motion.div
             variants={leftCardVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="w-full md:w-1/4"
+            className="flex-1 w-full md:max-w-[30%] lg:max-w-[25%]"
           >
             <PrizeCard title="2nd Prize" amount="$3,000" position="left" icon="🥈" />
           </motion.div>
-          <motion.div 
-            className="w-full md:w-1/3 order-first md:order-none"
+          <motion.div
+            className="flex-1 w-full md:max-w-[40%] lg:max-w-[30%] order-first md:order-none"
             initial={{ opacity: 0, scale: 1.2, y: -30 }}
             animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
             transition={{
@@ -130,7 +130,7 @@ export default function Component() {
             variants={rightCardVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="w-full md:w-1/4"
+            className="flex-1 w-full md:max-w-[30%] lg:max-w-[25%]"
           >
             <PrizeCard title="3rd Prize" amount="$1,000" position="right" icon="🥉" />
           </motion.div>
@@ -139,7 +139,7 @@ export default function Component() {
           variants={participationVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="w-full max-w-2xl mx-auto"
+          className="w-full max-w-lg mx-auto px-4"
         >
           <ParticipationCard />
         </motion.div>
@@ -175,8 +175,8 @@ function PrizeCard({
       >
         {icon}
       </div>
-      <h3 className={`text-2xl font-bold mb-3 ${isFirst ? "text-white" : "text-white"}`}>{title}</h3>
-      <p className={`text-4xl font-extrabold mb-6 ${isFirst ? "text-white" : "text-white"}`}>{amount}</p>
+      <h3 className="text-2xl font-bold mb-3 text-white">{title}</h3>
+      <p className="text-4xl font-extrabold mb-6 text-white">{amount}</p>
       <div className={`mt-4 ${position === "left" ? "text-left" : position === "right" ? "text-right" : "text-center"}`}>
         <span
           className={`inline-block text-sm px-4 py-2 rounded-full font-semibold
