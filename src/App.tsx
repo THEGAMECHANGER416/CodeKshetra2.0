@@ -2,7 +2,7 @@ import "./App.css";
 import Home from "./components/custom/Home";
 import AboutUs from "./components/custom/AboutUs";
 import Faq from "./components/custom/FAQ";
-import MentorCard from "./components/custom/MentorCard";
+// import MentorCard from "./components/custom/MentorCard";
 import Navbar from "./components/custom/Navbar";
 import ProblemStatement from "./components/custom/ProblemStatement";
 import TimeLine from "./components/custom/TimeLine";
@@ -12,6 +12,7 @@ import ScrollHandler from "./components/custom/ScrollHandler";
 import Footer from "./components/custom/Footer";
 import Sponsors from "./components/custom/Sponsor";
 import Prizes from "./components/custom/PrizePool";
+import Judge from "./components/custom/Judge";
 
 function App() {
   // Create refs for each section
@@ -23,6 +24,7 @@ function App() {
   const prizePoolRef = useRef<HTMLDivElement | null>(null);
   const faqRef = useRef<HTMLDivElement | null>(null);
   const mentorCardRef = useRef<HTMLDivElement | null>(null);
+  const JudgeRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <Router>
@@ -36,6 +38,7 @@ function App() {
             prizes: prizePoolRef,
             faq: faqRef,
             team: mentorCardRef,
+            judge: JudgeRef,
           }}
         />
 
@@ -81,13 +84,16 @@ function App() {
         <div id="prizes" ref={prizePoolRef} className="h-100">
           <Prizes />
         </div>
+        <div id="judge" ref={JudgeRef} className="h-100">
+          <Judge />
+        </div>
         <div id="faq" ref={faqRef} className="h-100">
           <Faq />
         </div>
-        <div id="team" ref={mentorCardRef} className="h-screen">
+        {/* <div id="team" ref={mentorCardRef} className="h-screen">
           <MentorCard />
-        </div>
-
+        </div> */}
+        
         <Footer />
       </>
     </Router>
