@@ -62,12 +62,11 @@ function App() {
           ref={timelineRef}
           className="
             h-screen 
-            mb-[50rem] 
             mt-[-5rem] 
-            mb-[60rem] sm:mb-[90rem]
-            sm:mb-[50rem] md:mb-[80rem]
-            lg:mb-[30rem]
-            xl:mb-[20rem]
+            mb-[60rem] sm:mb-[90rem] 
+            md:mb-[80rem]
+            lg:mb-[30rem] 
+            xl:mb-[20rem] 
             2xl:mb-[10rem]
           "
         >
@@ -79,7 +78,7 @@ function App() {
         <div id="sponsors" ref={sponsorsRef} className="h-100 mb-40 mt-[10rem]">
           <Sponsors />
         </div>
-        <div id="prizes" ref={prizePoolRef} className="h-screen">
+        <div id="prizes" ref={prizePoolRef} className="h-100">
           <Prizes />
         </div>
         <div id="faq" ref={faqRef} className="h-100">
