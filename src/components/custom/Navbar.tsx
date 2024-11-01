@@ -115,20 +115,20 @@ const Navbar: React.FC<NavbarProps> = ({ scrollRefs }) => {
           onClick={handleNavClick}
         />
         <NavItem
-          hash="#faq"
-          icon={<FaQuestion />}
-          label="Don't Know"
-          selected={selectedSection === "#faq"}
-          scrollTo={scrollRefs.faq}
+          hash="#judge"
+          icon={<RiTeamFill />}
+          label="Team"
+          selected={selectedSection === "#team"}
+          scrollTo={scrollRefs.team}
           onClick={handleNavClick}
         />
         <NavItem
-          hash="#team"
-          icon={<RiTeamFill />}
-          label="Team"
+          hash="#faq"
+          icon={<FaQuestion />}
+          label="Don't Know"
           isLast
-          selected={selectedSection === "#team"}
-          scrollTo={scrollRefs.team}
+          selected={selectedSection === "#faq"}
+          scrollTo={scrollRefs.faq}
           onClick={handleNavClick}
         />
       </div>
