@@ -6,7 +6,7 @@ export default {
     extend: {
       screens: {
         'max-w-400': '400px', // Custom screen for min-width 600px
-        'between-768-900': { 'min': '768px', 'max': '1000px' },
+        'between-768-900': { 'min': '768px', 'max': '900px' },
         'min-w-1024': '1024px'
       },
       fontFamily: {

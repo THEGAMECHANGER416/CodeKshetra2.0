@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Mobile from '/assets/mobile.png'; // Use this format
-import Tablet from "/assets/tablet.png"
-import laptop from "/assets/laptop.png"
+import Mobile from '/assets/mobile.png';
+import Tablet from "/assets/tablet.png";
+import laptop from "/assets/laptop.png";
+import { useEffect } from 'react';
 
 interface Task {
   time: string;
@@ -26,7 +27,6 @@ const dayData: DayContent[] = [
       { time: '16:00 PM', description: 'Mentoring Round 1', date: '21 February 2025' },
       { time: '20:00 PM', description: 'Dinner', date: '21 February 2025' },
       { time: '00:00 PM', description: 'Midnight DJ', date: '21 February 2025' },
-
     ],
   },
   {
@@ -39,70 +39,73 @@ const dayData: DayContent[] = [
       { time: '15:00 PM', description: 'Result Declaration for top 15', date: '22 February 2025' },
       { time: '16:30 PM', description: 'Judgement Round Begins', date: '22 February 2025' },
       { time: '18:30 PM', description: 'Winner Declaration', date: '22 February 2025' },
-      
     ],
   },
 ];
 
 const TimeLine: React.FC = () => {
   const [selectedDay, setSelectedDay] = useState(0);
+  const [isBetween768And900, setIsBetween768And900] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setIsBetween768And900(width >= 768 && width <= 900);
+    };
+
+    handleResize(); // Check width on initial load
+    window.addEventListener('resize', handleResize); // Listen for window resize
+
+    // Clean up listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className="p-4 md:pl-24 mt-96">
       <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
         EVENT SCHEDULE
       </h1>
-{/* Horizontal timeline for larger screens */}
-{/* Horizontal timeline for larger screens */}
-{/* Horizontal timeline for larger screens */}
-<div className="relative mb-[7rem] hidden md:flex">
-  {/* Background line */}
-  <div className="absolute bg-pink h-1 top-1/2 left-[5rem] right-16 z-0 transform md:translate-y-[-4.5rem]"></div>
 
-  {dayData[selectedDay].tasks.map((task, index) => (
-    <div
-      key={index}
-      className="flex flex-col items-center relative px-4"
-      style={{ textAlign: "center" }}
-    >
-      {/* Circle aligned with horizontal line */}
-      <div className="bg-white w-8 h-8 rounded-full border-8 border-purple z-10 relative -translate-y-1/2">
-        
+      {/* Days Button for both horizontal and vertical views, hidden in between-768-900 view */}
+      
+
+      {/* Horizontal Timeline for larger screens */}
+      <div className="relative mb-[5rem] hidden md:flex between-768-900:hidden">
+        <div className="absolute bg-pink h-1 top-1/2 left-[5rem] right-16 z-0 transform md:translate-y-[-4.5rem]"></div>
+        {dayData[selectedDay].tasks.map((task, index) => (
+          <div key={index} className="flex flex-col items-center relative px-4">
+            <div className="bg-white w-8 h-8 rounded-full border-8 border-purple z-10 relative -translate-y-1/2"></div>
+            <div className="flex flex-col items-center mt-4">
+              <span className="text-lg text-white font-bold text-center">{task.description}</span>
+              <span className="text-xs text-white mt-1">{`${task.date} | ${task.time}`}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center space-x-[3rem] mb-8 md:block between-768-900:hidden">
+        {dayData.map((day, index) => (
+          <button
+            key={index}
+            onClick={() => setSelectedDay(index)}
+            className={`px-6 py-2  font-bold rounded-[3rem] ${selectedDay === index ? 'bg-pink text-white' : 'bg-gray-200 text-gray-600'}`}
+          >
+            {day.title}
+          </button>
+        ))}
       </div>
 
-      {/* Text content below each circle */}
-      <div className="flex flex-col items-center mt-4">
-        <span className="text-lg text-white font-bold text-center leading-tight md:leading-normal lg:leading-relaxed">
-          {task.description}
-        </span>
-        <span className="text-xs text-white mt-1">{`${task.date} | ${task.time}`}</span>
-      </div>
-    </div>
-  ))}
-</div>
-
-
-
-
-
-
-      {/* Vertical timeline for small screens */}
-      <div className="block md:hidden relative mb-10">
+      {/* Vertical Timeline for small screens */}
+      <div className="block md:hidden relative mb-10 between-768-900:hidden">
         <div className="absolute bg-purple-600 w-1 left-[19%] z-0"></div>
-
         <div className="flex flex-col items-start justify-between pl-[15%] relative">
           {dayData[selectedDay].tasks.map((task, index) => (
             <div key={index} className="relative flex justify-between items-start mb-8">
               <div className="flex-shrink-0 relative">
-                {/* Circles */}
                 <div className="bg-white w-8 h-8 rounded-full border-8 border-purple z-10"></div>
-
-                {/* Connecting Line */}
                 {index < dayData[selectedDay].tasks.length - 1 && (
-                  <div className="absolute  left-[50%] transform -translate-x-1/2 w-1 h-[9vh] bg-pink z-0"></div>
+                  <div className="absolute left-[50%] transform -translate-x-1/2 w-1 h-[9vh] bg-pink z-0"></div>
                 )}
               </div>
-
               <div className="ml-4">
                 <span className="text-lg text-white font-bold">{task.description}</span>
                 <br />
@@ -113,22 +116,40 @@ const TimeLine: React.FC = () => {
         </div>
       </div>
 
-      {/* Day selection buttons */}
-      <div className="flex justify-center space-x-[4rem] mb-[6rem]">
-        {dayData.map((day, index) => (
-          <button
-            key={index}
-            onClick={() => setSelectedDay(index)}
-            className={`px-6 py-2 w-32 rounded-2xl border-2 border-secondary font-medium 
-              ${selectedDay === index ? 'bg-[#FF32F4] text-white' : 'text-white'} 
-              hover:bg-[#FF32F4] transition-colors duration-200`}
-          >
-            {day.title}
-          </button>
-        ))}
-      </div>
+      {/* Between 768-900 view without day buttons */}
+     
+      {isBetween768And900 && (
+        <div className="between-768-900:flex between-768-900:space-x-8 between-768-900:justify-center">
+          {dayData.map((day, dayIndex) => (
+            <div key={dayIndex} className="between-768-900:w-1/2 relative">
+              <h2 className="text-2xl font-bold text-pink mb-4 text-center">{day.title}</h2>
+              <div className="relative mb-10">
+                <div className="flex flex-col items-start pl-[25%] relative">
+                  {day.tasks.map((task, index) => (
+                    <div key={index} className="relative flex justify-start items-start mb-8">
+                      <div className="flex-shrink-0 relative">
+                        <div className="bg-white w-8 h-8 rounded-full border-8 border-purple z-10"></div>
+                        {index < day.tasks.length - 1 && (
+                          <div className="absolute left-[50%] transform -translate-x-1/2 w-1 h-[7vh] bg-pink z-0"></div>
+                        )}
+                      </div>
+                      <div className="ml-4">
+                        <span className="text-lg text-white font-bold">{task.description}</span>
+                        <br />
+                        <span className="text-sm text-white mt-1">{`${task.date} | ${task.time}`}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
 
-      {/* Image section */}
+
+
+      {/* Image Section */}
       <div className="text-center h-[15rem] w-full mb-[16rem]"> 
         <picture>
           <source media="(min-width: 1024px)" srcSet={laptop} />
@@ -140,10 +161,8 @@ const TimeLine: React.FC = () => {
           />
         </picture>
       </div>
-
     </div>
   );
 };
-
 
 export default TimeLine;
