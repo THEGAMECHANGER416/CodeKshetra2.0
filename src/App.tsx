@@ -57,7 +57,11 @@ function App() {
         <div id="home" ref={homeRef} className="xl:mt-10">
           <Home />
         </div>
-        <div id="about" ref={aboutUsRef} className="mt-[2rem] sm:mt-[-3rem] min-w-1024:mt-[-5rem]">
+        <div
+          id="about"
+          ref={aboutUsRef}
+          className="mt-[2rem] sm:mt-[-3rem] min-w-1024:mt-[-5rem]"
+        >
           <AboutUs />
         </div>
         <div
@@ -75,7 +79,11 @@ function App() {
         >
           <TimeLine />
         </div>
-        <div id="problems" ref={problemStatementRef} className="min-h-[70dvh] h-fit">
+        <div
+          id="problems"
+          ref={problemStatementRef}
+          className="min-h-[70dvh] h-fit"
+        >
           <ProblemStatement />
         </div>
         <div id="sponsors" ref={sponsorsRef} className="h-100 mb-40 mt-[10rem]">
@@ -84,16 +92,21 @@ function App() {
         <div id="prizes" ref={prizePoolRef} className="h-100">
           <Prizes />
         </div>
-        <div id="judge" ref={JudgeRef} className="h-100 pt-20">
+        <div
+          id="judge"
+          ref={JudgeRef}
+          className="h-auto py-10"
+        >
           <Judge />
         </div>
+
         <div id="faq" ref={faqRef} className="h-100">
           <Faq />
         </div>
         {/* <div id="team" ref={mentorCardRef} className="h-screen">
           <MentorCard />
         </div> */}
-        
+
         <Footer />
       </>
     </Router>
