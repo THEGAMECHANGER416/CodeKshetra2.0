@@ -20,7 +20,7 @@ const judges: Judge[] = [
 
 export default function Judge(): JSX.Element {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 bg-black min-h-screen text-white">
+    <div className="container mx-auto px-4 h-auto sm:px-6 lg:px-8 bg-black text-white">
       <div className="text-center mt-8 mb-12 lg:mt-12 lg:mb-16">
         <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
           EVENT JUDGES
@@ -54,8 +54,8 @@ export default function Judge(): JSX.Element {
         autoplay={{ delay: 2500 }}
         pagination={{
           clickable: true,
-          bulletClass: 'swiper-pagination-bullet',
-          bulletActiveClass: 'swiper-pagination-bullet-active',
+          bulletClass: "swiper-pagination-bullet",
+          bulletActiveClass: "swiper-pagination-bullet-active",
         }}
         modules={[Autoplay, Pagination]}
         className="lg:hidden"

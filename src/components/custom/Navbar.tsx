@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollRefs }) => {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5 // Adjust as needed
+      threshold: 0.5
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -118,7 +118,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollRefs }) => {
           hash="#judge"
           icon={<RiTeamFill />}
           label="Team"
-          selected={selectedSection === "#team"}
+          selected={selectedSection === "#judge"}
           scrollTo={scrollRefs.team}
           onClick={handleNavClick}
         />
