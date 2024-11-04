@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Mobile from '/assets/mobile.png';
-import Tablet from "/assets/tablet.png";
+
 import laptop from "/assets/DesktopTimeline.svg";
 import { useEffect } from 'react';
 
