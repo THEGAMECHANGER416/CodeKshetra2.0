@@ -68,13 +68,11 @@ function App() {
           id="timeline"
           ref={timelineRef}
           className="
-            h-screen 
-            mt-[-5rem] 
-            mb-[60rem] sm:mb-[90rem] 
-            md:mb-[80rem]
-            lg:mb-[30rem] 
-            xl:mb-[20rem] 
-            2xl:mb-[10rem]
+            mt-[-8rem] 
+            mb-[0rem] sm:mb-[90rem] 
+            md:mb-[20rem]
+         between-768-900:mb-[0rem]
+           
           "
         >
           <TimeLine />
