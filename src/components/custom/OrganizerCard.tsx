@@ -1,7 +1,6 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { FaLinkedin } from "react-icons/fa";
 
 const LeadOrganizers = () => {
   const organizers = [
@@ -12,22 +11,10 @@ const LeadOrganizers = () => {
     { id: 5, image: "../../../public/assets/team_members/sakshamVerma.jpg", name: "Saksham Verma", linkedin: "https://www.linkedin.com/in/saksham-verma-a9390b256/" },
   ];
 
-  const settings = {
-    dots: false, 
-    infinite: true, 
-    speed: 1500, 
-    slidesToShow: 3, 
-    slidesToScroll: 1, 
-    autoplay: true, 
-    autoplaySpeed: 1000, 
-    arrows: false, 
-    swipeToSlide: true, 
-  };
-
   return (
     <div className="text-center mt-10">
-      <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
-        LEAD ORGANIZERS
+      <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[2rem] md:mb-[5rem] text-center">
+        ORGANIZERS
       </h1>
 
       {/* Desktop view with flex layout */}
@@ -50,9 +37,8 @@ const LeadOrganizers = () => {
               whiteSpace: 'nowrap',
               textOverflow: 'ellipsis',
             }}>
-              <a href={organizer.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none', fontSize: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <FaLinkedin className='text-blue-800' style={{ width: '20px', height: '20px', marginRight: '6px' }} />
-                <span>{organizer.name}</span>
+              <a href={organizer.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none', fontSize: '18px' }}>
+                {organizer.name}
               </a>
             </div>
           </div>
@@ -61,9 +47,30 @@ const LeadOrganizers = () => {
 
       {/* Mobile view with slider */}
       <div className="md:hidden">
-        <Slider {...settings}>
+        <Slider
+          dots
+          infinite
+          speed={1500}
+          slidesToShow={3}
+          slidesToScroll={1}
+          autoplay
+          autoplaySpeed={1000}
+          arrows={false}
+          swipeToSlide
+          customPaging={(i) => (
+            <div className={`custom-dot ${i === 0 ? 'active' : ''}`}></div>
+          )}
+          appendDots={(dots) => (
+            <div style={{ position: 'relative', marginTop: '20px' }}>
+              <ul style={{ display: 'flex', justifyContent: 'center', padding: '0px', gap: '1px' }}> {dots} </ul>
+            </div>
+          )}
+        >
           {organizers.map((organizer) => (
-            <div key={organizer.id} className="flex-shrink px-2 mx-auto w-32 h-52 bg-transparent rounded-[100px] flex justify-center relative">
+            <div
+              key={organizer.id}
+              className="flex-shrink px-2 mx-auto w-32 h-52 bg-transparent rounded-[100px] flex justify-center relative slider-card"
+            >
               <img src={organizer.image} alt={organizer.name} className="rounded-[100px] w-full h-full object-cover" />
               <div style={{
                 position: 'absolute',
@@ -71,7 +78,7 @@ const LeadOrganizers = () => {
                 left: '50%',
                 transform: 'translateX(-50%)',
                 textAlign: 'center',
-                color: 'white',
+                color: 'grey',
                 backgroundColor: 'rgba(0, 0, 0, 0.5)',
                 padding: '5px 12px',
                 borderRadius: '8px',
@@ -81,15 +88,43 @@ const LeadOrganizers = () => {
                 whiteSpace: 'nowrap',
                 textOverflow: 'ellipsis',
               }}>
-                <a href={organizer.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none', fontSize: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <FaLinkedin className='text-blue-300' style={{ width: '18px', height: '18px', marginRight: '5px' }} />
-                  <span>{organizer.name}</span>
+                <a href={organizer.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none', fontSize: '12px' }}>
+                  {organizer.name} 
                 </a>
               </div>
             </div>
           ))}
         </Slider>
       </div>
+
+      {/* Custom Dot and Slide Styling */}
+      <style>{`
+        /* Gray color for inactive dots */
+        .slick-dots li button:before {
+          font-size: 10px;
+          color: grey; 
+        }
+        /* Pink color for active dot */
+        .slick-dots li.slick-active button:before {
+          color: pink;
+        }
+        .custom-dot {
+          width: 8px;
+          height: 8px;
+          background-color: grey;
+          border-radius: 50%;
+        }
+        .slick-active .custom-dot {
+          background-color: #DA39AE;
+        }
+
+        /* Pink border for active card */
+        .slick-center .slider-card {
+          border: 2px solid pink;
+          transform: scale(1.1); 
+          transition: transform 0.3s ease;
+        }
+      `}</style>
     </div>
   );
 };

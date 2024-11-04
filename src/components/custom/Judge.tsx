@@ -3,7 +3,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-import Logo from "../../../public/assets/logo.png";
+import Logo from "../../../public/assets/Main Logo.png";
 
 interface Judge {
   img: string;
@@ -22,7 +22,7 @@ export default function Judge(): JSX.Element {
   return (
     <div className="container mx-auto px-4 h-auto sm:px-6 lg:px-8 bg-black text-white">
       <div className="text-center mt-8 mb-12 lg:mt-12 lg:mb-16">
-        <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
+        <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[2rem] md:mb-[6rem] text-center">
           EVENT JUDGES
         </h1>
       </div>
@@ -64,7 +64,7 @@ export default function Judge(): JSX.Element {
           <SwiperSlide key={index}>
             <div className="flex justify-center mb-10">
               <div
-                className={`w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 bg-neutral-200/15 ${
+                className={`w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-neutral-200/15 ${
                   index % 2 === 0 ? "rounded-lg" : "rounded-full"
                 } overflow-hidden flex justify-center items-center ${
                   index === 2 ? "triangle-shape" : ""
@@ -83,18 +83,23 @@ export default function Judge(): JSX.Element {
 
       {/* Custom Pagination Styling */}
       <style>{`
-        .swiper-pagination-bullet {
-          background-color: grey; 
-          width:10px;
-          height:10px;
+        .swiper-pagination {
+          display: flex;
+          justify-content: center;
+          gap: 9px;
+          bottom: 15px;
         }
-        .swiper-pagination-bullet-active {
-          background-color: #DA39AE; 
+        .swiper-pagination-bullet {
+          background-color: grey;
           width: 10px;
           height: 10px;
+          border-radius: 50%;
         }
-        .swiper-pagination {
-          bottom: 15px;
+        .swiper-pagination-bullet-active {
+          background-color: #DA39AE;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
         }
       `}</style>
     </div>
