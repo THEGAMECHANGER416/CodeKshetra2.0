@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import Mobile from '/assets/mobile.png';
-import Tablet from "/assets/tablet.png";
-import laptop from "/assets/laptop.png";
+
+import laptop from "/assets/DesktopTimeline.svg";
 import { useEffect } from 'react';
 
 interface Task {
@@ -95,6 +94,8 @@ const TimeLine: React.FC = () => {
       </div>
 
       {/* Vertical Timeline for small screens */}
+
+
       <div className="block md:hidden relative mb-10 between-768-900:hidden">
         <div className="absolute bg-purple-600 w-1 left-[19%] z-0"></div>
         <div className="flex flex-col items-start justify-between pl-[15%] relative">
@@ -150,12 +151,12 @@ const TimeLine: React.FC = () => {
 
 
       {/* Image Section */}
-      <div className="text-center h-[15rem] w-full mb-[16rem]"> 
+      <div className="text-center h-[15rem] w-full  md:mb-[10rem] mt-[8rem]"> 
         <picture>
           <source media="(min-width: 1024px)" srcSet={laptop} />
-          <source media="(min-width: 768px)" srcSet={Tablet} />
+          <source media="(min-width: 768px)" srcSet={laptop} />
           <img
-            src={Mobile}
+            src={laptop}
             alt="Event SVG"
             className="w-full h-auto mx-auto max-w-[1200px] block"
           />
