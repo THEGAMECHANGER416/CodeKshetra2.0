@@ -13,6 +13,7 @@ import Footer from "./components/custom/Footer";
 import Sponsors from "./components/custom/Sponsor";
 import Prizes from "./components/custom/PrizePool";
 import Judge from "./components/custom/Judge";
+import LeadOrganizers from "./components/custom/OrganizerCard";
 
 function App() {
   // Create refs for each section
@@ -25,6 +26,7 @@ function App() {
   const faqRef = useRef<HTMLDivElement | null>(null);
   const mentorCardRef = useRef<HTMLDivElement | null>(null);
   const JudgeRef = useRef<HTMLDivElement | null>(null);
+  const LeadOrganizersRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <Router>
@@ -39,6 +41,7 @@ function App() {
             faq: faqRef,
             team: mentorCardRef,
             judge: JudgeRef,
+            leadOrganizers: LeadOrganizersRef,
           }}
         />
 
@@ -97,7 +100,9 @@ function App() {
         >
           <Judge />
         </div>
-
+        <div id="LeadOrganizers" ref={LeadOrganizersRef} className="h-100">
+          <LeadOrganizers />
+        </div>
         <div id="faq" ref={faqRef} className="h-100">
           <Faq />
         </div>
