@@ -8,7 +8,7 @@ const LeadOrganizers = () => {
     { id: 1, image: "../../../assets/team_members/arnavGupta.jpg", name: "Arnav Gupta", linkedin: "https://www.linkedin.com/in/arnav-gupta-437a66256/" },
     { id: 2, image: "../../../assets/team_members/manasChopra.jpg", name: "Manas Chopra", linkedin: "https://www.linkedin.com/in/themanas95826/" },
     { id: 3, image: "../../../assets/team_members/prathamBatra.jpg", name: "Pratham Batra", linkedin: "https://www.linkedin.com/in/pratham1908/" },
-    { id: 4, image: "../../../assets/team_members/purveshGupta.jpg", name: "Purvesh Gupta", linkedin: "https://www.linkedin.com/in/purveshgupta/" },
+    { id: 4, image: "../../../assets/team_members/SanidhyaGoel.jpg", name: "Sanidhya Goel", linkedin: "https://www.linkedin.com/in/sanidhya-goel-2499991b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
     { id: 5, image: "../../../assets/team_members/sakshamVerma.jpg", name: "Saksham Verma", linkedin: "https://www.linkedin.com/in/saksham-verma-a9390b256/" },
   ];
 
@@ -82,13 +82,13 @@ const LeadOrganizers = () => {
         <Slider
           dots
           infinite
-          speed={1500}
+          speed={300}
           slidesToShow={3}
           slidesToScroll={1}
-          autoplay
+          autoplay={true}
           autoplaySpeed={1000}
           arrows={false}
-          swipeToSlide
+          swipeToSlide={true}
           draggable={true}
           touchMove={true} 
           customPaging={(i) => (
