@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'; // Import motion from framer-motion
+import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -21,22 +21,20 @@ const LeadOrganizers = () => {
       {/* Desktop view with flex layout */}
       <motion.div
         className="hidden md:flex justify-center gap-16"
-        initial={{ opacity: 0, y: -50 }}  
-        animate={{ opacity: 1, y: 0 }}   
-        transition={{ duration: 0.6 }}    
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       >
         {organizers.map((organizer, index) => (
           <motion.div
             key={organizer.id}
-            className={`${
-             
-              index === 0 || index === organizers.length - 1
-                ? "w-64 h-96 xl:w-72 xl:h-[400px]"  
-                : "w-64 h-96 xl:w-72 xl:h-[400px]"  
-            } bg-transparent rounded-[100px] flex justify-center relative shadow-lg hover:shadow-2xl transition-all duration-300`}
-            initial={{ scale: 0.8 }}        
-            animate={{ scale: 1 }}         
-            transition={{ duration: 0.4 }}  
+            className={`${index === 0 || index === organizers.length - 1
+                ? "w-64 h-96 xl:w-72 xl:h-[400px]"
+                : "w-64 h-96 xl:w-72 xl:h-[400px]"
+              } bg-transparent rounded-[100px] flex justify-center relative shadow-lg hover:shadow-2xl transition-all duration-300`}
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.4 }}
           >
             <img
               src={organizer.image}
@@ -77,12 +75,13 @@ const LeadOrganizers = () => {
         ))}
       </motion.div>
 
-      {/* Mobile view with slider */}
+      {/* Mobile view with smoother slider */}
       <div className="md:hidden">
         <Slider
           dots
           infinite
-          speed={300}
+          speed={300}  
+          cssEase="cubic-bezier(0.25, 0.1, 0.25, 1)" 
           slidesToShow={3}
           slidesToScroll={1}
           autoplay={true}
@@ -90,7 +89,7 @@ const LeadOrganizers = () => {
           arrows={false}
           swipeToSlide={true}
           draggable={true}
-          touchMove={true} 
+          touchMove={true}
           customPaging={(i) => (
             <div className={`custom-dot ${i === 0 ? 'active' : ''}`}></div>
           )}
@@ -104,9 +103,9 @@ const LeadOrganizers = () => {
             <motion.div
               key={organizer.id}
               className="flex-shrink px-2 mx-auto w-44 h-64 bg-transparent rounded-[100px] flex justify-center relative slider-card shadow-lg hover:shadow-2xl transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}  
-              animate={{ opacity: 1, y: 0 }}   
-              transition={{ duration: 0.5 }}    
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
             >
               <img
                 src={organizer.image}
@@ -147,44 +146,45 @@ const LeadOrganizers = () => {
             </motion.div>
           ))}
         </Slider>
+        <style>{`
+  /* Gray color for inactive dots */
+  .slick-dots li button:before {
+    font-size: 10px;
+    color: grey;
+  }
+
+  /* Pink color for active dot */
+  .slick-dots li.slick-active button:before {
+    color: #DA39AE; /* Pink color for active dot */
+  }
+  
+  /* Pink custom-dot color */
+  .custom-dot {
+    width: 8px;
+    height: 8px;
+    background-color: grey;
+    border-radius: 50%;
+  }
+  .slick-active .custom-dot {
+    background-color: #DA39AE; /* Pink color for active custom dot */
+  }
+
+  /* Pink border for active card */
+  .slick-center .slider-card {
+    border: 2px solid pink;
+    transform: scale(1.1); 
+    transition: transform 0.3s ease;
+  }
+
+  /* Shadow effect */
+  .slider-card, .md\\:w-52 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for cards */
+  }
+  .slider-card:hover, .md\\:w-52:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  }
+`}</style>
       </div>
-
-      {/* Custom Dot and Slide Styling */}
-      <style>{`
-        /* Gray color for inactive dots */
-        .slick-dots li button:before {
-          font-size: 10px;
-          color: grey; 
-        }
-        /* Pink color for active dot */
-        .slick-dots li.slick-active button:before {
-          color: pink;
-        }
-        .custom-dot {
-          width: 8px;
-          height: 8px;
-          background-color: grey;
-          border-radius: 50%;
-        }
-        .slick-active .custom-dot {
-          background-color: #DA39AE;
-        }
-
-        /* Pink border for active card */
-        .slick-center .slider-card {
-          border: 2px solid pink;
-          transform: scale(1.1); 
-          transition: transform 0.3s ease;
-        }
-
-        /* Shadow effect */
-        .slider-card, .md\\:w-52 {
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for cards */
-        }
-        .slider-card:hover, .md\\:w-52:hover {
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
-        }
-      `}</style>
     </div>
   );
 };
