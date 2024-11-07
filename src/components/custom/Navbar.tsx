@@ -15,6 +15,7 @@ interface NavbarProps {
     faq: React.RefObject<HTMLDivElement>;
     team: React.RefObject<HTMLDivElement>;
     judge: React.RefObject<HTMLDivElement>;
+    leadOrganizers: React.RefObject<HTMLDivElement>;
   };
 }
 
