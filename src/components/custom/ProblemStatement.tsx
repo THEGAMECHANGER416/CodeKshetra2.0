@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Lock } from "lucide-react";
 
 import { CardContent } from "../CardContent";
 import { rippleEffect } from "@/utils/rippleEffect";
@@ -14,8 +14,8 @@ import {
 const ProblemStatement = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<number | null>(null);
 
   rippleEffect(titleRef, containerRef);
@@ -57,12 +57,25 @@ const ProblemStatement = () => {
     startAutoChange();
   }, [startAutoChange, stopAutoChange]);
 
+  const handleCardClick = (index: number) => {
+    const card = document.querySelector(`[data-card-index="${index}"]`);
+    if (card) {
+      card.classList.add("vibrate");
+      setTimeout(() => {
+        card.classList.remove("vibrate");
+      }, 600);
+    }
+  };
+
   return (
     <div
       ref={containerRef}
       className="py-12 h-fit grid grid-rows-[auto_1fr_auto]"
     >
-      <h1 className="font-bebas text-pink font-bold mb-[4rem] mt-[4rem] text-center text-6xl md:text-9xl xl:text-[12rem]">
+      <h1
+        ref={titleRef}
+        className="font-bebas text-pink font-bold mb-[4rem] mt-[4rem] text-center text-6xl md:text-9xl xl:text-[12rem]"
+      >
         PROBLEM STATEMENTS
       </h1>
 
@@ -95,7 +108,7 @@ const ProblemStatement = () => {
           >
             <CarouselContent className="h-full flex items-center">
               {problemStatements.map((statement, index) => (
-                <CarouselItem key={index} className="lg:basis-4/5 xl:basis-2/5">
+                <CarouselItem key={index} className="lg:basis-4/5 xl:basis-2/5" data-card-index={index}>
                   <div
                     className={`transition-all duration-300 rounded-lg shadow-lg ${
                       index === current
@@ -103,7 +116,27 @@ const ProblemStatement = () => {
                         : "scale-90 opacity-30"
                     }`}
                   >
-                    <CardContent {...statement} className="h-full" />
+                    <div className="relative overflow-hidden rounded-lg shadow-lg">
+                      <div className="filter blur-[6px]">
+                        <CardContent {...statement} className="h-full" />
+                      </div>
+
+                      {/* Remove this div to reveal the card */}
+                      <div 
+                        className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-sm rounded-lg cursor-pointer transition-all duration-300 hover:backdrop-blur-md"
+                        onClick={() => handleCardClick(index)}
+                      >
+                        <div className="bg-white/10 p-4 rounded-full mb-4 backdrop-blur-md">
+                          <Lock className="w-10 h-10 text-white" />
+                        </div>
+                        <p className="text-white text-xl font-bold text-center px-4 mb-2">
+                          Locked Content
+                        </p>
+                        <p className="text-pink/80 text-2xl font-medium text-center px-4">
+                          Will be revealed soon!! 😉
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </CarouselItem>
               ))}
@@ -145,5 +178,20 @@ const ProblemStatement = () => {
     </div>
   );
 };
+
+const style = document.createElement("style");
+style.textContent = `
+  @keyframes vibrate {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-2px) rotate(-0.5deg); }
+    40% { transform: translateX(2px) rotate(0.5deg); }
+    60% { transform: translateX(-2px) rotate(0.5deg); }
+    80% { transform: translateX(2px) rotate(-0.5deg); }
+  }
+  .vibrate {
+    animation: vibrate 0.4s cubic-bezier(.36,.07,.19,.97) both;
+  }
+`;
+document.head.appendChild(style);
 
 export default ProblemStatement;
