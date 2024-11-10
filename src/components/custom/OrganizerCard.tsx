@@ -5,11 +5,11 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const LeadOrganizers = () => {
   const organizers = [
-    { id: 1, image: "../../../assets/team_members/arnavGupta.jpg", name: "Arnav Gupta", linkedin: "https://www.linkedin.com/in/arnav-gupta-437a66256/" },
-    { id: 2, image: "../../../assets/team_members/manasChopra.jpg", name: "Manas Chopra", linkedin: "https://www.linkedin.com/in/themanas95826/" },
-    { id: 3, image: "../../../assets/team_members/prathamBatra.jpg", name: "Pratham Batra", linkedin: "https://www.linkedin.com/in/pratham1908/" },
-    { id: 4, image: "../../../assets/team_members/SanidhyaGoel.jpg", name: "Sanidhya Goel", linkedin: "https://www.linkedin.com/in/sanidhya-goel-2499991b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-    { id: 5, image: "../../../assets/team_members/sakshamVerma.jpg", name: "Saksham Verma", linkedin: "https://www.linkedin.com/in/saksham-verma-a9390b256/" },
+    { id: 1, image: "../../../assets/team_members/arnavGupta.jpg", name: "Arnav", linkedin: "https://www.linkedin.com/in/arnav-gupta-437a66256/" },
+    { id: 2, image: "../../../assets/team_members/manasChopra.jpg", name: "Manas", linkedin: "https://www.linkedin.com/in/themanas95826/" },
+    { id: 3, image: "../../../assets/team_members/prathamBatra.jpg", name: "Pratham", linkedin: "https://www.linkedin.com/in/pratham1908/" },
+    { id: 4, image: "../../../assets/team_members/SanidhyaGoel.jpg", name: "Sanidhya", linkedin: "https://www.linkedin.com/in/sanidhya-goel-2499991b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { id: 5, image: "../../../assets/team_members/sakshamVerma.jpg", name: "Saksham", linkedin: "https://www.linkedin.com/in/saksham-verma-a9390b256/" },
   ];
 
   return (
@@ -29,8 +29,8 @@ const LeadOrganizers = () => {
           <motion.div
             key={organizer.id}
             className={`${index === 0 || index === organizers.length - 1
-                ? "w-64 h-96 xl:w-72 xl:h-[400px]"
-                : "w-64 h-96 xl:w-72 xl:h-[400px]"
+              ? "w-64 h-96 xl:w-72 xl:h-[400px]"
+              : "w-64 h-96 xl:w-72 xl:h-[400px]"
               } bg-transparent rounded-[100px] flex justify-center relative shadow-lg hover:shadow-2xl transition-all duration-300`}
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
@@ -66,9 +66,13 @@ const LeadOrganizers = () => {
                   color: 'white',
                   textDecoration: 'none',
                   fontSize: '18px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
                 }}
               >
                 {organizer.name}
+                <i className="fab fa-linkedin" style={{ fontSize: '18px', color: 'white' }}></i>
               </a>
             </div>
           </motion.div>
@@ -80,8 +84,8 @@ const LeadOrganizers = () => {
         <Slider
           dots
           infinite
-          speed={300}  
-          cssEase="cubic-bezier(0.25, 0.1, 0.25, 1)" 
+          speed={300}
+          cssEase="cubic-bezier(0.25, 0.1, 0.25, 1)"
           slidesToShow={3}
           slidesToScroll={1}
           autoplay={true}
@@ -138,52 +142,81 @@ const LeadOrganizers = () => {
                     color: 'white',
                     textDecoration: 'none',
                     fontSize: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
                   }}
                 >
                   {organizer.name}
+                  <i className="fab fa-linkedin" style={{ fontSize: '12px', color: 'gray' }}></i>
                 </a>
               </div>
             </motion.div>
           ))}
         </Slider>
+
         <style>{`
-  /* Gray color for inactive dots */
-  .slick-dots li button:before {
-    font-size: 10px;
-    color: grey;
-  }
+          /* Gray color for inactive dots */
+          .slick-dots li button:before {
+            font-size: 10px;
+            color: grey;
+          }
 
-  /* Pink color for active dot */
-  .slick-dots li.slick-active button:before {
-    color: #DA39AE; /* Pink color for active dot */
-  }
-  
-  /* Pink custom-dot color */
-  .custom-dot {
-    width: 8px;
-    height: 8px;
-    background-color: grey;
-    border-radius: 50%;
-  }
-  .slick-active .custom-dot {
-    background-color: #DA39AE; /* Pink color for active custom dot */
-  }
+          /* Pink color for active dot */
+          .slick-dots li.slick-active button:before {
+            color: #DA39AE; /* Pink color for active dot */
+          }
 
-  /* Pink border for active card */
-  .slick-center .slider-card {
-    border: 2px solid pink;
-    transform: scale(1.1); 
-    transition: transform 0.3s ease;
-  }
+          /* Pink custom-dot color */
+          .custom-dot {
+            width: 8px;
+            height: 8px;
+            background-color: grey;
+            border-radius: 50%;
+          }
+          .slick-active .custom-dot {
+            background-color: #DA39AE; /* Pink color for active custom dot */
+          }
 
-  /* Shadow effect */
-  .slider-card, .md\\:w-52 {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for cards */
-  }
-  .slider-card:hover, .md\\:w-52:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
-  }
-`}</style>
+          /* Pink border for active card */
+          .slick-center .slider-card {
+            border: 2px solid pink;
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+          }
+
+          /* Shadow effect */
+          .slider-card, .md\\:w-52 {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for cards */
+          }
+          .slider-card:hover, .md\\:w-52:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+          }
+
+          /* Slide transition */
+          .slick-slide {
+            transition: transform 0.5s ease, opacity 0.5s ease;
+          }
+
+          .slick-slide-active {
+            transform: translateX(0) scale(1); /* Active slide centered */
+            opacity: 1; /* Full opacity for the active image */
+          }
+
+          .slick-slide-next,
+          .slick-slide-prev {
+            opacity: 0.5;  /* Slightly reduce opacity for previous and next images */
+            transform: scale(0.95);
+          }
+
+          .slick-slide-next {
+            transform: translateX(30px);
+          }
+          
+          .slick-slide-prev {
+            transform: translateX(-30px);
+          }
+        `}</style>
       </div>
     </div>
   );
