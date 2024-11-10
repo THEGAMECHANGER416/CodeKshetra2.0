@@ -102,7 +102,7 @@ export default function Component() {
             animate={inView ? "visible" : "hidden"}
             className="flex-1 w-full md:max-w-[30%] lg:max-w-[25%]"
           >
-            <PrizeCard title="2nd Prize" amount="$3,000" position="left" icon="🥈" />
+            <PrizeCard title="2nd Prize" amount="₹12,000" position="left" icon="🥈" />
           </motion.div>
           <motion.div
             className="flex-1 w-full md:max-w-[40%] lg:max-w-[30%] order-first md:order-none"
@@ -124,7 +124,7 @@ export default function Component() {
               }
             }}
           >
-            <PrizeCard title="1st Prize" amount="$5,000" position="center" icon="🏆" isFirst={true} />
+            <PrizeCard title="1st Prize" amount="₹15,000" position="center" icon="🏆" isFirst={true} />
           </motion.div>
           <motion.div
             variants={rightCardVariants}
@@ -132,7 +132,7 @@ export default function Component() {
             animate={inView ? "visible" : "hidden"}
             className="flex-1 w-full md:max-w-[30%] lg:max-w-[25%]"
           >
-            <PrizeCard title="3rd Prize" amount="$1,000" position="right" icon="🥉" />
+            <PrizeCard title="3rd Prize" amount="₹10,000" position="right" icon="🥉" />
           </motion.div>
         </div>
         <motion.div

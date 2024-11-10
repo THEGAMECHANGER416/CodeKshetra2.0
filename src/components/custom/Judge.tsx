@@ -32,27 +32,25 @@ export default function Judge(): JSX.Element {
         {judges.map((judge, index) => (
           <div
             key={index}
-            className={`${
+            className={`relative overflow-hidden flex justify-center items-center rounded-2xl glassy-div ${
               index === 1 || index === judges.length - 2
-                ? "w-40 h-72 xl:w-48 xl:h-80 rounded-[100px]" 
-                : "w-46 h-72 xl:w-64 xl:h-80 rounded-xl"
-            } bg-neutral-200/15 overflow-hidden flex justify-center items-center shadow-lg ${
-              index === 2 ? "triangle-shape rounded-xl" : ""
-            }`}
+                ? "w-48 h-72 xl:w-56 xl:h-80"
+                : "w-64 h-80 xl:w-72 xl:h-96"
+            } shadow-lg tilt-effect`}
           >
             <img
               src={judge.img}
               alt={judge.name}
-              className="h-full w-full object-cover rounded-[100px]"
+              className="h-full w-full object-cover rounded-2xl"
             />
           </div>
         ))}
       </div>
 
-      {/* Mobile View */}
+      {/* Mobile View (Uniform Card Size) */}
       <Swiper
         spaceBetween={30}
-        slidesPerView={1}
+        slidesPerView={1.0}
         autoplay={{ delay: 2500 }}
         pagination={{
           clickable: true,
@@ -65,19 +63,14 @@ export default function Judge(): JSX.Element {
         {judges.map((judge, index) => (
           <SwiperSlide key={index}>
             <div className="flex justify-center mb-10">
+              {/* All cards have the same size in mobile view */}
               <div
-                className={`${
-                  index === 1 || index === judges.length - 2
-                    ? "w-52 h-96 sm:w-56 sm:h-104 md:w-64 md:h-[300px] rounded-[100px]" 
-                    : "w-72 h-96 sm:w-80 sm:h-96 md:w-96 md:h-112 rounded-xl"
-                } bg-neutral-200/15 overflow-hidden flex justify-center items-center shadow-lg ${
-                  index === 2 ? "triangle-shape rounded-lg" : ""
-                }`}
+                className={`relative overflow-hidden flex justify-center items-center rounded-2xl glassy-div w-72 h-96 sm:w-80 sm:h-96 md:w-96 md:h-112 shadow-lg tilt-effect`}
               >
                 <img
                   src={judge.img}
                   alt={judge.name}
-                  className="h-full w-full object-cover rounded-[100px]" 
+                  className="h-full w-full object-cover rounded-2xl"
                 />
               </div>
             </div>
@@ -85,8 +78,15 @@ export default function Judge(): JSX.Element {
         ))}
       </Swiper>
 
-      {/* Custom Pagination Styling */}
+      {/* Custom CSS */}
       <style>{`
+        .glassy-div {
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(10px);
+        }
+        .tilt-effect {
+          transform: perspective(1000px) rotateX(2.5deg) rotateY(5deg);
+        }
         .swiper-pagination {
           display: flex;
           justify-content: center;
@@ -106,9 +106,43 @@ export default function Judge(): JSX.Element {
           border-radius: 50%;
         }
 
-        /* Box shadow for the active card */
         .swiper-slide-active {
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+          transform: scale(1);  /* Center active image */
+        }
+
+        /* Custom transition for the mobile swiper to create the effect of images coming from left and right */
+        .swiper-slide-next {
+          transform: translateX(30px) scale(0.95);  /* Next slide comes from right */
+        }
+        
+        .swiper-slide-prev {
+          transform: translateX(-30px) scale(0.95);  /* Previous slide comes from left */
+        }
+
+        .swiper-slide {
+          transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .swiper-slide-active {
+          transform: translateX(0) scale(1);  /* Active slide centered */
+        }
+
+        .swiper-slide-next,
+        .swiper-slide-prev {
+          opacity: 0.5;  /* Slightly reduce opacity for previous and next images */
+        }
+
+        .swiper-slide-active {
+          opacity: 1;  /* Full opacity for the active image */
+        }
+
+        /* Ensure the previous and next slides don't merge and are clearly spaced */
+        .swiper-slide-prev, .swiper-slide-next {
+          z-index: 0;
+        }
+        .swiper-slide-active {
+          z-index: 10;
         }
       `}</style>
     </div>

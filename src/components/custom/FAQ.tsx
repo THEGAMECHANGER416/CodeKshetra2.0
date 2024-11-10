@@ -63,7 +63,7 @@ export default function Faq() {
       <div className="space-y-8">
         {faqs.map((faq, index) => (
           <div key={index} className="relative">
-            <div className="bg-gray-700 rounded-3xl overflow-hidden shadow-lg">
+            <div className="bg-zinc-900 rounded-3xl overflow-hidden shadow-lg">
               <button
                 className="w-full text-left p-7 focus:outline-none flex justify-between items-center"
                 onClick={() => toggleFAQ(index)}
@@ -71,7 +71,7 @@ export default function Faq() {
                 <span className="font-bold text-white text-lg md:text-2xl pr-8">
                   {faq.question}
                 </span>
-                <div className="bg-gray-900 rounded-full p-1.5 flex-shrink-0">
+                <div className="bg-primary rounded-full p-1.5 flex-shrink-0">
                   <ChevronDown
                     className={`w-8 h-8 text-pink-500 transition-transform duration-200 ${
                       expandedIndex === index ? "transform rotate-180" : ""
@@ -85,7 +85,7 @@ export default function Faq() {
                 expandedIndex === index ? "max-h-screen opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"
               }`}
             >
-              <div className="mt-3 bg-gray-600 bg-opacity-40 rounded-3xl p-7 shadow-lg transform transition-all duration-700 ease-in-out">
+              <div className="mt-3 bg-gray-600/20 bg-opacity-40 rounded-3xl p-7 shadow-lg transform transition-all duration-700 ease-in-out">
                 <p className="text-white text-base md:text-lg font-semibold">{faq.answer}</p>
               </div>
             </div>
