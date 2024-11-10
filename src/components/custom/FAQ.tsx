@@ -71,7 +71,7 @@ export default function Faq() {
                 <span className="font-bold text-white text-lg md:text-2xl pr-8">
                   {faq.question}
                 </span>
-                <div className="bg-gray-900 rounded-full p-1.5 flex-shrink-0">
+                <div className="bg-primary rounded-full p-1.5 flex-shrink-0">
                   <ChevronDown
                     className={`w-8 h-8 text-pink-500 transition-transform duration-200 ${
                       expandedIndex === index ? "transform rotate-180" : ""
