@@ -4,7 +4,8 @@ import { GiLaurelsTrophy } from "react-icons/gi";
 import data from "../../json/home.json";
 
 const Home = () => {
-  const targetDate = new Date(Date.UTC(2025, 1, 14, 23, 59, 59)); // February 14, 2025
+  const targetDate = new Date(Date.UTC(2025, 1, 21, 9, 0, 0)); // February 21, 2025, 9:00 AM UTC
+
 
   // Countdown logic
   const calculateTimeLeft = () => {
