@@ -7,10 +7,11 @@ import image6 from "../../../public/assets/ethindia.png";
 import image7 from "../../../public/assets/interview buddy.png";
 import image8 from "../../../public/assets/polygon.png";
 import image9 from "../../../public/assets/unifest.png";
+import image10 from "../../../public/assets/wolfram.png";
 
 
 const Sponsors = () => {
-    const sponsors = [image1, image2, image3, image4, image5, image6,image7,image8,image9];
+    const sponsors = [image1, image2, image3, image4, image5, image6,image7,image8,image9,image10];
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-black">
