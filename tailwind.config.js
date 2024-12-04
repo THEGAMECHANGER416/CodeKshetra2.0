@@ -62,6 +62,9 @@ export default {
           DEFAULT: "#da39ae", // Fix the typo
           foreground: "hsl(var(--pink-foreground))",
         },
+        lightpink:{
+          DEFAULT: "#E096CB"
+        },
         background: "#000000",
         foreground: "hsl(var(--foreground))",
         card: {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import laptop from "/assets/DesktopTimeline.svg";
+// import laptop from "/assets/DesktopTimeline.svg";
 import { useEffect } from 'react';
 
 interface Task {
@@ -151,7 +151,7 @@ const TimeLine: React.FC = () => {
 
 
       {/* Image Section */}
-      <div className="text-center h-[15rem] w-full  md:mb-[10rem] mt-[8rem]"> 
+      {/* <div className="text-center h-[15rem] w-full  md:mb-[10rem] mt-[8rem]"> 
         <picture>
           <source media="(min-width: 1024px)" srcSet={laptop} />
           <source media="(min-width: 768px)" srcSet={laptop} />
@@ -161,7 +161,7 @@ const TimeLine: React.FC = () => {
             className="w-full h-auto mx-auto max-w-[1200px] block"
           />
         </picture>
-      </div>
+      </div> */}
     </div>
   );
 };

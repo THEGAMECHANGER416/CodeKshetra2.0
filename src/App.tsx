@@ -70,13 +70,7 @@ function App() {
         <div
           id="timeline"
           ref={timelineRef}
-          className="
-            mt-[-8rem] 
-            mb-[0rem] sm:mb-[90rem] 
-            md:mb-[20rem]
-         between-768-900:mb-[0rem]
-           
-          "
+          className=""
         >
           <TimeLine />
         </div>
