@@ -68,7 +68,7 @@ const Sponsors = () => {
       </div>
 
       <div className="flex justify-center items-center md:hidden">
-        <div className="w-full h-48 sm:h-52 bg-lightpink rounded-3xl shadow-lg overflow-hidden p-14">
+        <div className="w-full h-48 sm:h-52 bg-white rounded-3xl shadow-lg overflow-hidden p-14">
           <img
             src={MLH}
             alt={`Partner MLH`}
