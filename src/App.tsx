@@ -56,6 +56,11 @@ function App() {
             team: mentorCardRef,
           }}
         />
+        <img
+          src="/assets/mlh-trust-badge-2025-white.svg"
+          alt="Badge"
+          className="fixed top-0 right-6 h-24 w-24 md:h-32 md:w-20 z-30"
+        />
 
         <div id="home" ref={homeRef} className="xl:mt-10">
           <Home />
@@ -67,11 +72,7 @@ function App() {
         >
           <AboutUs />
         </div>
-        <div
-          id="timeline"
-          ref={timelineRef}
-          className=""
-        >
+        <div id="timeline" ref={timelineRef} className="">
           <TimeLine />
         </div>
         <div
@@ -81,17 +82,13 @@ function App() {
         >
           <ProblemStatement />
         </div>
-        <div id="sponsors" ref={sponsorsRef} className="h-100 mb-40 mt-[10rem]">
+        <div id="sponsors" ref={sponsorsRef} className="h-100 mb-20 mt-[10rem]">
           <Sponsors />
         </div>
         <div id="prizes" ref={prizePoolRef} className="h-100">
           <Prizes />
         </div>
-        <div
-          id="judge"
-          ref={JudgeRef}
-          className="h-auto py-10"
-        >
+        <div id="judge" ref={JudgeRef} className="h-auto py-10">
           <Judge />
         </div>
         <div id="LeadOrganizers" ref={LeadOrganizersRef} className="h-100">
