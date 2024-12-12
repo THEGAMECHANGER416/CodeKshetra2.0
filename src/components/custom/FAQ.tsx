@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -60,6 +58,7 @@ export default function Faq() {
       <h2 className="md:text-[12rem] text-6xl font-bebas text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
         FAQS
       </h2>
+
       <div className="space-y-8">
         {faqs.map((faq, index) => (
           <div key={index} className="relative">
@@ -82,11 +81,15 @@ export default function Faq() {
             </div>
             <div
               className={`overflow-hidden transition-all duration-700 ease-in-out ${
-                expandedIndex === index ? "max-h-screen opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"
+                expandedIndex === index
+                  ? "max-h-screen opacity-100 scale-100"
+                  : "max-h-0 opacity-0 scale-95"
               }`}
             >
               <div className="mt-3 bg-gray-600/20 bg-opacity-40 rounded-3xl p-7 shadow-lg transform transition-all duration-700 ease-in-out">
-                <p className="text-white text-base md:text-lg font-semibold">{faq.answer}</p>
+                <p className="text-white text-base md:text-lg font-semibold">
+                  {faq.answer}
+                </p>
               </div>
             </div>
           </div>

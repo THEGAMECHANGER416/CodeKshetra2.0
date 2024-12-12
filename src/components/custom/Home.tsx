@@ -6,7 +6,6 @@ import data from "../../json/home.json";
 const Home = () => {
   const targetDate = new Date(Date.UTC(2025, 1, 21, 9, 0, 0)); // February 21, 2025, 9:00 AM UTC
 
-
   // Countdown logic
   const calculateTimeLeft = () => {
     const now = new Date();
@@ -69,14 +68,16 @@ const Home = () => {
 
     animateCounter();
     return () => {
-      setCount((prevCount) => (prevCount >= targetCount ? targetCount : prevCount));
+      setCount((prevCount) =>
+        prevCount >= targetCount ? targetCount : prevCount
+      );
     };
   }, [targetCount, duration]);
 
   return (
     <div className="mb-40">
       <div className="flex h-[800px] w-full flex-col items-center justify-center rounded-lg">
-        <div className="grid h-full w-full grid-cols-2 md:grid-cols-5 md:grid-rows-9 gap-4">
+        <div className="  grid h-full w-full grid-cols-2 md:grid-cols-5 md:grid-rows-9 gap-4">
           {/* Background section */}
           <div className="col-span-2 animate-fadeInLeft md:col-span-4 row-span-6 relative rounded-3xl bg-cover bg-center flex flex-col pl-6 justify-end pb-12 bg-[url('/assets/homeBg.jpeg')] before:content-[''] before:absolute before:inset-0 before:bg-black/50 before:rounded-3xl">
             <div className="relative z-10 w-full">
@@ -90,10 +91,7 @@ const Home = () => {
                 <Button
                   className="mt-4 text-xl sm:text-2xl h-12 w-32 md:h-14 md:w-48 rounded-xl text-black font-bold bg-pink hover:text-white"
                   onClick={() =>
-                    window.open(
-                      "https://code-kshetra-2.devfolio.co/",
-                      "_blank"
-                    )
+                    window.open("https://code-kshetra-2.devfolio.co/", "_blank")
                   }
                 >
                   Register
@@ -104,7 +102,11 @@ const Home = () => {
 
           {/* Logo section */}
           <div className="col-span-2 animate-fadeInLeft md:col-span-1 row-start-1 row-span-1 md:row-span-2 flex justify-center z-20">
-            <img src="/assets/logo.png" alt="Logo" className="h-24 w-auto" />
+            <img
+              src="/assets/GRJims.png"
+              alt="Logo"
+              className="h-24 md:h-28 w-auto"
+            />
           </div>
 
           {/* Prize pool section */}
@@ -160,7 +162,9 @@ const Home = () => {
                   </p>
                   <p className="text-xs sm:text-base">Days</p>
                 </div>
-                <div className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold mb-2">:</div>
+                <div className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold mb-2">
+                  :
+                </div>
 
                 {/* Hours */}
                 <div className="text-center bg-background/30 p-2 sm:p-4 rounded-xl between-768-900:p-3">
@@ -169,7 +173,9 @@ const Home = () => {
                   </p>
                   <p className="text-xs sm:text-base">Hours</p>
                 </div>
-                <div className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold mb-2">:</div>
+                <div className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold mb-2">
+                  :
+                </div>
 
                 {/* Minutes */}
                 <div className="text-center bg-background/30 p-2 sm:p-4 rounded-xl between-768-900:p-3">
@@ -178,7 +184,9 @@ const Home = () => {
                   </p>
                   <p className="text-xs sm:text-base">Minutes</p>
                 </div>
-                <div className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold mb-2">:</div>
+                <div className="lg:text-6xl md:text-3xl sm:text-2xl text-4xl font-bold mb-2">
+                  :
+                </div>
 
                 {/* Seconds */}
                 <div className="text-center bg-background/30 p-2 sm:p-4 rounded-xl between-768-900:p-3">
