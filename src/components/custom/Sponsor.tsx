@@ -76,13 +76,14 @@ const Sponsors = () => {
           />
         </div>
       </div>
-      <div className="my-2 flex items-center space-x-3 text-white">
-        <div className="font-bold">Read the MLH Code of Conduct</div>
+      <div className="my-2 space-x-3 text-white">
         <a
-          href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md "
+          href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
           target="_blank"
+          className="flex items-center space-x-2"
         >
-          <FaExternalLinkAlt color="" />
+          <span className="font-bold">Read the MLH Code of Conduct</span>
+          <FaExternalLinkAlt />
         </a>
       </div>
     </div>
