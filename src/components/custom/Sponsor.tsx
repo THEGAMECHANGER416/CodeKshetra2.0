@@ -13,16 +13,16 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Sponsors = () => {
   const sponsors = [
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-    image7,
-    image8,
-    image9,
-    image10,
+    { src: image1, url: "https://www.aihello.com" },
+    { src: image2, url: "https://aptosfoundation.org" },
+    { src: image3, url: "https://balsamiq.com" },
+    { src: image4, url: "https://www.beeceptor.com" },
+    { src: image5, url: "https://devfolio.co" },
+    { src: image6, url: "https://ethindia.devfolio.co" },
+    { src: image7, url: "https://interviewbuddy.net" },
+    { src: image8, url: "https://www.polygon.technology" },
+    { src: image9, url: "https://www.unifest.in" },
+    { src: image10, url: "https://www.wolfram.com" },
   ];
 
   const partners = [MLH];
@@ -34,17 +34,20 @@ const Sponsors = () => {
       </h1>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 w-full max-w-6xl px-4 sm:px-6">
-        {sponsors.map((src, index) => (
-          <div
+        {sponsors.map((sponsor, index) => (
+          <a
             key={index}
+            href={sponsor.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full h-48 sm:h-52 bg-lightpink rounded-3xl shadow-lg overflow-hidden flex items-center justify-center"
           >
             <img
-              src={src}
+              src={sponsor.src}
               alt={`Sponsor ${index + 1}`}
               className="w-full p-5 h-full object-contain hover:scale-110 transition-all duration-300 ease-in-out"
             />
-          </div>
+          </a>
         ))}
       </div>
 
