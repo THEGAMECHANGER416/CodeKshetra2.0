@@ -82,9 +82,6 @@ function App() {
         >
           <ProblemStatement />
         </div>
-        <div id="sponsors" ref={sponsorsRef} className="h-100 mb-20 mt-[10rem]">
-          <Sponsors />
-        </div>
         <div id="prizes" ref={prizePoolRef} className="h-100">
           <Prizes />
         </div>
@@ -93,6 +90,9 @@ function App() {
         </div>
         <div id="LeadOrganizers" ref={LeadOrganizersRef} className="h-100">
           <LeadOrganizers />
+        </div>
+        <div id="sponsors" ref={sponsorsRef} className="h-100 mb-20 mt-[10rem]">
+          <Sponsors />
         </div>
         <div id="faq" ref={faqRef} className="h-100">
           <Faq />

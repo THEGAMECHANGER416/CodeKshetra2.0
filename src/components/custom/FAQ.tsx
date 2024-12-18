@@ -30,19 +30,44 @@ const faqs: FAQ[] = [
       "Bring your laptop, charger, any necessary software tools, and a collaborative spirit. Food and drinks will be provided.",
   },
   {
-    question: "Are there prizes for winners?",
+    question: "Are inter-college teams allowed to participate?",
     answer:
-      "Yes, there are exciting prizes for the top teams, including cash rewards, mentorship opportunities, and tech gadgets.",
+      "Yes, inter-college teams are allowed. You can form a team with students from different colleges or universities.",
   },
   {
-    question: "What is the duration of the hackathon?",
+    question: "Can I participate solo?",
     answer:
-      "The hackathon will last for 48 hours, starting from [start date] to [end date]. Participants are encouraged to work around the clock!",
+      "While we encourage participation as a team (as you'll get networking opportunities and it's always fun with friends) you can participate solo",
   },
   {
-    question: "Will there be mentors available during the event?",
+    question: "Will there be wifi available at the venue?",
     answer:
-      "Absolutely! We will have industry experts and mentors available to guide participants throughout the hackathon.",
+      "Yes, ofcourse! (even we can't survive without internet😭)",
+  },
+  {
+    question: "It is my hackathon, what's something I should know?",
+    answer:
+      "Hackathons are not only meant for winning (although that is the goal) but they provide you with so many networking opportunities (our community core members met in hacks too). Win or lose you'll definitely learn something, so come from a learning mindset and you will have fun along the way (we promise 😁)",
+  },
+  {
+    question: "Will there be enough charging ports available?",
+    answer:
+      "We will definitely ensure the availability of charging ports for every team (we've been to enough hacks and we know how that can be a problem 😚)",
+  },
+  {
+    question: "Do I need to bring food, snacks and all?",
+    answer:
+      "Nahh, we're your hosts for the duration of the hack, all food and snacks will be on us!",
+  },
+  {
+    question: "I have already applied but my application is not approved yet?",
+    answer:
+      "Be patient, we've got so many registrations, we are still in the process of accepting teams, just hold on for some time",
+  },
+  {
+    question: "Will our travel expenses be covered 👉👈?",
+    answer:
+      "While we wish we could cover all of you guy's travel expenses, we cannot reimburse for travel costs. Food and accommodation is on us for the duration of the hack 😊",
   },
 ];
 
