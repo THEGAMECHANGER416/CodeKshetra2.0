@@ -1,13 +1,13 @@
-import image1 from "../../../public/assets/aihello.png";
-import image2 from "../../../public/assets/aptos.png";
-import image3 from "../../../public/assets/balamsiq.png";
-import image4 from "../../../public/assets/beeceptor.png";
-import image5 from "../../../public/assets/Devfolio.svg";
-import image6 from "../../../public/assets/ethindia.png";
-import image7 from "../../../public/assets/interview buddy.png";
-import image8 from "../../../public/assets/polygon.png";
-import image9 from "../../../public/assets/unifest.png";
-import image10 from "../../../public/assets/wolfram.png";
+import image1 from "/assets/aihello.png";
+import image2 from "/assets/aptos.png";
+import image3 from "/assets/balamsiq.png";
+import image4 from "/assets/beeceptor.png";
+import image5 from "/assets/Devfolio.svg";
+import image6 from "/assets/ethindia.png";
+import image7 from "/assets/interview buddy.png";
+import image8 from "/assets/polygon.png";
+import image9 from "/assets/unifest.png";
+import image10 from "/assets/wolfram.png";
 import MLH from "/assets/mlh-logo-color.png";
 import { FaExternalLinkAlt } from "react-icons/fa";
 

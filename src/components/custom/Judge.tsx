@@ -3,7 +3,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-import Logo from "../../../public/assets/Main Logo.png";
+import Logo from "/assets/Main Logo.png";
 
 interface Judge {
   img: string;
