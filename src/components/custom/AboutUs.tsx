@@ -4,7 +4,7 @@ const AboutUs: React.FC = () => {
   return (
     <>
       <div className="p-4 md:pl-24 h-full w-full">
-        <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold  text-center mb-[2rem]">
+        <h1 className="md:text-[13rem] font-bebas text-7xl text-pink font-bold  text-center mb-[2rem]">
           About Us
         </h1>
         <p className="font-bold text-white text-xl leading-relaxed mb-[2rem]">

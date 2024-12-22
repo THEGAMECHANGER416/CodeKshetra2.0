@@ -80,7 +80,7 @@ export default function Faq() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-16">
-      <h2 className="md:text-[12rem] text-6xl font-bebas text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
+      <h2 className="md:text-[13rem] text-6xl font-bebas text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
         FAQS
       </h2>
 

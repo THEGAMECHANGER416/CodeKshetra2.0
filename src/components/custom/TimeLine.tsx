@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
-
-// import laptop from "/assets/DesktopTimeline.svg";
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface Task {
   time: string;
@@ -52,25 +49,20 @@ const TimeLine: React.FC = () => {
       setIsBetween768And900(width >= 768 && width <= 900);
     };
 
-    handleResize(); // Check width on initial load
-    window.addEventListener('resize', handleResize); // Listen for window resize
-
-    // Clean up listener on component unmount
+    handleResize();
+    window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
-    <div className="p-4 md:pl-24 mt-96">
-      <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
+    <div className="p-4 md:pl-24 mt-48">
+      <h1 className="md:text-[13rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
         EVENT SCHEDULE
       </h1>
 
-      {/* Days Button for both horizontal and vertical views, hidden in between-768-900 view */}
-      
-
-      {/* Horizontal Timeline for larger screens */}
+      {/* Horizontal Timeline */}
       <div className="relative mb-[5rem] hidden md:flex between-768-900:hidden">
-        <div className="absolute bg-pink h-1 top-1/2 left-[5rem] right-16 z-0 transform md:translate-y-[-4.5rem]"></div>
+        <div className="absolute bg-pink h-2 top-1/2 left-[5rem] right-16 z-0 transform md:translate-y-[-4.5rem]"></div>
         {dayData[selectedDay].tasks.map((task, index) => (
           <div key={index} className="flex flex-col items-center relative px-4">
             <div className="bg-white w-8 h-8 rounded-full border-8 border-purple z-10 relative -translate-y-1/2"></div>
@@ -81,30 +73,30 @@ const TimeLine: React.FC = () => {
           </div>
         ))}
       </div>
+
+      {/* Day Selector Buttons */}
       <div className="flex justify-center space-x-[3rem] mb-8 md:block between-768-900:hidden">
         {dayData.map((day, index) => (
           <button
             key={index}
             onClick={() => setSelectedDay(index)}
-            className={`px-6 py-2  font-bold rounded-[3rem] ${selectedDay === index ? 'bg-pink text-white' : 'bg-gray-200 text-gray-600'}`}
+            className={`px-6 py-2 font-bold rounded-[3rem] ${selectedDay === index ? 'bg-pink text-white' : 'bg-gray-200 text-gray-600'}`}
           >
             {day.title}
           </button>
         ))}
       </div>
 
-      {/* Vertical Timeline for small screens */}
-
-
+      {/* Vertical Timeline for Small Screens */}
       <div className="block md:hidden relative mb-10 between-768-900:hidden">
-        <div className="absolute bg-purple-600 w-1 left-[19%] z-0"></div>
+        <div className="absolute bg-purple-600 w-2 left-[19%] z-0"></div>
         <div className="flex flex-col items-start justify-between pl-[15%] relative">
           {dayData[selectedDay].tasks.map((task, index) => (
-            <div key={index} className="relative flex justify-between items-start mb-8">
+            <div key={index} className="relative flex justify-between items-start mb-6">
               <div className="flex-shrink-0 relative">
                 <div className="bg-white w-8 h-8 rounded-full border-8 border-purple z-10"></div>
                 {index < dayData[selectedDay].tasks.length - 1 && (
-                  <div className="absolute left-[50%] transform -translate-x-1/2 w-1 h-[9vh] bg-pink z-0"></div>
+                  <div className="absolute left-[50%] transform -translate-x-1/2 w-2 h-[7vh] bg-pink z-0"></div>
                 )}
               </div>
               <div className="ml-4">
@@ -116,52 +108,6 @@ const TimeLine: React.FC = () => {
           ))}
         </div>
       </div>
-
-      {/* Between 768-900 view without day buttons */}
-     
-      {isBetween768And900 && (
-        <div className="between-768-900:flex between-768-900:space-x-8 between-768-900:justify-center">
-          {dayData.map((day, dayIndex) => (
-            <div key={dayIndex} className="between-768-900:w-1/2 relative">
-              <h2 className="text-2xl font-bold text-pink mb-4 text-center">{day.title}</h2>
-              <div className="relative mb-10">
-                <div className="flex flex-col items-start pl-[25%] relative">
-                  {day.tasks.map((task, index) => (
-                    <div key={index} className="relative flex justify-start items-start mb-8">
-                      <div className="flex-shrink-0 relative">
-                        <div className="bg-white w-8 h-8 rounded-full border-8 border-purple z-10"></div>
-                        {index < day.tasks.length - 1 && (
-                          <div className="absolute left-[50%] transform -translate-x-1/2 w-1 h-[7vh] bg-pink z-0"></div>
-                        )}
-                      </div>
-                      <div className="ml-4">
-                        <span className="text-lg text-white font-bold">{task.description}</span>
-                        <br />
-                        <span className="text-sm text-white mt-1">{`${task.date} | ${task.time}`}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-
-
-      {/* Image Section */}
-      {/* <div className="text-center h-[15rem] w-full  md:mb-[10rem] mt-[8rem]"> 
-        <picture>
-          <source media="(min-width: 1024px)" srcSet={laptop} />
-          <source media="(min-width: 768px)" srcSet={laptop} />
-          <img
-            src={laptop}
-            alt="Event SVG"
-            className="w-full h-auto mx-auto max-w-[1200px] block"
-          />
-        </picture>
-      </div> */}
     </div>
   );
 };

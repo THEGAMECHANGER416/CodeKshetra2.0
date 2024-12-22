@@ -29,7 +29,7 @@ const Sponsors = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-      <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
+      <h1 className="md:text-[13rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
         SPONSORS
       </h1>
 
@@ -40,7 +40,7 @@ const Sponsors = () => {
             href={sponsor.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full h-48 sm:h-52 bg-lightpink rounded-3xl shadow-lg overflow-hidden flex items-center justify-center"
+            className="w-full h-48 sm:h-52 bg-white rounded-3xl shadow-lg overflow-hidden flex items-center justify-center"
           >
             <img
               src={sponsor.src}
@@ -51,7 +51,7 @@ const Sponsors = () => {
         ))}
       </div>
 
-      <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center mt-40">
+      <h1 className="md:text-[13rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center mt-40">
         PARTNERS
       </h1>
 
@@ -83,6 +83,7 @@ const Sponsors = () => {
         <a
           href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
           target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center space-x-2"
         >
           <span className="font-bold">Read the MLH Code of Conduct</span>
