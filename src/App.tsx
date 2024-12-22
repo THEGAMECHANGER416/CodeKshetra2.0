@@ -30,7 +30,7 @@ function App() {
 
   return (
     <Router>
-      <>
+      <div className="flex flex-col min-h-screen">
         <Navbar
           scrollRefs={{
             home: homeRef,
@@ -61,7 +61,7 @@ function App() {
           alt="Badge"
           className="fixed top-0 right-6 h-24 w-24 md:h-32 md:w-20 z-30"
         />
-
+        <main className="flex-grow">
         <div id="home" ref={homeRef} className="xl:mt-10">
           <Home />
         </div>
@@ -94,15 +94,15 @@ function App() {
         <div id="sponsors" ref={sponsorsRef} className="h-100 mb-20 mt-[10rem]">
           <Sponsors />
         </div>
-        <div id="faq" ref={faqRef} className="h-100">
+        <div id="faq" ref={faqRef} className="h-[80rem]">
           <Faq />
         </div>
         {/* <div id="team" ref={mentorCardRef} className="h-screen">
           <MentorCard />
         </div> */}
-
+        </main>
         <Footer />
-      </>
+      </div>
     </Router>
   );
 }
