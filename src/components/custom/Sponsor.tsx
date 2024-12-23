@@ -30,8 +30,8 @@ const Sponsors = () => {
   const partners = [MLH];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black p-4 md:pl-14">
-      <h1 className="md:text-[13rem] mt-[0.2rem] font-bebas text-[6.4rem] text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black">
+      <h1 className="md:text-[13rem] mt-[0.1rem] font-bebas text-8xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
         SPONSORS
       </h1>
 
