@@ -31,7 +31,7 @@ const Sponsors = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-      <h1 className="md:text-[13rem] mt-[0.3rem] font-bebas text-8xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
+      <h1 className="md:text-[13rem] mt-[0.2rem] font-bebas text-[6.4rem] text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
         SPONSORS
       </h1>
 
@@ -53,7 +53,7 @@ const Sponsors = () => {
         ))}
       </div>
 
-      <h1 className="md:text-[13rem] font-bebas text-8xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center mt-[9rem]">
+      <h1 className="md:text-[13rem] font-bebas text-[6.4rem] text-pink font-bold mb-[4rem] md:mb-[6rem] text-center mt-[9rem]">
         PARTNERS
       </h1>
 
