@@ -2,7 +2,7 @@ import logo from "/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-zinc-300 py-10 w-screen mt-[57rem] rounded-t-[50px] -ml-[50vw] -mr-[50vw] left-1/2 relative">
+    <footer className="bg-secondary text-zinc-300 py-10 w-screen mt-[54rem] rounded-t-[50px] -ml-[50vw] -mr-[50vw] left-1/2 relative">
       <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-start">
 
         <div className="w-full md:w-1/3 mb-8 md:mb-0 text-center">

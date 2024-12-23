@@ -14,7 +14,7 @@ const LeadOrganizers = () => {
 
   return (
     <div className="text-center mt-10">
-      <h1 className="md:text-[13rem] font-bebas text-6xl text-pink font-bold mb-[2rem] md:mb-[5rem] text-center">
+      <h1 className="md:text-[13rem] font-bebas text-8xl mt-[3.7rem] sm:mt-[1.5rem] text-pink font-bold mb-[2rem] md:mb-[5rem] text-center">
         ORGANIZERS
       </h1>
 

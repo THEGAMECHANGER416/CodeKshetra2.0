@@ -60,8 +60,8 @@ const TimeLine: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-4 md:pl-24 mt-96">
-      <h1 className="md:text-[13rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
+    <div className="p-4 mt-[6rem] sm:mt-[12rem] md:pl-24">
+      <h1 className="md:text-[13rem] font-bebas text-8xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
         EVENT SCHEDULE
       </h1>
 
