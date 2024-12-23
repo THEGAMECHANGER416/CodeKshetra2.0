@@ -79,7 +79,7 @@ export default function Faq() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-14">
+    <div className="max-w-4xl mx-auto px-4 py-14 md:pl-14">
       <h2 className="md:text-[13rem] text-[6.4rem] font-bebas text-pink font-bold mb-[3rem] md:mb-[5rem] text-center">
         FAQS
       </h2>

@@ -13,7 +13,7 @@ const LeadOrganizers = () => {
   ];
 
   return (
-    <div className="text-center mt-[1rem]">
+    <div className="text-center mt-[1rem] md:ml-14 p-4">
       <h1 className="md:text-[12rem] font-bebas text-8xl text-pink font-bold mb-[2rem] md:mb-[5rem] text-center">
         ORGANIZERS
       </h1>

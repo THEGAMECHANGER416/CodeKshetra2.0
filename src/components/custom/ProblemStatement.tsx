@@ -74,7 +74,7 @@ const ProblemStatement = () => {
     >
       <h1
         ref={titleRef}
-        className="text-[6rem] leading-tight p-4 md:pl-24 sm:text-[14rem] md:text-[13rem] font-bebas text-pink font-bold text-center mb-[3rem]"
+        className=" p-4 md:ml-24 font-bebas text-pink font-bold mb-[4rem] mt-[4rem] text-center text-7xl md:text-9xl xl:text-[12rem]"
       >
         PROBLEM STATEMENTS
       </h1>
