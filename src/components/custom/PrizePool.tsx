@@ -91,8 +91,8 @@ export default function Component() {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
     >
-      <div className="container mx-auto px-4 max-w-[90vw] sm:max-w-[80vw]">
-        <h2 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
+      <div className="container mx-auto px-4 max-w-[90vw] sm:max-w-[80vw] mt-[3rem]">
+        <h2 className="md:text-[13rem] font-bebas text-8xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
           Prize Pool
         </h2>
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-16 md:space-x-4">

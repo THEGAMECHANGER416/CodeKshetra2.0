@@ -8,6 +8,7 @@ import image7 from "/assets/interview buddy.png";
 import image8 from "/assets/polygon.png";
 import image9 from "/assets/unifest.png";
 import image10 from "/assets/wolfram.png";
+import image11 from "/assets/pathway.png";
 import MLH from "/assets/mlh-logo-color.png";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -23,13 +24,14 @@ const Sponsors = () => {
     { src: image8, url: "https://www.polygon.technology" },
     { src: image9, url: "https://www.unifest.in" },
     { src: image10, url: "https://www.wolfram.com" },
+    { src: image11, url: "https://www.pathway.com" },
   ];
 
   const partners = [MLH];
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-      <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
+      <h1 className="md:text-[13rem] mt-[0.1rem] font-bebas text-8xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center">
         SPONSORS
       </h1>
 
@@ -40,7 +42,7 @@ const Sponsors = () => {
             href={sponsor.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full h-48 sm:h-52 bg-lightpink rounded-3xl shadow-lg overflow-hidden flex items-center justify-center"
+            className="w-full h-48 sm:h-52 bg-white rounded-3xl shadow-lg overflow-hidden flex items-center justify-center"
           >
             <img
               src={sponsor.src}
@@ -51,7 +53,7 @@ const Sponsors = () => {
         ))}
       </div>
 
-      <h1 className="md:text-[12rem] font-bebas text-6xl text-pink font-bold mb-[4rem] md:mb-[6rem] text-center mt-40">
+      <h1 className="md:text-[13rem] font-bebas text-[6.4rem] text-pink font-bold mb-[4rem] md:mb-[6rem] text-center mt-[9rem]">
         PARTNERS
       </h1>
 
@@ -83,6 +85,7 @@ const Sponsors = () => {
         <a
           href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
           target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center space-x-2"
         >
           <span className="font-bold">Read the MLH Code of Conduct</span>

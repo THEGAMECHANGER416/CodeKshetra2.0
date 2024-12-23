@@ -111,10 +111,10 @@ const Home = () => {
 
           {/* Prize pool section */}
           <div className="col-span-1 row-span-2 animate-fadeInDown rounded-3xl bg-secondary p-4 z-20">
-            <div className="font-bebas text-pink text-3xl sm:text-4xl font-bold">
+            <div className="font-bebas text-pink text-4xl sm:text-5xl font-bold">
               PRIZE POOL
             </div>
-            <div className="mt-4 sm:mt-2 text-white text-3xl sm:text-2xl font-bold">
+            <div className="mt-4 sm:mt-2 text-white text-xl sm:text-xl font-bold">
               {data.prizePool}
             </div>
             <div className="text-white text-4xl sm:text-3xl mt-2 flex justify-center between-768-900:invisible">
@@ -124,10 +124,10 @@ const Home = () => {
 
           {/* Location section */}
           <div className="col-span-1 row-span-2 animate-fadeInUp rounded-3xl bg-secondary p-2 z-20">
-            <div className="font-bold text-pink mt-0 text-3xl sm:text-4xl font-bebas between-768-900:text-3xl">
+            <div className="font-bold text-pink mt-0 text-4xl sm:text-5xl font-bebas between-768-900:text-3xl">
               LOCATION
             </div>
-            <div className="font-bold mt-1 text-white text-xl sm:text-xl between-768-900:text-base">
+            <div className="font-bold mt-1 text-white text-md sm:text-l between-768-900:text-base">
               {data.location}
             </div>
           </div>
