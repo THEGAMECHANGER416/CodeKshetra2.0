@@ -82,10 +82,10 @@ function App() {
         >
           <ProblemStatement />
         </div>
-        <div id="prizes" ref={prizePoolRef} className="h-100">
+        <div id="prizes" ref={prizePoolRef} className="h-[25rem]">
           <Prizes />
         </div>
-        <div id="judge" ref={JudgeRef} className="h-auto py-10">
+        <div id="judge" ref={JudgeRef} className="h-[50rem] mt-[90rem] md:mt-[70rem] sm:mt-[95rem] lg:mt-[55rem] pt-10">
           <Judge />
         </div>
         <div id="LeadOrganizers" ref={LeadOrganizersRef} className="h-100">
