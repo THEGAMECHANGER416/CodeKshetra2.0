@@ -94,7 +94,7 @@ function App() {
         <div id="sponsors" ref={sponsorsRef} className="h-100 mb-20 mt-[10rem]">
           <Sponsors />
         </div>
-        <div id="faq" ref={faqRef} className="h-[80rem]">
+        <div id="faq" ref={faqRef} className="h-[85rem]">
           <Faq />
         </div>
         {/* <div id="team" ref={mentorCardRef} className="h-screen">
