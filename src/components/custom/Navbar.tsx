@@ -16,6 +16,7 @@ interface NavbarProps {
     team: React.RefObject<HTMLDivElement>;
     judge: React.RefObject<HTMLDivElement>;
     leadOrganizers: React.RefObject<HTMLDivElement>;
+    sponsors: React.RefObject<HTMLDivElement>;
   };
 }
 
@@ -35,21 +36,26 @@ const Navbar: React.FC<NavbarProps> = ({ scrollRefs }) => {
     };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setSelectedSection(`#${entry.target.id}`);
+          const sectionId = entry.target.id;
+          if (sectionId === "judge" || sectionId === "LeadOrganizers" || sectionId === "sponsors") {
+            setSelectedSection("#judge");
+          } else {
+            setSelectedSection(`#${sectionId}`);
+          }
         }
       });
     }, options);
 
-    Object.values(scrollRefs).forEach(ref => {
+    Object.values(scrollRefs).forEach((ref) => {
       if (ref.current) {
         observer.observe(ref.current);
       }
     });
 
     return () => {
-      Object.values(scrollRefs).forEach(ref => {
+      Object.values(scrollRefs).forEach((ref) => {
         if (ref.current) {
           observer.unobserve(ref.current);
         }
@@ -120,7 +126,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollRefs }) => {
           icon={<RiTeamFill />}
           label="Team"
           selected={selectedSection === "#judge"}
-          scrollTo={scrollRefs.team}
+          scrollTo={scrollRefs.judge}
           onClick={handleNavClick}
         />
         <NavItem
@@ -180,7 +186,7 @@ const NavItem: React.FC<NavItemProps> = ({
 }) => {
   const navItemRef = useRef<HTMLButtonElement>(null);
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const isDesktop = useMediaQuery("(min-width: 768px)"); // Check for desktop
+  const isDesktop = useMediaQuery("(min-width: 768px)");
 
   const handleMouseOver = () => {
     if (isDesktop) {
@@ -208,7 +214,7 @@ const NavItem: React.FC<NavItemProps> = ({
         `}
         onClick={() => {
           onClick(hash, scrollTo, navItemRef);
-        }} 
+        }}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
         aria-label={label}
