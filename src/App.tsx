@@ -6,7 +6,7 @@ import Faq from "./components/custom/FAQ";
 import Navbar from "./components/custom/Navbar";
 import ProblemStatement from "./components/custom/ProblemStatement";
 import TimeLine from "./components/custom/TimeLine";
-import { HashRouter as Router } from "react-router-dom"; // Use HashRouter for smooth scrolling
+import { HashRouter as Router } from "react-router-dom";
 import { useRef } from "react";
 import ScrollHandler from "./components/custom/ScrollHandler";
 import Footer from "./components/custom/Footer";
@@ -37,6 +37,7 @@ function App() {
             about: aboutUsRef,
             timeline: timelineRef,
             problems: problemStatementRef,
+            sponsors: sponsorsRef,
             prizes: prizePoolRef,
             faq: faqRef,
             team: mentorCardRef,
@@ -51,6 +52,7 @@ function App() {
             about: aboutUsRef,
             timeline: timelineRef,
             problems: problemStatementRef,
+            sponsors: sponsorsRef,
             prizes: prizePoolRef,
             faq: faqRef,
             team: mentorCardRef,
@@ -62,44 +64,44 @@ function App() {
           className="fixed top-0 right-6 h-24 w-24 md:h-32 md:w-20 z-30"
         />
         <main className="flex-grow">
-        <div id="home" ref={homeRef} className="xl:mt-10">
-          <Home />
-        </div>
-        <div
-          id="about"
-          ref={aboutUsRef}
-          className="mt-[2rem] sm:mt-[-3rem] min-w-1024:mt-[-5rem]"
-        >
-          <AboutUs />
-        </div>
-        <div id="timeline" ref={timelineRef} className="">
-          <TimeLine />
-        </div>
-        <div
-          id="problems"
-          ref={problemStatementRef}
-          className="min-h-[70dvh] h-fit"
-        >
-          <ProblemStatement />
-        </div>
-        <div id="prizes" ref={prizePoolRef} className="h-[25rem]">
-          <Prizes />
-        </div>
-        <div id="judge" ref={JudgeRef} className="h-[50rem] mt-[90rem] md:mt-[70rem] sm:mt-[95rem] lg:mt-[55rem] pt-10">
-          <Judge />
-        </div>
-        <div id="LeadOrganizers" ref={LeadOrganizersRef} className="h-100">
-          <LeadOrganizers />
-        </div>
-        <div id="sponsors" ref={sponsorsRef} className="h-100 mb-20 mt-[10rem]">
-          <Sponsors />
-        </div>
-        <div id="faq" ref={faqRef} className="h-[85rem]">
-          <Faq />
-        </div>
-        {/* <div id="team" ref={mentorCardRef} className="h-screen">
-          <MentorCard />
-        </div> */}
+          <div id="home" ref={homeRef} className="xl:mt-10">
+            <Home />
+          </div>
+          <div
+            id="about"
+            ref={aboutUsRef}
+            className="mt-[2rem] sm:mt-[-3rem] min-w-1024:mt-[-5rem]"
+          >
+            <AboutUs />
+          </div>
+          <div id="timeline" ref={timelineRef} className="">
+            <TimeLine />
+          </div>
+          <div
+            id="problems"
+            ref={problemStatementRef}
+            className="min-h-[70dvh] h-fit"
+          >
+            <ProblemStatement />
+          </div>
+          <div id="prizes" ref={prizePoolRef} className="h-[25rem]">
+            <Prizes />
+          </div>
+          <div id="judge" ref={JudgeRef} className="h-[50rem] mt-[90rem] md:mt-[70rem] sm:mt-[95rem] lg:mt-[55rem] pt-10">
+            <Judge />
+          </div>
+          <div id="LeadOrganizers" ref={LeadOrganizersRef} className="h-100">
+            <LeadOrganizers />
+          </div>
+          <div id="sponsors" ref={sponsorsRef} className="h-100 mb-20 mt-[10rem]">
+            <Sponsors />
+          </div>
+          <div id="faq" ref={faqRef} className="h-[85rem]">
+            <Faq />
+          </div>
+          {/* <div id="team" ref={mentorCardRef} className="h-screen">
+            <MentorCard />
+          </div> */}
         </main>
         <Footer />
       </div>
