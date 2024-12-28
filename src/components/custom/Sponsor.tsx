@@ -124,15 +124,15 @@ const Sponsors = () => {
       </div>
 
       <div className="w-full px-4 sm:px-6 mb-12 flex flex-wrap items-center justify-center">
-  {partners.map((sponsor, index) => (
+  {partners.map((partner, index) => (
     <div
       key={index}
-      className="bg-white rounded-3xl shadow-lg overflow-hidden flex items-center justify-center m-2 md:m-4 h-56 w-[calc(50%-1rem)] sm:w-80"
+      className="bg-white rounded-3xl shadow-lg overflow-hidden flex items-center justify-center m-2 md:m-4  h-44 md:h-56 w-[calc(50%-1rem)] sm:w-80"
     >
       <img
-        src={sponsor.src}
-        alt={`Sponsor ${index + 1}`}
-        className="w-full p-5 h-full object-contain hover:scale-110 transition-all duration-300 ease-in-out"
+        src={partner.src}
+        alt={`partner ${index + 1}`}
+        className="w-full  p-3 md:p-5  h-full object-contain hover:scale-110 transition-all duration-300 ease-in-out"
       />
     </div>
   ))}
