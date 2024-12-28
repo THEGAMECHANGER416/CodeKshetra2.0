@@ -9,6 +9,7 @@ import image8 from "/assets/polygon.png";
 import image9 from "/assets/unifest.png";
 import image10 from "/assets/wolfram.png";
 import image11 from "/assets/pathway.png";
+import codecrafter from "/assets/codecrafter.svg"
 import MLH from "/assets/mlh-logo-color.png";
 import cyborgs from "/assets/Cyborgs.png";
 import devDisplay from "/assets/devDisplay2.png";
@@ -30,6 +31,8 @@ const Sponsors = () => {
     Silver: [
       { src: image10, url: "https://www.wolfram.com" },
       { src: image5, url: "https://devfolio.co" },
+      
+      
     ],
     Bronze: [
       { src: image2, url: "https://aptosfoundation.org" },
@@ -39,6 +42,7 @@ const Sponsors = () => {
       { src: image7, url: "https://interviewbuddy.net" },
       { src: image8, url: "https://www.polygon.technology" },
       { src: image9, url: "https://www.unifest.in" },
+      { src: codecrafter, url: "https://codecrafters.io/" },
     ],
   };
 
