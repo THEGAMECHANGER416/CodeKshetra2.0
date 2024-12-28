@@ -10,6 +10,17 @@ import image9 from "/assets/unifest.png";
 import image10 from "/assets/wolfram.png";
 import image11 from "/assets/pathway.png";
 import MLH from "/assets/mlh-logo-color.png";
+import cyborgs from "/assets/Cyborgs.png";
+import devDisplay from "/assets/devDisplay2.png";
+import exploit from "/assets/exploit.png";
+import kaizen from "/assets/kaizen.jpg";
+import techSavvy from "/assets/Tech Savvy.png";
+import techLeads from "/assets/techLeads.png";
+import devArmy from "/assets/thedevArmy.png";
+import webForge from "/assets/webForge.png";
+
+
+
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Sponsors = () => {
@@ -31,7 +42,16 @@ const Sponsors = () => {
     ],
   };
 
-  const partners = [MLH];
+  const partners = [
+    { src: cyborgs },
+    { src: devDisplay },
+    { src: kaizen },
+    { src: techSavvy },
+    { src: techLeads },
+    { src: exploit },
+    { src: devArmy },
+    { src: webForge }, 
+];
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black">
@@ -75,26 +95,14 @@ const Sponsors = () => {
         </div>
       ))}
 
-      <h1 className="md:text-[13rem] font-bebas text-[6.4rem] text-pink font-bold mb-[4rem] md:mb-[6rem] text-center mt-[9rem]">
-        PARTNERS
-      </h1>
+<h1 className="md:text-[13rem] font-bebas text-[6.4rem] text-pink font-bold mb-[4rem] md:mb-[6rem] text-center mt-[9rem]">
+  PARTNERS
+</h1>
 
-      <div className=" grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 w-full max-w-6xl px-4 sm:px-6 hidden md:grid">
-        {partners.map((src, index) => (
-          <div
-            key={index}
-            className="w-full col-start-2 h-48 sm:h-52 bg-white rounded-3xl shadow-lg overflow-hidden p-14 flex flex-col items-center justify-center"
-          >
-            <img
-              src={src}
-              alt={`Partner ${index + 1}`}
-              className="w-full h-full object-contain hover:scale-110 transition-all duration-300 ease-in-out"
-            />
-          </div>
-        ))}
-      </div>
 
-      <div className="flex justify-center items-center md:hidden">
+
+
+      <div className="flex justify-center items-center mb-2">
         <div className="w-full h-48 sm:h-52 bg-white rounded-3xl shadow-lg overflow-hidden p-14">
           <img
             src={MLH}
@@ -103,7 +111,7 @@ const Sponsors = () => {
           />
         </div>
       </div>
-      <div className="my-2 space-x-3 text-white">
+      <div className="my-2 space-x-3 text-white mb-12">
         <a
           href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
           target="_blank"
@@ -114,6 +122,21 @@ const Sponsors = () => {
           <FaExternalLinkAlt />
         </a>
       </div>
+
+      <div className="w-full px-4 sm:px-6 mb-12 flex flex-wrap items-center justify-center">
+  {partners.map((sponsor, index) => (
+    <div
+      key={index}
+      className="bg-white rounded-3xl shadow-lg overflow-hidden flex items-center justify-center m-2 md:m-4 h-56 w-[calc(50%-1rem)] sm:w-80"
+    >
+      <img
+        src={sponsor.src}
+        alt={`Sponsor ${index + 1}`}
+        className="w-full p-5 h-full object-contain hover:scale-110 transition-all duration-300 ease-in-out"
+      />
+    </div>
+  ))}
+</div>
     </div>
   );
 };
