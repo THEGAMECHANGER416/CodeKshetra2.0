@@ -9,6 +9,7 @@ import image8 from "/assets/polygon.png";
 import image9 from "/assets/unifest.png";
 import image10 from "/assets/wolfram.png";
 import image11 from "/assets/pathway.png";
+import image12 from "/assets/appwrite.png";
 import codecrafter from "/assets/codecrafter.svg"
 import MLH from "/assets/mlh-logo-color.png";
 import cyborgs from "/assets/Cyborgs.png";
@@ -31,8 +32,7 @@ const Sponsors = () => {
     Silver: [
       { src: image10, url: "https://www.wolfram.com" },
       { src: image5, url: "https://devfolio.co" },
-      
-      
+      { src: image12, url: "https://appwrite.io" },      
     ],
     Bronze: [
       { src: image2, url: "https://aptosfoundation.org" },
