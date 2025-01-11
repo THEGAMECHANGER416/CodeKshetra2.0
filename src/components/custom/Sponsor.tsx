@@ -27,10 +27,8 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Sponsors = () => {
   const categories = {
-    Platinum: [
-      { src: image11, url: "https://www.pathway.com" },
-      { src: groq, url: "https://groq.com/" },
-    ],
+    PoweredBy: [{ src: groq, url: "https://groq.com/" }],
+    Platinum: [{ src: image11, url: "https://www.pathway.com" }],
     Gold: [{ src: image1, url: "https://www.aihello.com" }],
     Silver: [
       { src: image10, url: "https://www.wolfram.com" },
@@ -48,6 +46,10 @@ const Sponsors = () => {
       { src: image9, url: "https://www.unifest.in" },
       { src: codecrafter, url: "https://codecrafters.io/" },
     ],
+  };
+
+  const formatCategoryName = (name: string) => {
+    return name.replace(/([a-z])([A-Z])/g, "$1 $2");
   };
 
   const partners = [
@@ -73,7 +75,7 @@ const Sponsors = () => {
           className="w-full max-w-6xl px-4 sm:px-6 mb-12 flex flex-col items-center"
         >
           <h2 className="text-4xl sm:text-5xl font-bebas text-pink mb-6 text-center">
-            {category}
+            {formatCategoryName(category)}
           </h2>
           <div
             className={`flex flex-wrap justify-center ${
