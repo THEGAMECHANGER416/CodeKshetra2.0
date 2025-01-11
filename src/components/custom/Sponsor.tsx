@@ -20,7 +20,7 @@ import techSavvy from "/assets/Tech Savvy.png";
 import techLeads from "/assets/techLeads.png";
 import devArmy from "/assets/thedevArmy.png";
 import webForge from "/assets/webForge.png";
-import groq from "/assets/GROQ.webp";
+import groq from "/assets/GROQ.jpg";
 import quilshield from "/assets/quilshield.png";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
