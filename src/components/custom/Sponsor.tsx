@@ -10,7 +10,7 @@ import image9 from "/assets/unifest.png";
 import image10 from "/assets/wolfram.png";
 import image11 from "/assets/pathway.png";
 import image12 from "/assets/appwrite.png";
-import codecrafter from "/assets/codecrafter.svg"
+import codecrafter from "/assets/codecrafter.svg";
 import MLH from "/assets/mlh-logo-color.png";
 import cyborgs from "/assets/Cyborgs.png";
 import devDisplay from "/assets/devDisplay2.png";
@@ -20,19 +20,21 @@ import techSavvy from "/assets/Tech Savvy.png";
 import techLeads from "/assets/techLeads.png";
 import devArmy from "/assets/thedevArmy.png";
 import webForge from "/assets/webForge.png";
-
-
+import groq from "/assets/GROQ.jpg";
+import quilshield from "/assets/quilshield.png";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Sponsors = () => {
   const categories = {
+    PoweredBy: [{ src: groq, url: "https://groq.com/" }],
     Platinum: [{ src: image11, url: "https://www.pathway.com" }],
     Gold: [{ src: image1, url: "https://www.aihello.com" }],
     Silver: [
       { src: image10, url: "https://www.wolfram.com" },
       { src: image5, url: "https://devfolio.co" },
-      { src: image12, url: "https://appwrite.io" },      
+      { src: image12, url: "https://appwrite.io" },
+      { src: quilshield, url: "https://shield.quillai.network/" },
     ],
     Bronze: [
       { src: image2, url: "https://aptosfoundation.org" },
@@ -46,6 +48,10 @@ const Sponsors = () => {
     ],
   };
 
+  const formatCategoryName = (name: string) => {
+    return name.replace(/([a-z])([A-Z])/g, "$1 $2");
+  };
+
   const partners = [
     { src: cyborgs },
     { src: devDisplay },
@@ -54,8 +60,8 @@ const Sponsors = () => {
     { src: techLeads },
     { src: exploit },
     { src: devArmy },
-    { src: webForge }, 
-];
+    { src: webForge },
+  ];
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black">
@@ -69,7 +75,7 @@ const Sponsors = () => {
           className="w-full max-w-6xl px-4 sm:px-6 mb-12 flex flex-col items-center"
         >
           <h2 className="text-4xl sm:text-5xl font-bebas text-pink mb-6 text-center">
-            {category}
+            {formatCategoryName(category)}
           </h2>
           <div
             className={`flex flex-wrap justify-center ${
@@ -99,12 +105,9 @@ const Sponsors = () => {
         </div>
       ))}
 
-<h1 className="md:text-[13rem] font-bebas text-[6.4rem] text-pink font-bold mb-[4rem] md:mb-[6rem] text-center mt-[9rem]">
-  PARTNERS
-</h1>
-
-
-
+      <h1 className="md:text-[13rem] font-bebas text-[6.4rem] text-pink font-bold mb-[4rem] md:mb-[6rem] text-center mt-[9rem]">
+        PARTNERS
+      </h1>
 
       <div className="flex justify-center items-center mb-2">
         <div className="w-full h-48 sm:h-52 bg-white rounded-3xl shadow-lg overflow-hidden p-14">
@@ -128,19 +131,19 @@ const Sponsors = () => {
       </div>
 
       <div className="w-full px-4 sm:px-6 mb-12 flex flex-wrap items-center justify-center">
-  {partners.map((partner, index) => (
-    <div
-      key={index}
-      className="bg-white rounded-3xl shadow-lg overflow-hidden flex items-center justify-center m-2 md:m-4  h-44 md:h-56 w-[calc(50%-1rem)] sm:w-80"
-    >
-      <img
-        src={partner.src}
-        alt={`partner ${index + 1}`}
-        className="w-full  p-3 md:p-5  h-full object-contain hover:scale-110 transition-all duration-300 ease-in-out"
-      />
-    </div>
-  ))}
-</div>
+        {partners.map((partner, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-3xl shadow-lg overflow-hidden flex items-center justify-center m-2 md:m-4  h-44 md:h-56 w-[calc(50%-1rem)] sm:w-80"
+          >
+            <img
+              src={partner.src}
+              alt={`partner ${index + 1}`}
+              className="w-full  p-3 md:p-5  h-full object-contain hover:scale-110 transition-all duration-300 ease-in-out"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
