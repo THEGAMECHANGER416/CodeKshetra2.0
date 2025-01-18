@@ -23,6 +23,7 @@ import webForge from "/assets/webForge.png";
 import groq from "/assets/GROQ.jpg";
 import quilshield from "/assets/quilshield.png";
 import neoappAi from "/assets/neoappAI.png";
+import github from "/assets/GitHub.png";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -30,8 +31,10 @@ const Sponsors = () => {
   const categories = {
     PoweredBy: [{ src: groq, url: "https://groq.com/" }],
     Platinum: [{ src: image11, url: "https://www.pathway.com" }],
-    Gold: [{ src: image1, url: "https://www.aihello.com" }
-      ,{src: neoappAi, url:"https://neoapps.ai/"}
+    Gold: [
+      { src: image1, url: "https://www.aihello.com" },
+      { src: neoappAi, url: "https://neoapps.ai/" },
+      { src: github, url: "https://github.com" },
     ],
     Silver: [
       { src: image10, url: "https://www.wolfram.com" },
