@@ -22,7 +22,7 @@ const faqs: FAQ[] = [
   {
     question: "What are the eligibility criteria for participants?",
     answer:
-      "Participants must be students currently enrolled in a college or university. All skill levels are welcome.",
+      "All are welcome to participate, whether you are currently enrolled in a college or university or a working professional. All skill levels are welcome.",
   },
   {
     question: "What should I bring to the hackathon?",
