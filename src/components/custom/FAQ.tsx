@@ -41,11 +41,10 @@ const faqs: FAQ[] = [
   },
   {
     question: "Will there be wifi available at the venue?",
-    answer:
-      "Yes, ofcourse! (even we can't survive without internet😭)",
+    answer: "Yes, ofcourse! (even we can't survive without internet😭)",
   },
   {
-    question: "It is my hackathon, what's something I should know?",
+    question: "It is my first hackathon, what's something I should know?",
     answer:
       "Hackathons are not only meant for winning (although that is the goal) but they provide you with so many networking opportunities (our community core members met in hacks too). Win or lose you'll definitely learn something, so come from a learning mindset and you will have fun along the way (we promise 😁)",
   },
