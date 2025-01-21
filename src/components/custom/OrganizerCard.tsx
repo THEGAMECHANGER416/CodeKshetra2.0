@@ -9,7 +9,7 @@ const LeadOrganizers = () => {
     { id: 2, image: "../../../assets/team_members/manasChopra.jpg", name: "Manas", linkedin: "https://www.linkedin.com/in/themanas95826/" },
     { id: 3, image: "../../../assets/team_members/prathamBatra.jpg", name: "Pratham", linkedin: "https://www.linkedin.com/in/pratham1908/" },
     { id: 4, image: "../../../assets/team_members/SanidhyaGoel.jpg", name: "Sanidhya", linkedin: "https://www.linkedin.com/in/sanidhya-goel-2499991b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-    { id: 5, image: "../../../assets/team_members/sakshamVerma.jpg", name: "Saksham", linkedin: "https://www.linkedin.com/in/saksham-verma-a9390b256/" },
+    { id: 5, image: "../../../assets/team_members/vibhor.jpg", name: "Vibhor", linkedin: "https://www.linkedin.com/in/vibhor-aggarwal-726095189" },
   ];
 
   return (
