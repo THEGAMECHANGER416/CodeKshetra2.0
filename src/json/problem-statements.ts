@@ -12,43 +12,43 @@ export const problemStatements: ProblemStatement[] = [
     Submission: "https://shorturl.at/ew4Gy",
         },
   {
-    title: "Currently locked 😊🔒",
-    category: "Currently locked 😊🔒",
+    title: "Currently locked 🔒",
+    category: "Currently locked 🔒",
     description:
       "🔒",
-      Statement: "locked 😊🔒",
-      Submission: "locked 😊🔒",
+      Statement: "locked 🔒",
+      Submission: "locked 🔒",
   },
   {
-    title: "Currently locked 😊🔒",
-    category: "Currently locked 😊🔒",
+    title: "Currently locked 🔒",
+    category: "Currently locked 🔒",
     description:
       "🔒",
-      Statement: "locked 😊🔒",
-      Submission: "locked 😊🔒",
+      Statement: "locked 🔒",
+      Submission: "locked 🔒",
   },
   {
-    title: "Currently locked 😊🔒",
-    category: "Currently locked 😊🔒",
+    title: "Currently locked 🔒",
+    category: "Currently locked 🔒",
     description:
       "🔒",
-      Statement: "locked 😊🔒",
-      Submission: "locked 😊🔒",
+      Statement: "locked 🔒",
+      Submission: "locked 🔒",
   },
   {
-    title: "Currently locked 😊🔒",
-    category: "Currently locked 😊🔒",
+    title: "Currently locked 🔒",
+    category: "Currently locked 🔒",
     description:
       "🔒",
-      Statement: "locked 😊🔒",
-      Submission: "locked 😊🔒",
+      Statement: "locked 🔒",
+      Submission: "locked 🔒",
   },
   {
-    title: "Currently locked 😊🔒",
-    category: "Currently locked 😊🔒",
+    title: "Currently locked 🔒",
+    category: "Currently locked 🔒",
     description:
       "🔒",
-      Statement: "locked 😊🔒",
-      Submission: "locked 😊🔒",
+      Statement: "locked 🔒",
+      Submission: "locked 🔒",
   },
 ];
