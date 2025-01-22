@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { ChevronLeft, ChevronRight, Lock } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { CardContent } from "../CardContent";
 import { rippleEffect } from "@/utils/rippleEffect";
@@ -57,15 +57,15 @@ const ProblemStatement = () => {
     startAutoChange();
   }, [startAutoChange, stopAutoChange]);
 
-  const handleCardClick = (index: number) => {
-    const card = document.querySelector(`[data-card-index="${index}"]`);
-    if (card) {
-      card.classList.add("vibrate");
-      setTimeout(() => {
-        card.classList.remove("vibrate");
-      }, 600);
-    }
-  };
+  // const handleCardClick = (index: number) => {
+  //   const card = document.querySelector(`[data-card-index="${index}"]`);
+  //   if (card) {
+  //     card.classList.add("vibrate");
+  //     setTimeout(() => {
+  //       card.classList.remove("vibrate");
+  //     }, 600);
+  //   }
+  // };
 
   return (
     <div
@@ -115,14 +115,15 @@ const ProblemStatement = () => {
                         ? "scale-100 opacity-100"
                         : "scale-90 opacity-30"
                     }`}
+                   
                   >
                     <div className="relative overflow-hidden rounded-lg shadow-lg">
-                      <div className="filter blur-[6px]">
+                      <div className="">
                         <CardContent {...statement} className="h-full" />
                       </div>
 
                       {/* Remove this div to reveal the card */}
-                      <div 
+                      {/* <div 
                         className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-sm rounded-lg cursor-pointer transition-all duration-300 hover:backdrop-blur-md"
                         onClick={() => handleCardClick(index)}
                       >
@@ -135,7 +136,7 @@ const ProblemStatement = () => {
                         <p className="text-pink/80 text-2xl font-medium text-center px-4">
                           Will be revealed soon!! 😉
                         </p>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </CarouselItem>
