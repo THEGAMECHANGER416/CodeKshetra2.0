@@ -4,18 +4,21 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import Logo from "/assets/Main Logo.png";
+import Judge1 from "../../../public/assets/Judges/Judge1.jpg";
+import Judge2 from "../../../public/assets/Judges/Judge2.jpg";
 
 interface Judge {
   img: string;
   name: string;
+  linkedin: string;
 }
 
 const judges: Judge[] = [
-  { img: Logo, name: "Judge 1" },
-  { img: Logo, name: "Judge 2" },
-  { img: Logo, name: "Judge 3" },
-  { img: Logo, name: "Judge 4" },
-  { img: Logo, name: "Judge 5" },
+  { img: Judge1, name: "Bhaskarjit Samah" , linkedin:"https://www.linkedin.com/in/bhaskarjitsarmah/"},
+  { img: Judge2, name: "Ayon Roy", linkedin:"https://www.linkedin.com/in/ayon-roy/" },
+  { img: Logo, name: "Judge 3",linkedin:"" },
+  { img: Logo, name: "Judge 4", linkedin:"" },
+  { img: Logo, name: "Judge 5",linkedin:"" },
 ];
 
 export default function Judge(): JSX.Element {
@@ -43,6 +46,25 @@ export default function Judge(): JSX.Element {
               alt={judge.name}
               className="h-full w-full object-cover rounded-2xl"
             />
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white text-sm px-3 py-1 rounded-md flex items-center space-x-2">
+              <span>{judge.name}</span>
+                {judge.linkedin && (
+              <a
+              href={judge.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink"
+              ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-4 h-4"
+              >
+              <path d="M20.447 3H3.553A1.553 1.553 0 002 4.553v14.894C2 20.403 3.197 21 4.553 21H20.44c1.356 0 2.553-.598 2.553-2.553V4.553A1.553 1.553 0 0020.447 3zm-11.61 15H5.337V9.6h3.5v8.4zm-1.74-9.603a2.032 2.032 0 110-4.063 2.032 2.032 0 010 4.063zM19.1 18h-3.499v-4.6c0-1.2-.4-2.014-1.395-2.014-.763 0-1.209.513-1.409 1.01-.072.177-.09.422-.09.67v4.933H9.3c.042-8.034 0-8.9 0-8.9h3.499v1.36a3.294 3.294 0 013.056-1.74c2.274 0 3.744 1.483 3.744 4.13V18z" />
+          </svg>
+        </a>
+      )}
+    </div>
           </div>
         ))}
       </div>
@@ -72,6 +94,26 @@ export default function Judge(): JSX.Element {
                   alt={judge.name}
                   className="h-full w-full object-cover rounded-2xl"
                 />
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white text-sm px-3 py-1 rounded-md flex items-center space-x-2">
+      <span>{judge.name}</span>
+      {judge.linkedin && (
+        <a
+          href={judge.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-pink"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="w-4 h-4"
+          >
+            <path d="M20.447 3H3.553A1.553 1.553 0 002 4.553v14.894C2 20.403 3.197 21 4.553 21H20.44c1.356 0 2.553-.598 2.553-2.553V4.553A1.553 1.553 0 0020.447 3zm-11.61 15H5.337V9.6h3.5v8.4zm-1.74-9.603a2.032 2.032 0 110-4.063 2.032 2.032 0 010 4.063zM19.1 18h-3.499v-4.6c0-1.2-.4-2.014-1.395-2.014-.763 0-1.209.513-1.409 1.01-.072.177-.09.422-.09.67v4.933H9.3c.042-8.034 0-8.9 0-8.9h3.499v1.36a3.294 3.294 0 013.056-1.74c2.274 0 3.744 1.483 3.744 4.13V18z" />
+          </svg>
+        </a>
+      )}
+    </div>
               </div>
             </div>
           </SwiperSlide>

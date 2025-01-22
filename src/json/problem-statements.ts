@@ -4,39 +4,51 @@ export const CHANGE_DURATION = 5000;
 
 export const problemStatements: ProblemStatement[] = [
   {
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    category: "Some Random Category 1",
+    title: "AiHello Problem Statements",
+    category: "Machine learning",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eos repellendus natus corrupti delectus voluptatibus, provident ducimus, dignissimos saepe fugit et iste est vero? Nobis quaerat labore autem corrupti consequatur, repellat, non optio officiis iusto consectetur eum. Odio dolores consequuntur vitae minima. Excepturi dolorum deserunt aperiam asperiores, repudiandae reiciendis obcaecati, vero quod necessitatibus laborum corporis explicabo culpa eligendi incidunt architecto.",
+      "Our sponsor - AiHello (https://www.aihello.com/) have released 2 problem statements. Anyone who performs well and submits their work to us will get a direct entry to Code Kshetra 2.0! They can use their project for the hackathon and also stand a chance to get hired by the company!!!",
+    Statement: "https://shorturl.at/VLAaq",
+    Submission: "https://shorturl.at/ew4Gy",
+        },
+  {
+    title: "Currently locked 😊🔒",
+    category: "Currently locked 😊🔒",
+    description:
+      "🔒",
+      Statement: "locked 😊🔒",
+      Submission: "locked 😊🔒",
   },
   {
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    category: "Some Random Category 2",
+    title: "Currently locked 😊🔒",
+    category: "Currently locked 😊🔒",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eos repellendus natus corrupti delectus voluptatibus, provident ducimus, dignissimos saepe fugit et iste est vero? Nobis quaerat labore autem corrupti consequatur, repellat, non optio officiis iusto consectetur eum. Odio dolores consequuntur vitae minima. Excepturi dolorum deserunt aperiam asperiores, repudiandae reiciendis obcaecati, vero quod necessitatibus laborum corporis explicabo culpa eligendi incidunt architecto.",
+      "🔒",
+      Statement: "locked 😊🔒",
+      Submission: "locked 😊🔒",
   },
   {
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    category: "Some Random Category 3",
+    title: "Currently locked 😊🔒",
+    category: "Currently locked 😊🔒",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eos repellendus natus corrupti delectus voluptatibus, provident ducimus, dignissimos saepe fugit et iste est vero? Nobis quaerat labore autem corrupti consequatur, repellat, non optio officiis iusto consectetur eum. Odio dolores consequuntur vitae minima. Excepturi dolorum deserunt aperiam asperiores, repudiandae reiciendis obcaecati, vero quod necessitatibus laborum corporis explicabo culpa eligendi incidunt architecto.",
+      "🔒",
+      Statement: "locked 😊🔒",
+      Submission: "locked 😊🔒",
   },
   {
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    category: "Some Random Category 4",
+    title: "Currently locked 😊🔒",
+    category: "Currently locked 😊🔒",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eos repellendus natus corrupti delectus voluptatibus, provident ducimus, dignissimos saepe fugit et iste est vero? Nobis quaerat labore autem corrupti consequatur, repellat, non optio officiis iusto consectetur eum. Odio dolores consequuntur vitae minima. Excepturi dolorum deserunt aperiam asperiores, repudiandae reiciendis obcaecati, vero quod necessitatibus laborum corporis explicabo culpa eligendi incidunt architecto.",
+      "🔒",
+      Statement: "locked 😊🔒",
+      Submission: "locked 😊🔒",
   },
   {
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    category: "Some Random Category 5",
+    title: "Currently locked 😊🔒",
+    category: "Currently locked 😊🔒",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eos repellendus natus corrupti delectus voluptatibus, provident ducimus, dignissimos saepe fugit et iste est vero? Nobis quaerat labore autem corrupti consequatur, repellat, non optio officiis iusto consectetur eum. Odio dolores consequuntur vitae minima. Excepturi dolorum deserunt aperiam asperiores, repudiandae reiciendis obcaecati, vero quod necessitatibus laborum corporis explicabo culpa eligendi incidunt architecto.",
-  },
-  {
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    category: "Some Random Category 6",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eos repellendus natus corrupti delectus voluptatibus, provident ducimus, dignissimos saepe fugit et iste est vero? Nobis quaerat labore autem corrupti consequatur, repellat, non optio officiis iusto consectetur eum. Odio dolores consequuntur vitae minima. Excepturi dolorum deserunt aperiam asperiores, repudiandae reiciendis obcaecati, vero quod necessitatibus laborum corporis explicabo culpa eligendi incidunt architecto.",
+      "🔒",
+      Statement: "locked 😊🔒",
+      Submission: "locked 😊🔒",
   },
 ];
