@@ -24,11 +24,13 @@ import groq from "/assets/GROQ.jpg";
 import quilshield from "/assets/quilshield.png";
 import neoappAi from "/assets/neoappAI.png";
 import github from "/assets/GitHub.png";
+import reactive from "/assets/Reactive.png";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Sponsors = () => {
   const categories = {
+    Title: [{ src: reactive, url: "https://reactive.network" }],
     PoweredBy: [{ src: groq, url: "https://groq.com/" }],
     Platinum: [{ src: image11, url: "https://www.pathway.com" }],
     Gold: [

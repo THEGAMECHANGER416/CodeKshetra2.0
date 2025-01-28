@@ -4,8 +4,8 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import Logo from "/assets/Main Logo.png";
-import Judge1 from "../../../public/assets/Judges/Judge1.jpg";
-import Judge2 from "../../../public/assets/Judges/Judge2.jpg";
+import Judge1 from "/assets/Judges/Judge1.jpg";
+import Judge2 from "/assets/Judges/Judge2.jpg";
 
 interface Judge {
   img: string;
