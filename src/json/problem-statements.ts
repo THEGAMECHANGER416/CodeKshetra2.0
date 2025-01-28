@@ -12,12 +12,12 @@ export const problemStatements: ProblemStatement[] = [
     Submission: "https://shorturl.at/ew4Gy",
         },
   {
-    title: "Currently locked 🔒",
-    category: "Currently locked 🔒",
+    title: "Neoapps.ai Problem Statements",
+    category: "Full Stack Development",
     description:
-      "🔒",
-      Statement: "locked 🔒",
-      Submission: "locked 🔒",
+      "Neoapps.ai, an all-in-one platform for building full-stack applications, streamlines the entire process—analyzing requirements, generating tailored backend and frontend, and deploying seamlessly—while proudly sponsoring the hackathon with a $1,000 one-year credit prize to empower the winner to bring ideas to life with speed and efficiency.",
+      Statement: " Open to Innovation😄",
+      Submission: "Submit it in Hackathon ",
   },
   {
     title: "Currently locked 🔒",
