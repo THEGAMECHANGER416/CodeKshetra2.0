@@ -42,7 +42,7 @@ export const CardContent = ({
         href={Statement}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-pink hover:text-white transition-all underline duration-300"
+        className="text-pink hover:text-white transition-all duration-300"
       >{Statement}</a>
     </p>
 
@@ -51,7 +51,7 @@ export const CardContent = ({
         href={Submission}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-pink hover:text-white transition-all underline duration-300"
+        className="text-pink hover:text-white transition-all duration-300"
       >{Submission}</a>
     </p>
   </div>
