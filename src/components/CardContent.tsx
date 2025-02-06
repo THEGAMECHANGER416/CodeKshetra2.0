@@ -22,7 +22,7 @@ export const CardContent = ({
       <span className="absolute left-0 top-0 w-0 h-full bg-accent/5 group-hover:w-full transition-all duration-500 overflow-hidden rounded-xl flex justify-center items-center">
         Statement
       </span>
-    </h4>
+    </h4>6
 
     <h3 className="capitalize font-medium text-slate-200 text-sm md:text-lg py-2">
       {title}
