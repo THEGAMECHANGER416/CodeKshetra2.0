@@ -16,8 +16,8 @@ export const problemStatements: ProblemStatement[] = [
     category: "Full Stack Development",
     description:
       "Neoapps.ai, an all-in-one platform for building full-stack applications, streamlines the entire process—analyzing requirements, generating tailored backend and frontend, and deploying seamlessly—while proudly sponsoring the hackathon with a $1,000 one-year credit prize to empower the winner to bring ideas to life with speed and efficiency.",
-      Statement: " Open to Innovation😄",
-      Submission: "Submit it in Hackathon ",
+      Statement: " https://shorturl.at/CAgmD",
+      Submission: "https://shorturl.at/r2SeK ",
   },
   {
     title: "Currently locked 🔒",
