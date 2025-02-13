@@ -3,6 +3,7 @@ import { ProblemStatement } from "@/types/problems";
 export const CHANGE_DURATION = 5000;
 
 export const problemStatements: ProblemStatement[] = [
+  
   {
     title: "AiHello Problem Statements",
     category: "Machine learning",
@@ -20,35 +21,12 @@ export const problemStatements: ProblemStatement[] = [
       Submission: "https://shorturl.at/r2SeK ",
   },
   {
-    title: "Currently locked 🔒",
-    category: "Currently locked 🔒",
+    title: "CodeKshetra-2.0 Problem Satements",
+    category: "All Domains Accepted",
     description:
-      "🔒",
-      Statement: "locked 🔒",
-      Submission: "locked 🔒",
+      "Geek Room is a thriving coding community with 25,000+ active coders nationwide, founded by three enthusiasts to promote transparency, idea-sharing, and mutual support. Known for its hackathon-winning teams, Geek Room, after the success of Codekshetra 1.0, is now back with Codekshetra 2.0",
+      Statement: "https://shorturl.at/wHMDW",
+      Submission: " https://shorturl.at/sqHHw",
   },
-  {
-    title: "Currently locked 🔒",
-    category: "Currently locked 🔒",
-    description:
-      "🔒",
-      Statement: "locked 🔒",
-      Submission: "locked 🔒",
-  },
-  {
-    title: "Currently locked 🔒",
-    category: "Currently locked 🔒",
-    description:
-      "🔒",
-      Statement: "locked 🔒",
-      Submission: "locked 🔒",
-  },
-  {
-    title: "Currently locked 🔒",
-    category: "Currently locked 🔒",
-    description:
-      "🔒",
-      Statement: "locked 🔒",
-      Submission: "locked 🔒",
-  },
+  
 ];
