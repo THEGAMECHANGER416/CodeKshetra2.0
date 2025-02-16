@@ -83,7 +83,7 @@ const ProblemStatement = () => {
         PROBLEM STATEMENTS
       </h1>
 
-      <div className="max-w-6xl px-4 md:ml-[-1.65rem] py-[2.5rem] h-fit grid grid-cols-1 md:grid-cols-[50px_1fr_50px] gap-2">
+      <div className="max-w-6xl px-4 md:ml-[-5.49rem] py-[2.5rem] h-fit grid grid-cols-1 md:grid-cols-[50px_1fr_50px] gap-2">
         <div className="hidden md:flex md:items-center">
           <button
             onClick={goToPrev}
@@ -107,7 +107,7 @@ const ProblemStatement = () => {
             onTouchStart={stopAutoChange}
             onTouchEnd={startAutoChange}
           >
-            <CarouselContent className="h-full flex items-center md:ml-[-12rem]">
+            <CarouselContent className="h-full flex items-center md:ml-[-5.1rem]">
               {problemStatements.map((statement, index) => (
                 <CarouselItem key={index} className="lg:basis-4/5 xl:basis-2/5">
                   <div
