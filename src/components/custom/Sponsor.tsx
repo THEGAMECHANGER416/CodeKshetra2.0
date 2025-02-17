@@ -25,6 +25,8 @@ import quilshield from "/assets/quilshield.png";
 import neoappAi from "/assets/neoappAI.png";
 import github from "/assets/GitHub.png";
 import reactive from "/assets/Reactive.png";
+import cloudCraft from "/assets/cloudCraft.jpg";
+import reinaiScience from "/assets/reinaiScience.jpg";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -37,6 +39,9 @@ const Sponsors = () => {
       { src: image1, url: "https://www.aihello.com" },
       { src: neoappAi, url: "https://neoapps.ai/" },
       { src: github, url: "https://github.com" },
+      { src: cloudCraft },
+      { src: reinaiScience },
+
     ],
     Silver: [
       { src: image10, url: "https://www.wolfram.com" },
