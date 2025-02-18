@@ -7,7 +7,7 @@ export const problemStatements: ProblemStatement[] = [
     title: "Pathway Problem Statements",
     category: "Real Time Analytics & A.I Domain",
     description:
-      "Pathway specializes in real-time data processing, streaming analytics, and AI-driven workflows. It supports event-driven architectures, ETL pipelines, and unstructured data, enabling RAG, dynamic ETL, and AI-powered decision-making in big data and knowledge engineering.",
+      "Pathway specializes in real-time data processing, streaming analytics, and AI-driven workflows. It supports event-driven architectures, ETL pipelines, and unstructured data, enabling RAG, dynamic ETL, and AI-powered decision-making in big data and knowledge engineering.The prize distribution for the event, sponsored by Pathway, is as follows  => { 1st place: 5000 USD ;2nd place: 3000 USDT & 3rd place: 2000 USDT }",
       Statement: "https://shorturl.at/GR0nn",
       Submission: " https://shorturl.at/7yBrv",
   },
