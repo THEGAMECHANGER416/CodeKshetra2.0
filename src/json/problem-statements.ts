@@ -15,7 +15,7 @@ export const problemStatements: ProblemStatement[] = [
     title: "Reactive Network Problem Statements",
     category: "Blockchain & Web-3 Related Domain",
     description:
-      "Reactive Network is a fully EVM-compatible execution layer that allows developers to create the next wave of dApps using Reactive Smart Contracts. These contracts differ from traditional ones by using Inversion-of-Control for the transaction lifecycle, driven by data flows across blockchain ecosystems rather than user input.",
+      "Reactive Network is a fully EVM-compatible execution layer that allows developers to create the next wave of dApps using Reactive Smart Contracts. These contracts differ from traditional ones by using Inversion-of-Control for the transaction lifecycle, driven by data flows across blockchain ecosystems rather than user input. The prize distribution for the event, sponsored by Reactive Network, is as follows  => { Track 1 Pool Prize : 10,003 USDT ; Track 2 Pool Prize: 5,003 USDT & Track 3 Pool Prize: 5,003 USDT }",
       Statement: "https://shorturl.at/oP64V",
       Submission: " https://shorturl.at/94Tta",
   },
