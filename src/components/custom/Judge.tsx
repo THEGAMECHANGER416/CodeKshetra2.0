@@ -3,9 +3,11 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-import Logo from "/assets/Main Logo.png";
 import Judge1 from "/assets/Judges/Judge1.jpg";
 import Judge2 from "/assets/Judges/Judge2.jpg";
+import Judge3 from "/assets/Judges/Judge3.jpg";
+import Judge4 from "/assets/Judges/Judge4.jpg";
+import Judge5 from "/assets/Judges/Judge5.jpg";
 
 interface Judge {
   img: string;
@@ -16,9 +18,9 @@ interface Judge {
 const judges: Judge[] = [
   { img: Judge1, name: "Bhaskarjit Samah" , linkedin:"https://www.linkedin.com/in/bhaskarjitsarmah/"},
   { img: Judge2, name: "Ayon Roy", linkedin:"https://www.linkedin.com/in/ayon-roy/" },
-  { img: Logo, name: "Judge 3",linkedin:"" },
-  { img: Logo, name: "Judge 4", linkedin:"" },
-  { img: Logo, name: "Judge 5",linkedin:"" },
+  { img: Judge3, name: "Ivan Ivanitskiy",linkedin:"https://www.linkedin.com/in/ivan-ivanitskiy/" },
+  { img: Judge4, name: "Deepak Yadav", linkedin:"https://www.linkedin.com/in/dyadav2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+  { img: Judge5, name: "Mudit Srivastava",linkedin:"https://www.linkedin.com/in/muditjps?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
 ];
 
 export default function Judge(): JSX.Element {
